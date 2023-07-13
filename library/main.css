@@ -93,6 +93,8 @@ li {
     width: 600px;
     height: 220px;
     margin-bottom: 160px;
+
+    background-color: #0C0C0E;
 }
 
 .title-welcome {
@@ -115,9 +117,15 @@ span {
 
 /* about section */
 
+.about-section {
+    display: flex;
+    flex-direction: column;
+    /* margin-bottom: 57px; !!!! */
+}
+
 h2 {
-    margin-top: 20px;
-    margin-bottom: 60px;
+    margin-top: 19px;
+    margin-bottom: 20px;
 
     text-align: center;
     font-family: Forum;
@@ -128,6 +136,17 @@ h2 {
     letter-spacing: 2px;
     text-transform: capitalize;
     color: #0C0C0E;
+}
+
+.title-hr {
+    width: 50px;
+    height: 1px;
+    flex-shrink: 0;
+    align-self: center;
+
+    margin-bottom: 40px;
+
+    background: #0C0C0E;
 }
 
 .about-prgph {
@@ -175,8 +194,26 @@ h2 {
 
 /* favorites section */
 
+.favorites-section {
+    display: flex;
+    flex-direction: column;
+}
+
 .custom-radio-buttons {
     display: flex;
+    flex-direction: row;
+    gap: 90px;
+
+    margin-bottom: 40px;
+    margin-left: 20px;
+}
+
+.custom-radio-buttons-item {
+    display: flex;
+    gap: 20px;
+
+    margin-top: 5px;
+    margin-right: 3px;
 }
 
 .custom-btn {
@@ -186,6 +223,37 @@ h2 {
 
     border-radius: 50%;
     border: 3px solid #000000;
+
+    cursor: pointer;
+}
+
+.custom-btn:hover {
+    background-color: #000000;
+    /* !!! */
+}
+
+.btn-season_favorites-section {
+    margin-bottom: 2px;
+
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.favorites-prgrph {
+    margin-bottom: 32px;
+    margin-left: 20px;
+
+    text-align: left;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    color: #000;
 }
 
 .favorites-section-descriptions {
@@ -193,13 +261,23 @@ h2 {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    margin-right: 60px;
+    margin-left: 20px;
 }
 
 .bg-description {
     width: 550px;
+    height: 555px;
+    margin-bottom: 40px;
+
+    border: 1px solid #000;
 }
 
 h3 {
+    margin-top: 15px;
+    margin-left: 20px;
+
     color: #000;
     font-family: Forum;
     font-size: 20px;
@@ -211,6 +289,9 @@ h3 {
 }
 
 h4 {
+    margin-top: 20px;
+    margin-left: 20px;
+
     color: #000;
     font-family: Inter;
     font-size: 15px;
@@ -221,7 +302,24 @@ h4 {
     text-transform: uppercase;
 }
 
+.bg-description-hr {
+    width: 50px;
+    height: 1px;
+    flex-shrink: 0;
+    
+    margin-left: 20px;
+
+    background:  #0C0C0E;
+}
+
+/* .bg-description-hr:hover { !!!!!!
+    background: #BB945F;
+} */
+
 .bg-description-author {
+    margin-top: 0px;
+    margin-left: 20px;
+
     color: #000;
     font-family: Inter;
     font-size: 15px;
@@ -230,4 +328,203 @@ h4 {
     line-height: 40px;
     letter-spacing: 2px;
     text-transform: capitalize; 
+}
+
+.description-prgrph {
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.description-box {
+    position: relative;
+    display: flex;
+}
+
+.description-box-content {
+    margin-top: 20px;
+    margin-right: 175px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.favorites-books-photo {
+   position: absolute;
+   right: -40px;
+   bottom: 2px;
+   
+}
+
+.favorites-button1, .favorites-button2, .favorites-button3, .favorites-button4 {
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    background-color: #FFFFFF;
+
+    cursor: pointer;
+}
+
+.favorites-button1:hover, .favorites-button2:hover, .favorites-button3:hover, .favorites-button4:hover {
+    border-radius: 2px;
+    border: 1px solid #BB945F;
+    background: #BB945F;
+    transition: 0.5s;
+}
+
+.favorites-button1 {
+    margin-top: 13px;
+}
+
+.favorites-button2 {
+    margin-top: 55px;
+}
+
+.favorites-button3 {
+    margin-top: 15px;
+}
+
+.favorites-button4 {
+    margin-top: 95px;
+}
+
+/* Coffee shop */
+
+.coffee-shop-section {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.coffee-shop-prgrph {
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+
+.coffee-shop-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coffee-tea, .desserts-cakes {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: -15px;   /* !!! */
+}
+
+.desserts-cakes {
+    align-items: flex-end;
+}
+
+.coffee-tea-content, .desserts-cakes-content {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+} 
+
+.coffe-shop-items-title {
+    margin-top: 40px;
+    color: #BB945F;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+
+.coffee-tea-items, .desserts-cakes-items {
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+
+.desserts-cakes-items {
+    text-align: end;
+}
+
+.coffe-shop-menu-item {
+    margin-top: 40px;
+}
+
+.coffee-shop-section-hr {
+    width: 100px;
+    height: 1px;
+    margin-bottom: 80px;
+
+    background: #BB945F;
+}
+
+.hr-items {
+    margin-top: 60px;
+}
+
+.coffee-shop-price-list {
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.price-item {
+    margin-top: 40px;
+}
+
+/* our contacts section */
+
+.our-contacts-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.our-contacts-title {
+    margin-top: 10px;
+}
+
+.contacts-list-title {
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.contacts-list-item {
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
 }
