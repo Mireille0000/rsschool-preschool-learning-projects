@@ -15,7 +15,7 @@ html {
 
 .wrapper-body {
     margin: 0 auto;
-    max-width: 1440px;
+    width: 1440px;  /*!!! */
 }
 
 body {
@@ -244,7 +244,7 @@ h2 {
 
 .favorites-prgrph {
     margin-bottom: 32px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 
     text-align: left;
     font-family: Inter;
@@ -275,7 +275,7 @@ h2 {
 }
 
 h3 {
-    margin-top: 15px;
+    margin-top: -17px;
     margin-left: 20px;
 
     color: #000;
@@ -290,7 +290,7 @@ h3 {
 
 h4 {
     margin-top: 20px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 
     color: #000;
     font-family: Inter;
@@ -318,7 +318,7 @@ h4 {
 
 .bg-description-author {
     margin-top: 0px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 
     color: #000;
     font-family: Inter;
@@ -331,6 +331,8 @@ h4 {
 }
 
 .description-prgrph {
+    width: 355px;
+    margin-top: 20px;
     font-family: Inter;
     font-size: 15px;
     font-style: normal;
@@ -347,19 +349,26 @@ h4 {
 
 .description-box-content {
     margin-top: 20px;
-    margin-right: 175px;
+    /* margin-right: 175px; */
     margin-bottom: 20px;
     margin-left: 20px;
 }
 
 .favorites-books-photo {
-   position: absolute;
+   /* position: absolute;
    right: -40px;
-   bottom: 2px;
-   
+   bottom: -44px; */
+
+   position: absolute;
+   left: 370px;
+   top: 100px;
 }
 
-.favorites-button1, .favorites-button2, .favorites-button3, .favorites-button4 {
+.favorites-button {
+    position: relative;
+    top: 507px;
+    left: 20px;
+
     width: 75px;
     height: 30px;
     flex-shrink: 0;
@@ -378,32 +387,16 @@ h4 {
     cursor: pointer;
 }
 
-.favorites-button1:hover, .favorites-button2:hover, .favorites-button3:hover, .favorites-button4:hover {
+.favorites-button:hover{
     border-radius: 2px;
     border: 1px solid #BB945F;
     background: #BB945F;
     transition: 0.5s;
 }
 
-.favorites-button1 {
-    margin-top: 13px;
-}
-
-.favorites-button2 {
-    margin-top: 55px;
-}
-
-.favorites-button3 {
-    margin-top: 15px;
-}
-
-.favorites-button4 {
-    margin-top: 95px;
-}
-
-.hidden-content {
+/* .hidden-content {
     display: none;
-}
+} */
 
 /* Coffee shop */
 
