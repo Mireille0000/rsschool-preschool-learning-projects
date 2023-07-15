@@ -120,7 +120,6 @@ span {
 .about-section {
     display: flex;
     flex-direction: column;
-    /* margin-bottom: 57px; !!!! */
 }
 
 h2 {
@@ -244,7 +243,6 @@ h2 {
 
 .favorites-prgrph {
     margin-bottom: 32px;
-    /* margin-left: 20px; */
 
     text-align: left;
     font-family: Inter;
@@ -312,13 +310,9 @@ h4 {
     background:  #0C0C0E;
 }
 
-/* .bg-description-hr:hover { !!!!!!
-    background: #BB945F;
-} */
 
 .bg-description-author {
     margin-top: 0px;
-    /* margin-left: 20px; */
 
     color: #000;
     font-family: Inter;
@@ -349,16 +343,11 @@ h4 {
 
 .description-box-content {
     margin-top: 20px;
-    /* margin-right: 175px; */
     margin-bottom: 20px;
     margin-left: 20px;
 }
 
 .favorites-books-photo {
-   /* position: absolute;
-   right: -40px;
-   bottom: -44px; */
-
    position: absolute;
    left: 370px;
    top: 100px;
@@ -394,9 +383,9 @@ h4 {
     transition: 0.5s;
 }
 
-/* .hidden-content {
+.hidden-content {
     display: none;
-} */
+}
 
 /* Coffee shop */
 
@@ -504,8 +493,14 @@ h4 {
     margin-top: 10px;
 }
 
-.contacts-list-title {
-    text-align: center;
+.our-contects-content {
+    display: flex;
+    gap: 201px;
+}
+
+.contacts-list-title1, .contacts-list-title2 {
+    margin-left: 18px;
+    
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -515,8 +510,18 @@ h4 {
     text-transform: capitalize;
 }
 
+.contacts-list-title1 {
+    margin-bottom: 40px;
+}
+
+.contacts-list-title2 {
+    margin-bottom: 20px;
+}
+
 .contacts-list-item {
-    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 18px;
+   
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -524,4 +529,8 @@ h4 {
     line-height: 40px;
     letter-spacing: 2px;
     text-transform: capitalize;
+}
+
+.contacts-phonenumbers {
+    margin-bottom: 40px;
 }
