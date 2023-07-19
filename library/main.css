@@ -54,13 +54,9 @@ li {
     padding: 20px;
 }
 
-a {
+.link-nav {
     text-decoration: none;
     color: #FFFFFF;
-}
-
-a:hover {
-    color: #BB945F;
 }
 
 .nav-list {
@@ -79,9 +75,10 @@ a:hover {
     color: #FFFFFF;
 }
 
-.nav-item:hover {
+.link-nav:hover, .nav-item:hover {
     transition-duration: 1s;
     transform: scale(1.1);
+    color: #BB945F;
 }
 
 .icon-header {
@@ -527,6 +524,11 @@ h4 {
     margin-top: 9px;
 }
 
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
 .our-contects-content {
     display: flex;
     gap: 201px;
@@ -721,6 +723,12 @@ h4 {
     justify-content: flex-end;
 
     margin-top: 35px;
+}
+
+.dlcards-section-button:hover, .card-block-button:hover {
+    background-color: #BB945F;
+    transition-duration: 0.5s;
+    cursor: pointer;
 }
 
 /* footer styles */
