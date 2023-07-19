@@ -52,20 +52,35 @@
                 <h2 id="favorites">Favorites</h2>
                 <hr class="title-hr">
                 <div class="favorites-prgrph">Pick favorites of season</div>
-                <div class="custom-radio-buttons">
-                    <div class="custom-radio-buttons-item">
-                        <div class="custom-btn"></div><div class="btn-season_favorites-section">Winter</div>
+                <form class="radio-buttons-form">
+                    <div class="radio-button">
+                        <label for="radio-button1">
+                            <input id="radio-button1" type="radio">
+                        </label>
+                        <div class="radion-btn-name"><b>Winter</b></div>
                     </div>
-                    <div class="custom-radio-buttons-item">
-                        <div class="custom-btn"> </div><div class="btn-season_favorites-section">Spring</div>
+
+                    <div class="radio-button">
+                        <label for="radio-button2">
+                            <input id="radio-button2" type="radio">
+                        </label>
+                        <div class="radion-btn-name">Spring</div>
                     </div>
-                    <div class="custom-radio-buttons-item">
-                        <div class="custom-btn"> </div><div class="btn-season_favorites-section">Summer</div>
+
+                    <div class="radio-button">
+                        <label for="radio-button3">
+                            <input id="radio-button3" type="radio">
+                        </label>
+                        <div class="radion-btn-name">Summer</div>
                     </div>
-                    <div class="custom-radio-buttons-item">
-                        <div class="custom-btn"> </div><div class="btn-season_favorites-section">Autumn</div>
-                    </div> 
-                </div>
+
+                    <div class="radio-button">
+                        <label for="radio-button4">
+                            <input id="radio-button4" type="radio">
+                        </label>
+                        <div class="radion-btn-name">Autumn</div>
+                    </div>
+                </form>
 
                 <div class="favorites-section-descriptions">
                     <div class="bg-description">
@@ -111,7 +126,7 @@
                     </div>
 
                     <div class="bg-description">
-                        <button class="favorites-button">Buy</button>
+                        <button class="favorites-button btn-own" disabled>Own</button>
                         <h3>Staff Picks</h3>
                         <hr class="bg-description-hr">
                         <div class="description-box-content">

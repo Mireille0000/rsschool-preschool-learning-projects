@@ -200,10 +200,6 @@ h2 {
     background-color: #000000;
 }
 
-/* .button-colored {
-   background-color: #BB945F;
-} */
-
 .about-photo-girl {
     width: 450px;
     height: 560px;
@@ -227,53 +223,47 @@ h2 {
 .favorites-section {
     display: flex;
     flex-direction: column;
+
+    /* margin-right: 93px; */
 }
 
-.custom-radio-buttons {
+.radio-buttons-form {
     display: flex;
     flex-direction: row;
-    gap: 90px;
 
-    margin-bottom: 40px;
+    margin-bottom: 37px;
     margin-left: 20px;
 }
 
-.custom-radio-buttons-item {
+.radio-button {
     display: flex;
-    gap: 20px;
+    flex-direction: row;
 
-    margin-top: 5px;
-    margin-right: 3px;
-}
-
-.custom-btn {
-    width: 17px;
-    height: 17px;
-    flex-shrink: 0;
-
-    border-radius: 50%;
-    border: 3px solid #000000;
+    margin-right: 93px;
 
     cursor: pointer;
 }
 
-.custom-btn:hover {
-    background-color: #000000;
-    /* !!! */
+#radio-button1, #radio-button2, #radio-button3, #radio-button4 {
+    width: 17px;
+    height: 17px;
+    margin-top: 8px;
+
+    cursor: pointer;
 }
 
-.btn-season_favorites-section {
-    margin-bottom: 2px;
+.radion-btn-name {
+    margin-left: 20px;
 
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-}
+} 
 
 .favorites-prgrph {
-    margin-bottom: 32px;
+    margin-bottom: 39px;
     margin-left: 20px;
 
     text-align: left;
@@ -414,6 +404,15 @@ h4 {
     background: #BB945F;
     transition: 0.5s;
 }
+    
+.btn-own {
+    background-color: #FFFFFF;
+    color: #BB945F;
+    border: 1px solid #BB945F;
+    cursor: none;
+    pointer-events: none;
+}
+
 
 .hidden-content {
     display: none;
