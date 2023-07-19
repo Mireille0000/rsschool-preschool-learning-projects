@@ -13,11 +13,11 @@
             <div class="wrapper-header">  <!-- change class name -->
                 <nav>
                     <ul class="nav-list">
-                        <li class="nav-item">About</li>
-                        <li class="nav-item">Favorites</li>
-                        <li class="nav-item">Coffee shop</li>
-                        <li class="nav-item">Contacts</li>
-                        <li class="nav-item">Library Card</li>
+                        <li class="nav-item"><a href="#about">About</a></li>
+                        <li class="nav-item"><a href="#favorites">Favorites</a></li>
+                        <li class="nav-item"><a href="#coffee-shop">Coffee shop</a></li>
+                        <li class="nav-item"><a href="#contacts">Contacts</a></li>
+                        <li class="nav-item"><a href="#library-card">Library Card</a></li>
                     </ul>  
                 </nav>
             <div class="icon-header"><img src="icon-profile.png" alt="icon_profile" width="28" height="28"></div>
@@ -33,7 +33,7 @@
             </section>
 
             <section class="about-section">
-                <h2>About</h2>
+                <h2 id="about">About</h2>
                 <hr class="title-hr">
                 <p class="about-prgph">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside </p>
                 <div class="photos">
@@ -41,11 +41,15 @@
                     <div class="about-photo-statues"></div>
                     <div class="about-photo-books"></div>
                 </div>
-                <div class="carousel-pagination"><img src="carousel-pagination.svg" alt="carousel"></div>
+                <div class="carousel-pagination">
+                    <div class="pagination-button" style="background-color: #BB945F"></div>
+                    <div class="pagination-button"></div>
+                    <div class="pagination-button"></div>
+                </div>
             </section>
 
             <section class="favorites-section">
-                <h2>Favorites</h2>
+                <h2 id="favorites">Favorites</h2>
                 <hr class="title-hr">
                 <div class="favorites-prgrph">Pick favorites of season</div>
                 <div class="custom-radio-buttons">
@@ -293,7 +297,7 @@
             </section>
 
             <section class="coffee-shop-section">
-                <h2>Coffee Shop</h2>
+                <h2 id="coffee-shop">Coffee Shop</h2>
                 <hr class="title-hr">
                 <p class="coffee-shop-prgrph">In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation. 
                     You can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can try desserts from bakery.</p>
@@ -362,7 +366,7 @@
             </section>
 
             <section class="our-contacts-section">
-                <h2 class="our-contacts-title">Our contacts</h2>
+                <h2 id="contacts" class="our-contacts-title">Our contacts</h2>
                 <hr class="title-hr">
                 <div class="our-contects-content">
                 <div class="contacts-list">
@@ -386,7 +390,7 @@
             </section>
 
             <section class="digital-library-cards-section">
-                <h2>Digital Library Cards</h2>
+                <h2 id="library-card">Digital Library Cards</h2>
                 <hr class="title-hr">
 
                 <div class="dl-cards-section-content">
@@ -416,27 +420,30 @@
             </section>
         </main>
 
-        <footer>
-            <div>
-                <p>286 Cadman Plaza, New York,<br> NY 11238, United States</p>
-                <div class="icons-footer">
-                    <img src="./icons/twitter-icon-footer.svg" alt="Twitter icon">
-                    <img src="./icons/instagram-icon-footer.svg" alt="Instagram icon">
-                    <img src="./icons/facebook-icon-footer.svg" alt="Facebook icon">
+        <footer class="footer">
+            <div class="footer-above-line">
+                <div class="address-icons-footer">
+                    <p class="prgrph-footer-address">286 Cadman Plaza, New York,<br> NY 11238, United States</p>
+                    <div class="icons-footer">
+                        <img src="./icons/twitter-icon-footer.svg" alt="Twitter icon">
+                        <img src="./icons/instagram-icon-footer.svg" alt="Instagram icon">
+                        <img src="./icons/facebook-icon-footer.svg" alt="Facebook icon">
+                    </div>
+                </div>
+            
+
+                <div class="timetable-footer">
+                    <p class="prgrph-footer-timetable">Mon - Fri<br> 08:00 am - 07:00 pm</p>
+                    <p class="prgrph-footer-timetable">Sat - Sun<br> 10:00 am - 06:00 pm</p>
                 </div>
             </div>
 
-            <div>
-                <p>Mon - Fri<br> 08:00 am - 07:00 pm</p>
-                <p>Sat - Sun<br> 10:00 am - 06:00 pm</p>
-            </div>
-
-            <hr>
+            <hr class="hr-footer">
 
             <div class="footer-under-line">
-                <div>2023</div>
-                <div>The Rolling Scopes School</div>
-                <div>Tamara Gasanova</div>
+                <div class="footer-under-line-item">2023</div>
+                <div class="footer-under-line-item2">The Rolling Scopes School</div>
+                <div class="footer-under-line-item">Tamara Gasanova</div>
             </div>
         </footer>
     </div>

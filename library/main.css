@@ -54,6 +54,15 @@ li {
     padding: 20px;
 }
 
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+a:hover {
+    color: #BB945F;
+}
+
 .nav-list {
     display: flex;
     align-items: flex-end;
@@ -68,6 +77,11 @@ li {
     line-height: 50px;
 
     color: #FFFFFF;
+}
+
+.nav-item:hover {
+    transition-duration: 1s;
+    transform: scale(1.1);
 }
 
 .icon-header {
@@ -168,10 +182,27 @@ h2 {
 }
 
 .carousel-pagination {
-    margin-top: 40px;
-    margin-bottom: 40px;
-   text-align: center;
+    display: flex;
+    justify-content: center;
+
+    margin-top: 35px;
+    margin-bottom: 38px;
+    text-align: center;
 }
+
+.pagination-button {
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+
+    border-radius: 50%;
+
+    background-color: #000000;
+}
+
+/* .button-colored {
+   background-color: #BB945F;
+} */
 
 .about-photo-girl {
     width: 450px;
@@ -394,6 +425,7 @@ h4 {
     display: flex;
     flex-direction: column;
     margin-right: 20px;
+    margin-bottom: 8px;
     margin-left: 20px;
 }
 
@@ -451,6 +483,7 @@ h4 {
 
 .desserts-cakes-items {
     text-align: end;
+    margin-right: -5px;
 }
 
 .coffe-shop-menu-item {
@@ -458,9 +491,9 @@ h4 {
 }
 
 .coffee-shop-section-hr {
-    width: 100px;
+    width: 101px;
     height: 1px;
-    margin-bottom: 80px;
+    margin-bottom: 79px;
 
     background: #BB945F;
 }
@@ -488,11 +521,11 @@ h4 {
 .our-contacts-section {
     display: flex;
     flex-direction: column;
-    margin-bottom: 37px;
+    margin-bottom: 36px;
 }
 
 .our-contacts-title {
-    margin-top: 10px;
+    margin-top: 9px;
 }
 
 .our-contects-content {
@@ -513,7 +546,8 @@ h4 {
 }
 
 .contacts-list-title1 {
-    margin-bottom: 40px;
+    margin-top: -4px;
+    margin-bottom: 42px;
 }
 
 .contacts-list-title2 {
@@ -543,7 +577,7 @@ h4 {
     display: flex;
     flex-direction: column;
 
-    margin-bottom: 41px;
+    margin-bottom: 38px;
 }
 
 .dl-cards-section-content {
@@ -688,4 +722,78 @@ h4 {
     justify-content: flex-end;
 
     margin-top: 35px;
+}
+
+/* footer styles */
+
+.footer {
+    background: #000000;
+}
+
+.hr-footer {
+    width: 1400px;
+    height: 1px;
+    margin-left: 20px;
+    background: #FFF;
+}
+
+.footer-above-line {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px;
+}
+
+.address-icons-footer {
+    align-self: stretch;
+}
+
+.prgrph-footer-address, .prgrph-footer-timetable {
+    text-align: right;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+    color: #FFFFFF;
+}
+
+.prgrph-footer-address {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.icons-footer {
+    display: flex;
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.prgrph-footer-timetable {
+    margin-bottom: 10px;
+}
+
+.footer-under-line {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 35px 20px;
+}
+
+.footer-under-line-item, .footer-under-line-item2 {
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; 
+    letter-spacing: 2px;
+
+    color: #FFFFFF;
+}
+
+.footer-under-line-item2 {
+    margin-left: 140px;
 }
