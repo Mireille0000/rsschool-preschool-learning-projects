@@ -23,6 +23,11 @@ body {
     min-height: 100vh;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 li {
     list-style-type: none;
 }
@@ -529,7 +534,7 @@ a {
     color: #000000;
 }
 
-.our-contects-content {
+.our-contacts-content {
     display: flex;
     gap: 201px;
 }
@@ -631,8 +636,29 @@ a {
     flex-shrink: 0;
 
     margin-bottom: 25px;
+    padding-left: 20px;
+
+    font-family: Forum;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0.6px;
 
     border-radius: 10px;
+}
+
+.input-dlcards-section::placeholder {
+    /* padding-left: 19px; */
+    padding-top: 8px;
+
+    color: #8E8E8E;
+    font-family: Forum;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0.6px;
 }
 
 .dlcards-section-button-block {

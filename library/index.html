@@ -383,7 +383,7 @@
             <section class="our-contacts-section">
                 <h2 id="contacts" class="our-contacts-title">Our contacts</h2>
                 <hr class="title-hr">
-                <div class="our-contects-content">
+                <div class="our-contacts-content">
                 <div class="contacts-list">
                     <div class="contacts-list-title1">For all Library inquiries</div>
                     <ul class="contacts-phonenumbers">
@@ -411,16 +411,16 @@
                 <div class="dl-cards-section-content">
                     <div>
                         <div class="library-cards-title">Find your Library card</div>
-                        <div class="library-card-block">
+                        <form class="library-card-block">
                             <div class="library-cards-form">
                                 <div class="dlcards-form-title">Brooklyn Public Library</div>
-                                    <form class="form-dlcards-section">
-                                        <input class="input-dlcards-section" type="text" placeholder="Reader's name">
-                                        <input class="input-dlcards-section" type="text" placeholder="Card number">
-                                    </form>
+                                    <div class="form-dlcards-section">
+                                        <input class="input-dlcards-section name-input" type="text" maxlength="1500" placeholder="Reader's name">
+                                        <input class="input-dlcards-section number-card-input" type="number" placeholder="Card number">
+                                    </div>
                             </div>
                             <div class="dlcards-section-button-block"><button class="dlcards-section-button" type="submit">Check the card</button></div>
-                        </div>
+                        </form>
                     </div>
 
                     <div class="dlcards-get-card-block">
@@ -462,5 +462,6 @@
             </div>
         </footer>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>
