@@ -10,26 +10,34 @@
 <body>
     <div class="wrapper-body">
         <header class="header">
-            <h1 class="title-header">Brooklyn Public Library</h1> <!-- class name?? -->
-            <div class="wrapper-header">  <!-- change class name -->
-                <nav>
-                    <ul class="nav-list">
-                        <li class="nav-item"><a class="link-nav" href="#about">About</a></li>
-                        <li class="nav-item"><a class="link-nav" href="#favorites">Favorites</a></li>
-                        <li class="nav-item"><a class="link-nav" href="#coffee-shop">Coffee shop</a></li>
-                        <li class="nav-item"><a class="link-nav" href="#contacts">Contacts</a></li>
-                        <li class="nav-item"><a class="link-nav" href="#library-card">Library Card</a></li>
-                    </ul>  
-                </nav>
-            <div class="icon-header"><img src="icon-profile.png" alt="icon_profile" width="28" height="28"></div>
+            <!-- <div class="header-container"> -->
+                <!-- <div class="header"> -->
+                    <h1 class="title-header">Brooklyn Public Library</h1> <!-- class name?? -->
+                    <div class="wrapper-header">  <!-- change class name -->
+                        <nav>
+                            <ul class="nav-list">
+                                <li class="nav-item"><a class="link-nav" href="#about">About</a></li>
+                                <li class="nav-item"><a class="link-nav" href="#favorites">Favorites</a></li>
+                                <li class="nav-item"><a class="link-nav" href="#coffee-shop">Coffee shop</a></li>
+                                <li class="nav-item"><a class="link-nav" href="#contacts">Contacts</a></li>
+                                <li class="nav-item"><a class="link-nav" href="#library-card">Library Card</a></li>
+                            </ul>  
+                        </nav>
+                    <div class="icon-header"><img src="icon-profile.png" alt="icon_profile" width="28" height="28"></div>
+                    <!-- </div> -->
+                <!-- </div> -->
             </div>
         </header>
-
+        
         <main>
-            <section class="welcome-section">
-                <div class="overlayout"></div>
-                <div class="title-wrapper">
-                   <h2 class="title-welcome"><span>Welcome</span> <br>to the Brooklyn library</h2>
+            <section class="welcome">
+                <div class="welcome-section">
+                      <div class="welcome-container">
+                        <div class="overlayout"></div>
+                        <div class="title-wrapper">
+                        <h2 class="title-welcome"><span>Welcome</span> <br>to the Brooklyn library</h2>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -57,25 +65,25 @@
                     <label for="radio-button1">
                         <input name="radio" id="radio-button1" class="radio-button-item" type="radio">
                         <span class="custom-radio-button"></span>
-                        <div class="radion-btn-name"><b>Winter</b></div>
+                        <span class="radion-btn-name"><b>Winter</b></span>
                     </label>
 
                     <label for="radio-button2">
                         <input name="radio" id="radio-button2" type="radio">
                         <span class="custom-radio-button"></span>
-                        <div class="radion-btn-name">Spring</div>
+                        <span class="radion-btn-name">Spring</span>
                     </label>
                    
                     <label for="radio-button3">
                         <input name="radio" id="radio-button3" type="radio">
                         <span class="custom-radio-button"></span>
-                        <div class="radion-btn-name">Summer</div>
+                        <span class="radion-btn-name">Summer</span>
                     </label>
                     
                     <label for="radio-button4">
                         <input name="radio" id="radio-button4" type="radio">
                         <span class="custom-radio-button"></span>
-                        <div class="radion-btn-name">Autumn</div>
+                        <span class="radion-btn-name">Autumn</span>
                     </label>
                 </form>
 
@@ -313,7 +321,6 @@
                 <hr class="title-hr">
                 <p class="coffee-shop-prgrph">In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation. 
                     You can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can try desserts from bakery.</p>
-                
                 <div class="coffee-shop-menu">
                     <div class="coffee-tea">
                         <div class="coffe-shop-items-title">Coffee & Tea</div>
@@ -413,7 +420,7 @@
                                 <div class="dlcards-form-title">Brooklyn Public Library</div>
                                     <div class="form-dlcards-section">
                                         <input class="input-dlcards-section name-input" type="text" maxlength="1500" placeholder="Reader's name">
-                                        <input class="input-dlcards-section number-card-input" type="number" placeholder="Card number">
+                                        <input class="input-dlcards-section number-card-input" type="text" maxlength="23" placeholder="Card number">
                                     </div>
                             </div>
                             <div class="dlcards-section-button-block"><button class="dlcards-section-button" type="submit">Check the card</button></div>
