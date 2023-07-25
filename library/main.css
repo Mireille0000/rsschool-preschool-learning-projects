@@ -22,7 +22,7 @@ body {
     font-family: "Forum";
     min-height: 100vh;
     /* background-size: 100vw; */
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     /* max-width: 100vw; */
 }
 
@@ -106,9 +106,15 @@ li {
     /* display: flex; */
     margin: 0 auto;
     max-width: 1440px;
+
+    /* background: url(welcome-layout.png) 50% / cover no-repeat; */
 }
 
 .welcome-section {
+    position: absolute;
+    left: 0;
+    min-width: 100vw;
+
     background: url(welcome-layout.png) 50% / cover no-repeat;
     
     /* margin: 0 auto; */
@@ -137,15 +143,16 @@ li {
     width: 600px;
     height: 220px;
     margin-bottom: 160px;
+    margin-left: -5px;
 
     background-color: #0C0C0E;
 }
 
 .title-welcome {
-    /* margin-top: 35px;
+    margin-top: 35px;
     margin-right: 40px;
-    margin-left: 67px; */
-    margin: 35px 40px;
+    margin-left: 29px;
+    /* margin: 35px 40px; */
 
     color: #ffffff;
     text-align: center;
@@ -167,6 +174,8 @@ span {
 .about-section {
     display: flex;
     flex-direction: column;
+
+    padding-top: 600px;
 }
 
 h2 {
@@ -275,7 +284,7 @@ h2 {
 label {
     display: flex;
 
-    margin-right: 85.5px;
+    margin-right: 76px;
 }
 
 #radio-button1, #radio-button2, #radio-button3, #radio-button4 {
