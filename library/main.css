@@ -243,7 +243,7 @@ h2 {
     display: flex;
     flex-direction: row;
 
-    margin-bottom: 38px;
+    margin-bottom: 34px;
     margin-left: 15px;
 }
 
@@ -308,6 +308,8 @@ label input:checked + .radio-button-item::before{
 
 .radion-btn-name {
     margin-left: 15px;
+    margin-top: 4px;
+    margin-bottom: 4px;
 
     font-family: Inter;
     font-size: 20px;
@@ -317,7 +319,7 @@ label input:checked + .radio-button-item::before{
 } 
 
 .favorites-prgrph {
-    margin-bottom: 39px;
+    margin-bottom: 37px;
     margin-left: 20px;
 
     text-align: left;
@@ -430,7 +432,7 @@ h4 {
 
 .favorites-button {
     position: relative;
-    top: 507px;
+    top: 509px;
     left: 20px;
 
     width: 75px;
@@ -639,7 +641,7 @@ h4 {
     display: flex;
     flex-direction: column;
 
-    margin-bottom: 39px;
+    margin-bottom: 42px;
 }
 
 .dl-cards-section-content {

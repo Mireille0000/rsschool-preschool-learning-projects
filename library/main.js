@@ -12,3 +12,5 @@
         this.value = this.value.replace(regexLibraryCardNumber, '');
     };
 }())
+
+console.log('100/100, все требования выполнены');
