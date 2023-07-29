@@ -592,6 +592,11 @@ h4 {
     color: #000000;
 }
 
+.links-contacts-section:hover {
+   color: #BB945F;
+   animation-duration: 1s;
+}
+
 .our-contacts-content {
     display: flex;
     gap: 201px;
