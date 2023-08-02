@@ -15,7 +15,7 @@ html {
 
 .wrapper-body {
     margin: 0 auto;
-    width: 1440px;
+    max-width: 1440px;
 }
 
 body {
@@ -897,4 +897,101 @@ h4 {
 .links-footer {
     color: #FFFFFF;
     text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+    /* header */
+    .nav-list {
+        display: none;
+    }
+    /* about us section */
+    .about-photo-books, .about-photo-statues {
+        display: none;
+    }
+
+    .about-prgph {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .carousel-pagination {
+        margin-top: 20px;
+    }
+
+    /* favorites section */
+
+    .favorites-section-descriptions {
+        margin-left: 90px;
+    }
+
+    /* coffee shop section */
+
+    .coffee-shop-menu {
+        flex-direction: column;
+    }
+
+    .desserts-cakes {
+        margin-bottom: -16px;
+    }
+
+    .coffee-tea {
+        margin-bottom: -60px;
+    }
+    /* our contacts section */
+    .our-contacts-content {
+        display: flex;
+        flex-direction: column;
+        gap: 83px;
+    }
+
+    .map {
+        margin-left: 40px;
+    }
+    /* digital library cards section */
+
+    .library-cards-title {
+        margin-left: 140px;
+    }
+
+    .library-card-block {
+        margin-left: 0;
+    }
+
+    .dlcards-get-card-block {
+        margin-right: 0;
+    }
+
+    .dl-cards-section-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 21px;
+    }
+
+    .dlcards-get-card-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-block-prgrph {
+        text-align: center;
+        margin-top: 5px;
+        padding-left: 84px;
+        padding-right: 84px;
+    }
+
+    .dlcards-get-card-block-buttons {
+        margin-top: 39px;
+    }
+
+    /* footer */
+
+    .hr-footer {
+        width: 95vw;
+    }
+
+    .footer-under-line-item2 {
+        margin-left: 91px;
+    }
 }
