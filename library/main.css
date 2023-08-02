@@ -195,6 +195,11 @@ h2 {
     margin-right: 7px;
 }
 
+.arrows {
+    align-self: center;
+    display: none;
+}
+
 .carousel-pagination {
     display: flex;
     justify-content: center;
@@ -212,6 +217,13 @@ h2 {
     border-radius: 50%;
 
     background-color: #000000;
+    cursor: pointer;
+}
+
+.pagination-button:hover {
+    background-color: #BB945F;
+    box-shadow: 1px 1px 2px #BB945F;
+    transition-duration: 0.5s;
 }
 
 .about-photo-girl {
@@ -685,6 +697,7 @@ h4 {
 
     border: 3px solid #BB945F;
     background: #FFF;
+    box-shadow: 0px 5px 5px #c4bdbd;
 }
 
 .library-cards-form {
@@ -913,6 +926,24 @@ h4 {
         margin-right: 20px;
         margin-left: 20px;
     }
+
+    
+.arrows {
+    display: flex;
+    align-self: center;
+    
+}
+
+.arrow2 {
+    margin-left: 55px;
+    margin-top: 40px;
+}
+
+.arrow1 {
+    margin-right: 55px;
+    margin-top: 40px;
+}
+
 
     .carousel-pagination {
         margin-top: 20px;
