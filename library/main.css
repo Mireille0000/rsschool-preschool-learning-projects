@@ -212,6 +212,13 @@ h2 {
     border-radius: 50%;
 
     background-color: #000000;
+    cursor: pointer;
+}
+
+.pagination-button:hover {
+    background-color: #BB945F;
+    box-shadow: 1px 1px 2px #BB945F;
+    transition-duration: 0.5s;
 }
 
 .about-photo-girl {
