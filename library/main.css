@@ -36,7 +36,7 @@ li {
     display: flex;
     justify-content: space-between;
 
-    max-width: 1440px;
+    /* max-width: 1440px; */
     background-color: #000000;
 }
 
@@ -95,7 +95,7 @@ li {
 
 .welcome {
     margin: 0 auto;
-    max-width: 1440px;
+    /* max-width: 1440px; */
 }
 
 .welcome-section {
@@ -254,6 +254,7 @@ h2 {
 .radio-buttons-form {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
     margin-bottom: 34px;
     margin-left: 15px;
@@ -839,10 +840,11 @@ h4 {
 }
 
 .hr-footer {
-    width: 1400px;
+    /* width: 1400px; */
     height: 1px;
     margin-top: -2px;
     margin-left: 20px;
+    margin-right: 20px;
     background: #FFF;
 }
 
@@ -975,10 +977,23 @@ h4 {
         gap: 83px;
     }
 
+    .our-contacts-section {
+        margin-bottom: 38px;
+    }
+
     .map {
         margin-left: 40px;
+        padding-right: 40px;
+    }
+
+    iframe {
+        width: 100%;
     }
     /* digital library cards section */
+
+    .digital-library-cards-section {
+        margin-bottom: 39px;
+    }
 
     .library-cards-title {
         margin-left: 140px;
@@ -1026,3 +1041,5 @@ h4 {
         margin-left: 91px;
     }
 }
+
+/* map and radio buttons + burger menu + transition, transforme */
