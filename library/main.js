@@ -13,4 +13,13 @@
     };
 }())
 
-console.log('100/100, все требования выполнены');
+const burgerFunction = () => {
+    const burgerIcon = document.querySelector('.burger-icon');
+    const burgerMenu = document.querySelector('.burger-menu');
+    
+    burgerIcon.addEventListener('click', () => {
+        burgerMenu.classList.toggle('burger-menu_active');
+    })
+}
+
+burgerFunction();
