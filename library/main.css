@@ -252,6 +252,10 @@ h2 {
     transition-duration: 0.5s;
 }
 
+.tablet {
+    display: none;
+}
+
 .about-photo-girl {
     width: 450px;
     height: 560px;
@@ -1027,6 +1031,11 @@ h4 {
         margin-left: 20px;
     }
 
+    .photos {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
     
 .arrows {
     display: flex;
@@ -1048,6 +1057,9 @@ h4 {
         margin-top: 20px;
     }
 
+    .tablet {
+        display: flex;
+    }
     /* favorites section */
 
     .favorites-section-descriptions {
