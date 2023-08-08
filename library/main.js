@@ -16,9 +16,13 @@
 const burgerFunction = () => {
     const burgerIcon = document.querySelector('.burger-icon');
     const burgerMenu = document.querySelector('.burger-menu');
+    const burgerMenuClose = document.querySelector('.burger-menu-close');
+
     
     burgerIcon.addEventListener('click', () => {
         burgerMenu.classList.toggle('burger-menu_active');
+        burgerIcon.classList.toggle('burger-icon-active')
+        burgerMenuClose.classList.toggle('burger-menu-close-active');
     })
 }
 
