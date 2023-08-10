@@ -97,7 +97,7 @@ li {
 .burger-menu {
     opacity: 0;
     position: absolute;
-    top: 90px;
+    top: 98px;
     right: 0;
     width: 40vw;
 
@@ -964,6 +964,10 @@ h4 {
         padding-right: 82px;
     }
 
+    .burger-menu-container_active{
+        opacity: 0;
+    }
+
    .burger-menu_active {
         opacity: 1;
         display: flex;
@@ -971,6 +975,11 @@ h4 {
         transform: translateX(0);
         
         background-color: #000000;
+    }
+
+    .burger-menu-item {
+        padding-right: 37px;
+        margin-bottom: 31px;
     }
 
     .burger-icon {
