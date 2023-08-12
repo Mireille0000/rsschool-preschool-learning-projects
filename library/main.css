@@ -90,18 +90,21 @@ li {
     padding-bottom: 9px;
 }
 
+.icon-header:hover {
+    cursor: pointer;
+}
+
 .burger-icon span {
     display: none;
 }
 
 .burger-menu {
-    opacity: 0;
-    position: absolute;
+    position: fixed;
     top: 98px;
     right: 0;
     width: 40vw;
 
-    transform: translateX(-100%);
+    transform: translateX(100%);
     transition: 1s;
         
     background-color: #000000;
@@ -584,7 +587,6 @@ h4 {
 
 .desserts-cakes-items {
     text-align: end;
-    /* margin-right: -5px; */
 }
 
 .coffe-shop-menu-item {
@@ -870,7 +872,6 @@ h4 {
 }
 
 .hr-footer {
-    /* width: 1400px; */
     height: 1px;
     margin-top: -2px;
     margin-left: 20px;
@@ -960,7 +961,6 @@ h4 {
 
     .icon-header {
         padding-bottom: 8px;
-        /* padding-right: 40px; */
         padding-right: 82px;
     }
 
@@ -969,7 +969,8 @@ h4 {
     }
 
    .burger-menu_active {
-        opacity: 1;
+        width: 332px;
+        height: 470px;
         display: flex;
         flex-direction: column;
         transform: translateX(0);
@@ -978,7 +979,6 @@ h4 {
     }
 
     .burger-menu-item {
-        padding-right: 37px;
         margin-bottom: 31px;
     }
 
@@ -1041,25 +1041,25 @@ h4 {
     }
 
     .photos {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-}
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+    }
     
-.arrows {
-    display: flex;
-    align-self: center;   
-}
+    .arrows {
+        display: flex;
+        align-self: center;   
+    }
 
-.arrow2 {
-    margin-left: 55px;
-    margin-top: 40px;
-}
+    .arrow2 {
+        margin-left: 55px;
+        margin-top: 40px;
+    }
 
-.arrow1 {
-    margin-right: 55px;
-    margin-top: 40px;
-}
+    .arrow1 {
+        margin-right: 55px;
+        margin-top: 40px;
+    }
 
 
     .carousel-pagination {
@@ -1069,6 +1069,7 @@ h4 {
     .tablet {
         display: flex;
     }
+
     /* favorites section */
 
     .favorites-section-descriptions {
@@ -1092,7 +1093,9 @@ h4 {
     .coffee-tea {
         margin-bottom: -60px;
     }
+
     /* our contacts section */
+
     .our-contacts-content {
         display: flex;
         flex-direction: column;
@@ -1111,6 +1114,7 @@ h4 {
     iframe {
         width: 100%;
     }
+
     /* digital library cards section */
 
     .digital-library-cards-section {
@@ -1171,7 +1175,5 @@ h4 {
 
     .favorites-section-descriptions {
         margin-left: 50px;
-    }
-    
+    }  
 }
-/* map and radio buttons + burger menu + transition, transforme */

@@ -16,20 +16,22 @@
 const burgerFunction = () => {
     const burgerIcon = document.querySelector('.burger-icon');
     const burgerMenu = document.querySelector('.burger-menu');
-    // const burgerMenuItems = document.querySelectorAll('.burger-menu-item');
-    const burgerMenuContainer = document.querySelector('.burger-menu-container')
-
-
+    const burgerMenuContainer = document.querySelector('.burger-menu-container');
     burgerIcon.addEventListener('click', () => {
         burgerMenu.classList.toggle('burger-menu_active');
         burgerIcon.classList.toggle('burger-icon-active');
         }
     )
 
-        burgerMenuContainer.addEventListener('click', () => {
-            burgerMenu.classList.remove('burger-menu_active');
-            burgerIcon.classList.remove('burger-icon-active');
-        })   
+    burgerMenuContainer.addEventListener('click', () => {
+        burgerMenu.classList.remove('burger-menu_active');
+        burgerIcon.classList.remove('burger-icon-active');  
+    })
+
+    window.addEventListener('scroll', () => {
+        burgerMenu.classList.remove('burger-menu_active');
+        burgerIcon.classList.remove('burger-icon-active');
+    })
 }
 
 burgerFunction();
