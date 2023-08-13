@@ -15,7 +15,7 @@ html {
 
 .wrapper-body {
     margin: 0 auto;
-    width: 1440px;
+    max-width: 1440px;
 }
 
 body {
@@ -36,7 +36,6 @@ li {
     display: flex;
     justify-content: space-between;
 
-    max-width: 1440px;
     background-color: #000000;
 }
 
@@ -91,11 +90,41 @@ li {
     padding-bottom: 9px;
 }
 
+.icon-header:hover {
+    cursor: pointer;
+}
+
+.burger-icon span {
+    display: none;
+}
+
+.burger-menu {
+    position: fixed;
+    top: 98px;
+    right: -1px;
+    width: 40vw;
+
+    transform: translateX(100%);
+    transition: 1s;
+        
+    background-color: #000000;
+    }
+
+    .burger-menu-item {
+        margin-bottom: 30px;
+        text-align: center;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px;
+    }
+
 /* welcome section */
 
 .welcome {
     margin: 0 auto;
-    max-width: 1440px;
 }
 
 .welcome-section {
@@ -139,7 +168,7 @@ li {
     text-transform: uppercase;
 }
 
-span {
+.span-welcome {
     margin-right: 10px;
 }
 
@@ -195,6 +224,11 @@ h2 {
     margin-right: 7px;
 }
 
+.arrows {
+    align-self: center;
+    display: none;
+}
+
 .carousel-pagination {
     display: flex;
     justify-content: center;
@@ -212,6 +246,17 @@ h2 {
     border-radius: 50%;
 
     background-color: #000000;
+    cursor: pointer;
+}
+
+.pagination-button:hover {
+    background-color: #BB945F;
+    box-shadow: 1px 1px 2px #BB945F;
+    transition-duration: 0.5s;
+}
+
+.tablet {
+    display: none;
 }
 
 .about-photo-girl {
@@ -242,6 +287,7 @@ h2 {
 .radio-buttons-form {
     display: flex;
     flex-direction: row;
+    /* flex-wrap: wrap; */
 
     margin-bottom: 34px;
     margin-left: 15px;
@@ -249,7 +295,7 @@ h2 {
 
 label {
     display: flex;
-    margin-right: 76px;
+    margin-right: 86px;
 }
 
 #radio-button1, #radio-button2, #radio-button3, #radio-button4 {
@@ -541,7 +587,6 @@ h4 {
 
 .desserts-cakes-items {
     text-align: end;
-    /* margin-right: -5px; */
 }
 
 .coffe-shop-menu-item {
@@ -685,6 +730,7 @@ h4 {
 
     border: 3px solid #BB945F;
     background: #FFF;
+    box-shadow: 0px 5px 5px #c4bdbd;
 }
 
 .library-cards-form {
@@ -826,10 +872,10 @@ h4 {
 }
 
 .hr-footer {
-    width: 1400px;
     height: 1px;
     margin-top: -2px;
     margin-left: 20px;
+    margin-right: 20px;
     background: #FFF;
 }
 
@@ -897,4 +943,237 @@ h4 {
 .links-footer {
     color: #FFFFFF;
     text-decoration: none;
+}
+
+@media  screen and (max-width: 1160px) {
+    .dl-cards-section-content {
+        display: flex;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    /* header */
+
+    .nav-list {
+        display: none;
+    }
+
+    .icon-header {
+        padding-bottom: 8px;
+        padding-right: 82px;
+    }
+
+    .burger-menu-container_active{
+        opacity: 0;
+    }
+
+   .burger-menu_active {
+        width: 332px;
+        height: 470px;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(0);
+        
+        background-color: #000000;
+    }
+
+    .burger-menu-item {
+        margin-bottom: 31px;
+    }
+
+    .burger-icon {
+        position: relative;
+        bottom: 17px;
+        height: 20px;
+    }
+
+     .burger-icon span,
+     .burger-icon::before,
+     .burger-icon::after {
+        position: absolute;
+        display: flex;
+        right: 0;
+        width: 44px;
+        height: 2px;
+        background: #ffffff;
+        transition-duration: 1s;
+    }
+
+    .burger-icon  span {
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+    }
+
+    .burger-icon-active  span {
+        transform: scale(0) translate(0px, -50%);
+    }
+
+    .burger-icon::before { 
+        top: 0;
+        content: "";
+    }
+
+    .burger-icon::after {
+        bottom: 0;
+        content: "";
+    }
+
+    .burger-icon-active::before {
+        top: 45%;
+        transform: rotate(-45deg);
+    }
+
+    .burger-icon-active::after {
+        bottom: 45%;
+        transform: rotate(45deg);
+    }
+
+    /* about us section */
+
+    .about-photo-books, .about-photo-statues {
+        display: none;
+    }
+
+    .about-prgph {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .photos {
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+    }
+    
+    .arrows {
+        display: flex;
+        align-self: center;   
+    }
+
+    .arrow2 {
+        margin-left: 55px;
+        margin-top: 40px;
+    }
+
+    .arrow1 {
+        margin-right: 55px;
+        margin-top: 40px;
+    }
+
+
+    .carousel-pagination {
+        margin-top: 20px;
+    }
+
+    .tablet {
+        display: flex;
+    }
+
+    /* favorites section */
+
+    .favorites-section-descriptions {
+        margin-left: 90px;
+    }
+
+    label {
+        margin-right: 85px;
+    }
+
+    /* coffee shop section */
+
+    .coffee-shop-menu {
+        flex-direction: column;
+    }
+
+    .desserts-cakes {
+        margin-bottom: -16px;
+    }
+
+    .coffee-tea {
+        margin-bottom: -60px;
+    }
+
+    /* our contacts section */
+
+    .our-contacts-content {
+        display: flex;
+        flex-direction: column;
+        gap: 83px;
+    }
+
+    .our-contacts-section {
+        margin-bottom: 38px;
+    }
+
+    .map {
+        margin-left: 40px;
+        padding-right: 40px;
+    }
+
+    iframe {
+        width: 100%;
+    }
+
+    /* digital library cards section */
+
+    .digital-library-cards-section {
+        margin-bottom: 39px;
+    }
+
+    .library-cards-title {
+        margin-left: 140px;
+    }
+
+    .library-card-block {
+        margin-left: 0;
+    }
+
+    .dlcards-get-card-block {
+        margin-right: 0;
+    }
+
+    .dl-cards-section-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 21px;
+    }
+
+    .dlcards-get-card-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-block-prgrph {
+        text-align: center;
+        margin-top: 5px;
+        padding-left: 84px;
+        padding-right: 84px;
+    }
+
+    .dlcards-get-card-block-buttons {
+        margin-top: 39px;
+    }
+
+    /* footer */
+
+    .hr-footer {
+        width: 95vw;
+    }
+
+    .footer-under-line-item2 {
+        margin-left: 91px;
+    }
+}
+
+@media  screen and (max-width: 715px) {
+    .radio-buttons-form {
+        flex-wrap: wrap;
+    }
+
+    .favorites-section-descriptions {
+        margin-left: 50px;
+    }  
 }
