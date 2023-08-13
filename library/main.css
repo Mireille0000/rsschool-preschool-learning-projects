@@ -1,0 +1,900 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.wrapper-body {
+    margin: 0 auto;
+    width: 1440px;
+}
+
+body {
+    font-family: "Forum";
+    min-height: 100vh;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 1440px;
+    background-color: #000000;
+}
+
+.title-header {
+    padding: 20px;
+
+    color: #FFF;
+    text-shadow: 0 4px 4px ;
+    font-family: Forum;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+}
+
+.wrapper-header {
+    display: flex;
+    align-items: flex-end;
+
+    padding: 20px;
+}
+
+.link-nav {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.nav-list {
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    
+    padding-right: 41px;
+
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+
+    color: #FFFFFF;
+}
+
+.link-nav:hover, .nav-item:hover {
+    transition-duration: 1s;
+    transform: scale(1.1);
+    color: #BB945F;
+}
+
+.icon-header {
+    padding-bottom: 9px;
+}
+
+/* welcome section */
+
+.welcome {
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+.welcome-section {
+    background: url(welcome-layout.png) 50% / cover no-repeat;
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+.overlayout {
+    height: 300px;
+    background:  linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10));
+}
+
+.title-wrapper {
+    flex-shrink: 0;
+    width: 600px;
+    height: 220px;
+    margin-bottom: 160px;
+
+    background-color: #0C0C0E;
+}
+
+.title-welcome {
+    margin: 35px 40px;
+
+    color: #ffffff;
+    text-align: center;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+span {
+    margin-right: 10px;
+}
+
+/* about section */
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    margin-top: 19px;
+    margin-bottom: 20px;
+
+    text-align: center;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    color: #0C0C0E;
+}
+
+.title-hr {
+    width: 50px;
+    height: 1px;
+    flex-shrink: 0;
+    align-self: center;
+
+    margin-bottom: 40px;
+
+    background: #0C0C0E;
+}
+
+.about-prgph {
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    color: #000000;
+}
+
+.photos {
+    display: flex;
+    justify-content: space-around;
+
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.carousel-pagination {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 35px;
+    margin-bottom: 38px;
+    text-align: center;
+}
+
+.pagination-button {
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+
+    border-radius: 50%;
+
+    background-color: #000000;
+}
+
+.about-photo-girl {
+    width: 450px;
+    height: 560px;
+    background: url(./images/about-photo-girl.png) lightgray 50% / cover no-repeat;
+}
+
+.about-photo-statues {
+    width: 450px;
+    height: 560px;
+    background: url(./images/about-photo-statues.png) lightgray 50% / cover no-repeat;
+}
+
+.about-photo-books {
+    width: 450px;
+    height: 560px;
+    background: url(./images/about-photo-books.png) lightgray 50% / cover no-repeat;
+}
+
+/* favorites section */
+
+.favorites-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-buttons-form {
+    display: flex;
+    flex-direction: row;
+
+    margin-bottom: 34px;
+    margin-left: 15px;
+}
+
+label {
+    display: flex;
+    margin-right: 76px;
+}
+
+#radio-button1, #radio-button2, #radio-button3, #radio-button4 {
+    position: absolute;
+    opacity: 0;
+    display: block;
+    height: 0;
+    width: 0;
+}
+
+label .custom-radio-button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    height: 17px;
+    width: 17px;
+    margin: 5px; /*!!! */
+    border-radius: 50%;
+    border: 2px solid #000000;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    transition: .5s all;
+}
+
+label:hover .custom-radio-button{
+    background-color: #f9f9f9;
+    box-shadow: inset 1px 2px 3px 0 rgba(0,0,0,0.1);
+  }
+
+label input:checked + .custom-radio-button{
+    border-color: #000000;
+    background-color: #FFFFFF;
+    box-shadow: inset 1px 2px 3px 0 rgba(0,0,0,0.1);
+    cursor: default;
+  }
+
+  label:hover .custom-radio-button::before, label input:checked + .custom-radio-button::before{
+    position: absolute;
+    content: '';
+    width: 7.5px;
+    height: 7.5px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background-color: #0b0101;
+    transform: translate(-50%,-50%);
+  }
+
+label input:checked + .radio-button-item::before{
+    background-color: #000000;
+    box-shadow: 1px 2px 2px 0 rgba(0,0,0,0.2);
+  }
+
+.radion-btn-name {
+    margin-left: 15px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+} 
+
+.favorites-prgrph {
+    margin-bottom: 37px;
+    margin-left: 20px;
+
+    text-align: left;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    color: #000;
+}
+
+.favorites-section-descriptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    margin-right: 60px;
+    margin-left: 20px;
+}
+
+.bg-description {
+    width: 550px;
+    height: 555px;
+    margin-bottom: 40px;
+
+    border: 1px solid #000;
+}
+
+h3 {
+    margin-top: -17px;
+    margin-left: 20px;
+
+    color: #000;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+h4 {
+    margin-top: 20px;
+
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.bg-description-hr {
+    width: 60px;
+    height: 1px;
+    flex-shrink: 0;
+    
+    margin-left: 20px;
+
+    background:  #0C0C0E;
+}
+
+
+.bg-description-author {
+    margin-top: 0px;
+
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize; 
+}
+
+.description-prgrph {
+    width: 355px;
+    margin-top: 20px;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.description-box {
+    position: relative;
+    display: flex;
+}
+
+.description-box-content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.favorites-books-photo {
+   position: absolute;
+   left: 370px;
+   top: 100px;
+}
+
+.favorites-button {
+    position: relative;
+    top: 509px;
+    left: 20px;
+
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    background-color: #FFFFFF;
+
+    cursor: pointer;
+}
+
+.favorites-button:hover{
+    border-radius: 2px;
+    border: 1px solid #BB945F;
+    background: #BB945F;
+    transition: 0.5s;
+}
+    
+.btn-own {
+    background-color: #FFFFFF;
+    color: #BB945F;
+    border: 1px solid #BB945F;
+    cursor: none;
+    pointer-events: none;
+}
+
+
+.hidden-content {
+    display: none;
+}
+
+/* coffee shop */
+
+.coffee-shop-section {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-bottom: 8px;
+    margin-left: 20px;
+}
+
+.coffee-shop-prgrph {
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+
+.coffee-shop-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coffee-tea, .desserts-cakes {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: -15px;   /* !!! */
+}
+
+.desserts-cakes {
+    align-items: flex-end;
+}
+
+.coffee-tea-content, .desserts-cakes-content {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+} 
+
+.coffe-shop-items-title {
+    margin-top: 40px;
+    color: #BB945F;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+
+.coffee-shop-price-list {
+    margin-left: -3px;
+}
+
+.coffee-tea-items, .desserts-cakes-items {
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+
+.desserts-cakes-items {
+    text-align: end;
+    /* margin-right: -5px; */
+}
+
+.coffe-shop-menu-item {
+    margin-top: 40px;
+}
+
+.coffee-shop-section-hr {
+    width: 101px;
+    height: 1px;
+    margin-bottom: 79px;
+
+    background: #BB945F;
+}
+
+.hr-items {
+    margin-top: 60px;
+}
+
+.coffee-shop-price-list {
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.price-item {
+    margin-top: 40px;
+    margin-left: -1px;
+}
+
+/* our contacts section */
+
+.our-contacts-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 36px;
+}
+
+.our-contacts-title {
+    margin-top: 9px;
+}
+
+.links-contacts-section {
+    text-decoration: none;
+    color: #000000;
+}
+
+.links-contacts-section:hover {
+   color: #BB945F;
+   animation-duration: 1s;
+}
+
+.our-contacts-content {
+    display: flex;
+    gap: 201px;
+}
+
+.contacts-list-title1, .contacts-list-title2 {
+    margin-left: 18px;
+    
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.contacts-list-title1 {
+    margin-top: -4px;
+    margin-bottom: 42px;
+}
+
+.contacts-list-title2 {
+    margin-bottom: 20px;
+}
+
+.contacts-list-item {
+    margin-bottom: 20px;
+    margin-left: 20px;
+   
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.contacts-phonenumbers {
+    margin-bottom: 40px;
+}
+
+/* digital-library-cards */
+
+.digital-library-cards-section {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 42px;
+}
+
+.dl-cards-section-content {
+    display: flex;
+    gap: 344px;
+}
+
+.library-cards-title {
+    margin-bottom: 30px;
+    margin-left: 158px;
+
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
+}
+
+.dlcards-form-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-family: Forum;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+}
+
+.library-card-block {
+    width: 600px;
+    flex-shrink: 0;
+    margin-left: 18px;
+
+    border: 3px solid #BB945F;
+    background: #FFF;
+}
+
+.library-cards-form {
+    width: 560px;
+    margin: 18px 20px;
+    background: #BB945F;
+}
+
+.input-dlcards-section {
+    width: 520px;
+    height: 66px;
+    flex-shrink: 0;
+
+    margin-bottom: 25px;
+    padding-left: 20px;
+
+    font-family: Forum;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+
+    border-radius: 10px;
+}
+
+.input-dlcards-section::placeholder {
+    padding-top: 8px;
+
+    color: #8E8E8E;
+    font-family: Forum;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+}
+
+.dlcards-section-button-block {
+    margin-bottom: 27px;
+    margin-left: 177px;
+}
+
+.dlcards-section-button {
+    padding: 10px 40px;
+
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+
+    border-radius: 2px;
+    background: #FFFFFF;
+    border: 1px solid #0C0C0E;
+}
+
+.dlcards-get-card-block {
+    margin-right: 20px
+}
+
+.card-block-title {
+    margin-bottom: 35px;
+    text-align: right;
+    font-family: Forum;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
+}
+
+.card-block-prgrph {
+    text-align: right;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0.4px;
+}
+
+.card-block-button {
+    display: flex;
+    width: 75px;
+    height: 30px;
+    padding: 10px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+}
+
+.library-cards-form {
+    width: 560px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-dlcards-section {
+    display: flex;
+    flex-direction: column;
+
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.dlcards-get-card-block-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-end;
+
+    margin-top: 35px;
+}
+
+.dlcards-section-button:hover, .card-block-button:hover {
+    background-color: #BB945F;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+/* footer styles */
+
+.footer {
+    background: #000000;
+}
+
+.hr-footer {
+    width: 1400px;
+    height: 1px;
+    margin-top: -2px;
+    margin-left: 20px;
+    background: #FFF;
+}
+
+.footer-above-line {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px;
+}
+
+.address-icons-footer {
+    align-self: stretch;
+}
+
+.prgrph-footer-address, .prgrph-footer-timetable {
+    text-align: right;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+    color: #FFFFFF;
+}
+
+.prgrph-footer-address {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.icons-footer {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 19px;
+}
+
+.prgrph-footer-timetable {
+    margin-bottom: 10px;
+}
+
+.footer-under-line {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 35px 20px;
+}
+
+.footer-under-line-item, .footer-under-line-item2 {
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; 
+    letter-spacing: 2px;
+
+    color: #FFFFFF;
+}
+
+.footer-under-line-item2 {
+    margin-left: 140px;
+}
+
+.links-footer {
+    color: #FFFFFF;
+    text-decoration: none;
+}
