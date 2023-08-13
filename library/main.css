@@ -101,7 +101,7 @@ li {
 .burger-menu {
     position: fixed;
     top: 98px;
-    right: 0;
+    right: -1px;
     width: 40vw;
 
     transform: translateX(100%);
