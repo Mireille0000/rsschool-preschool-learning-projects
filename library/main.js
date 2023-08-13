@@ -17,11 +17,17 @@ const burgerFunction = () => {
     const burgerIcon = document.querySelector('.burger-icon');
     const burgerMenu = document.querySelector('.burger-menu');
     const burgerMenuContainer = document.querySelector('.burger-menu-container');
+    const main = document.querySelector('main');
+
+    main.addEventListener('click', () => {
+        burgerMenu.classList.remove('burger-menu_active');
+        burgerIcon.classList.remove('burger-icon-active');  
+    })
+    
     burgerIcon.addEventListener('click', () => {
         burgerMenu.classList.toggle('burger-menu_active');
         burgerIcon.classList.toggle('burger-icon-active');
-        }
-    )
+    })
 
     burgerMenuContainer.addEventListener('click', () => {
         burgerMenu.classList.remove('burger-menu_active');
