@@ -224,7 +224,8 @@ h2 {
     margin-right: 7px;
 }
 
-.arrows {
+
+.carrets {
     align-self: center;
     display: none;
 }
@@ -246,6 +247,17 @@ h2 {
     border-radius: 50%;
 
     background-color: #000000;
+    cursor: pointer;
+}
+
+.pagination-button:hover {
+    background-color: #BB945F;
+    box-shadow: 1px 1px 2px #BB945F;
+    transition-duration: 0.5s;
+}
+
+.tablet {
+    display: none;
 }
 
 .about-photo-girl {
@@ -266,6 +278,19 @@ h2 {
     background: url(./images/about-photo-books.png) lightgray 50% / cover no-repeat;
 }
 
+.about-photo-ladder {
+    width: 450px;
+    height: 560px;
+    display: none;
+    background: url(./images/about-photo-ladder.png) lightgray 50% / cover no-repeat;
+}
+
+.about-photo-building {
+    width: 450px;
+    height: 560px;
+    display: none;
+    background: url(./images/about-photo-building.png) lightgray 50% / cover no-repeat;
+}
 /* favorites section */
 
 .favorites-section {
@@ -352,6 +377,11 @@ label input:checked + .radio-button-item::before{
     font-weight: 400;
     line-height: normal;
 } 
+
+.radion-btn-name:hover {
+    font-weight: 700px;
+    cursor: pointer;
+}
 
 .favorites-prgrph {
     margin-bottom: 37px;
@@ -1035,17 +1065,17 @@ h4 {
         gap: 30px;
     }
     
-    .arrows {
+    .carrets {
         display: flex;
         align-self: center;   
     }
 
-    .arrow2 {
+    .carret-left {
         margin-left: 55px;
         margin-top: 40px;
     }
 
-    .arrow1 {
+    .carret-right {
         margin-right: 55px;
         margin-top: 40px;
     }
@@ -1066,7 +1096,7 @@ h4 {
     }
 
     label {
-        margin-right: 85px;
+        margin-right: 87px;
     }
 
     /* coffee shop section */
