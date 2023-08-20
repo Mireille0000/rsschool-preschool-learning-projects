@@ -216,7 +216,7 @@ h2 {
     color: #000000;
 }
 
-.photos {
+.photos-block {
     display: flex;
     justify-content: space-around;
 
@@ -224,6 +224,10 @@ h2 {
     margin-right: 7px;
 }
 
+.photos {
+    display: flex;
+    gap: 23px;
+}
 
 .carrets {
     align-self: center;
@@ -281,16 +285,21 @@ h2 {
 .about-photo-ladder {
     width: 450px;
     height: 560px;
-    display: none;
+    /* display: none; */
     background: url(./images/about-photo-ladder.png) lightgray 50% / cover no-repeat;
 }
 
 .about-photo-building {
     width: 450px;
     height: 560px;
-    display: none;
+    /* display: none; */
     background: url(./images/about-photo-building.png) lightgray 50% / cover no-repeat;
 }
+
+.photos-hidden {
+    display: none;
+}
+
 /* favorites section */
 
 .favorites-section {
@@ -383,6 +392,23 @@ label input:checked + .radio-button-item::before{
     cursor: pointer;
 }
 
+.active {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 259px;
+}
+
+.spring, .summer, .autumn {
+    width: 1420px;
+    height: 1190px;
+    position: absolute;
+    column-gap: 259px;
+    opacity: 0;
+    transition-duration: 1s;
+    z-index: 1;
+}
+
 .favorites-prgrph {
     margin-bottom: 37px;
     margin-left: 20px;
@@ -398,13 +424,17 @@ label input:checked + .radio-button-item::before{
 }
 
 .favorites-section-descriptions {
+    position: relative;
+    top: 0;
+    height: 1190px;  /* !!! */
+    overflow: hidden;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    /* flex-direction: row;
+    justify-content: space-between; */
+    /* flex-wrap: wrap; */
 
-    margin-right: 60px;
-    margin-left: 20px;
+    padding-right: 60px;
+    padding-left: 20px;
 }
 
 .bg-description {
@@ -534,9 +564,9 @@ h4 {
 }
 
 
-.hidden-content {
+/* .hidden-content {
     display: none;
-}
+} */
 
 /* coffee shop */
 
@@ -1059,7 +1089,7 @@ h4 {
         margin-left: 20px;
     }
 
-    .photos {
+    .photos-block {
         display: flex;
         justify-content: space-around;
         gap: 30px;
@@ -1091,12 +1121,25 @@ h4 {
 
     /* favorites section */
 
+    .radio-buttons-form {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background-color: #ffffff;
+    }
+        
+
     .favorites-section-descriptions {
-        margin-left: 90px;
+        height: 2380px;
+        margin-left: 70px;
     }
 
     label {
         margin-right: 87px;
+    }
+
+    .spring, .summer, .autumn {
+        width: auto;
     }
 
     /* coffee shop section */
