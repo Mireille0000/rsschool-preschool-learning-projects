@@ -32,6 +32,8 @@ li {
     list-style-type: none;
 }
 
+/* header */
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -120,6 +122,155 @@ li {
         font-weight: 400;
         line-height: 50px;
     }
+
+/*modal windows, header  */
+
+.drop-menu-modal-windows {
+    display: none;
+}
+
+.drop-menu-no-authorization, .drop-menu-with-authorization {
+    width: 80px;
+    height: 115px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: #ffffff;
+}
+
+.drop-menu-title {
+    margin-bottom: 5px;
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    line-height: 20px;
+}
+
+.hr-modal {
+    width: 40px;
+    height: 1px;
+    margin-bottom: 15px;
+    background-color:#BB945F;
+}
+
+.drop-menu-item {
+    margin-bottom: 10px;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+/* login modal */
+
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 262px; 
+
+    background-color: #ffffff;
+}
+
+.login-header {
+    display: flex;
+    justify-content: center;
+}
+
+.svg-login {
+    justify-self: end;
+}
+
+.login-title {
+    margin: 20px 67px 10px 95px;
+    color: #000;
+    text-align: center;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.svg-login {
+    margin-top: 15px;
+}
+
+.login-input-title {
+    margin-top: 10px;
+    text-align: center;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+}
+
+.login-mail, .login-passward {
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 25px;
+    border: 1px solid #BB945F;
+}
+
+.button-login {
+    margin-top: 20px;
+    margin-left: 25px;
+    width: 75px;
+    height: 31px;
+
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+}
+
+.button-login-name {
+    box-sizing: content-box;
+    margin-top: 9px;
+    margin-left: 20px;
+
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+
+    background-color: #FFFFFF;
+}
+
+.register-spans {
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.register-link-item {
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.register-link {
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-decoration-line: underline;
+}
 
 /* welcome section */
 
@@ -1128,7 +1279,6 @@ h4 {
         background-color: #ffffff;
     }
         
-
     .favorites-section-descriptions {
         height: 2380px;
         margin-left: 70px;

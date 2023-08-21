@@ -85,8 +85,8 @@ carousel();
 // favotites function 
 
 function favorites () {
-    const seasonBooks = document.querySelector('.favorites-section-descriptions');
-    const seasonBooksArray = Array.from(seasonBooks.children);
+    // const seasonBooks = document.querySelector('.favorites-section-descriptions');
+    // const seasonBooksArray = Array.from(seasonBooks.children);
     const winter = document.querySelector('.winter.active');
     const spring = document.querySelector('.spring');
     const summer = document.querySelector('.summer');
@@ -121,9 +121,7 @@ function favorites () {
         spring.style = 'display: flex; flex-wrap: wrap; opacity: 0; transition-duration: 1s';
         summer.style = 'display: flex; flex-wrap: wrap; opacity: 0; transition-duration: 1s';
         setTimeout(() => (autumn.style = 'position: absolute; opacity: inherit; display: flex; column-gap: 259px; flex-wrap: wrap; transition-duration: 1s'), "1000");
-    })
-
-        
+    })       
 }
 
 favorites();
