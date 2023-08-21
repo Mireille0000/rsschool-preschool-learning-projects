@@ -168,9 +168,9 @@ li {
     line-height: 20px;
 }
 
-/* login modal */
+/* login modal and register modal */
 
-.login {
+.log-in {
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -179,17 +179,24 @@ li {
     background-color: #ffffff;
 }
 
-.login-header {
+.register {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+
+    background-color: #ffffff;
+}
+
+.log-in-header, .register-header {
     display: flex;
     justify-content: center;
 }
 
-.svg-login {
+.log-in-svg, .register-svg {
     justify-self: end;
 }
 
-.login-title {
-    margin: 20px 67px 10px 95px;
+.log-in-title, .register-title {
     color: #000;
     text-align: center;
     font-family: Forum;
@@ -201,11 +208,19 @@ li {
     text-transform: uppercase;
 }
 
-.svg-login {
+.log-in-title {
+    margin: 20px 67px 10px 95px;
+}
+
+.register-title {
+    margin: 20px 54px 20px 85px;
+}
+
+.log-in-svg, .register-svg {
     margin-top: 15px;
 }
 
-.login-input-title {
+.log-in-input-title, .register-input-title {
     margin-top: 10px;
     text-align: center;
     font-family: Inter;
@@ -216,14 +231,14 @@ li {
     letter-spacing: 0.3px;
 }
 
-.login-mail, .login-passward {
+.log-in-input, .register-input {
     width: 200px;
     margin-top: 10px;
     margin-left: 25px;
     border: 1px solid #BB945F;
 }
 
-.button-login {
+.log-in-button, .register-button {
     margin-top: 20px;
     margin-left: 25px;
     width: 75px;
@@ -233,7 +248,7 @@ li {
     border: 1px solid #0C0C0E;
 }
 
-.button-login-name {
+.log-in-button-name, .register-button-name {
     box-sizing: content-box;
     margin-top: 9px;
     margin-left: 20px;
@@ -248,12 +263,13 @@ li {
     background-color: #FFFFFF;
 }
 
-.register-spans {
+.log-in-register-spans, .register-spans {
     margin-top: 10px;
     margin-left: 25px;
+    margin-bottom: 20px;
 }
 
-.register-link-item {
+.log-in-register-link-item, .register-spans-link-item {
     text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
     font-family: Inter;
     font-size: 10px;
@@ -262,7 +278,7 @@ li {
     line-height: normal;
 }
 
-.register-link {
+.log-in-register-link, .register-spans-link {
     font-family: Inter;
     font-size: 10px;
     font-style: normal;
