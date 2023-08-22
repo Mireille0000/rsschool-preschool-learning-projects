@@ -889,6 +889,126 @@ h4 {
     pointer-events: none;
 }
 
+/* buy a card modal window */
+
+.buy-a-card {
+    display: none;
+}
+
+.buy-a-card-wrapper {
+    width: 630px;
+    margin: auto;
+}
+
+
+.buy-a-card-header {
+    display: flex;
+    justify-content: center;
+    column-gap: 80px;
+    background-color: #000000;
+}
+
+.buy-a-card-svg {
+    padding-top: 20px;
+    margin-right: 20px;
+}
+
+.buy-a-card-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 143px;
+
+    color: #FFF;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.buy-a-card-content {
+    display: flex;
+    gap: 40px;
+    margin-left: 40px;
+    /* margin-left: 40px; */
+}
+
+.buy-a-card-form {
+    margin-top: 30px;
+}
+
+.buy-a-card-form-item {
+    margin-bottom: 10px;
+
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+    letter-spacing: 0.3px;
+}
+
+.buy-a-card-input {
+    width: 200px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #BB945F;
+}
+
+.buy-a-card-input.small {
+    width: 45px;
+    height: 20px;
+}
+
+.buy-a-card-double-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+article {
+    width: 234px;
+    margin-top: 30px;
+    /* margin-right: 40px;
+    margin-left: 40px; */
+}
+.buy-a-card-payment {
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.buy-a-card-button {
+    width: 75px;
+    height: 30px;
+    text-align: center;
+    flex-shrink: 0;
+    
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    background-color: #ffffff;
+}
+
+.buy-a-card-total {
+    margin-top: 10px;
+    color: #0C0C0E;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 
 /* .hidden-content {
     display: none;
@@ -1240,6 +1360,40 @@ h4 {
     cursor: pointer;
 }
 
+/* LibraryCard after login in account modal */
+
+.library-card-after {
+    display: none;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.title-hr-after {
+    width: 50px;
+    height: 1px;
+    align-self: center;
+    margin-bottom: 40px;
+    background: #0C0C0E;
+}
+.dlcards-statistics {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-bottom: 15px;
+}
+
+.dlcards-icon {
+    text-align: center;
+}
+
+.dlcards-profile-button {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-end;
+
+    margin-top: 35px;
+}
 /* footer styles */
 
 .footer {
