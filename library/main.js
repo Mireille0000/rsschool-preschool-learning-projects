@@ -99,28 +99,28 @@ function favorites () {
         spring.style = 'display: flex; flex-wrap: wrap; opacity: 0; transition-duration: 1s';
         summer.style = 'display: flex; flex-wrap: wrap; opacity: 0; transition-duration: 1s';
         autumn.style = 'display: flex; flex-wrap: wrap; opacity: 0; transition-duration: 1s';
-        setTimeout(() => (winter.style = 'position: absolute; display: flex; column-gap: 259px; flex-wrap: wrap; transition-duration: 1s'), "1000");
+        setTimeout(() => (winter.style = 'position: absolute; z-index: 3; display: flex; column-gap: 259px; flex-wrap: wrap; transition-duration: 1s'), "1000");
     })
 
     radioButtonsArray[1].addEventListener('click', () => {
         winter.style = 'display: flex; flex-wrap: wrap; opacity: 0; transition-duration: 1s';
         summer.style = 'display: flex; flex-wrap: wrap; opacity: 0; transition-duration: 1s';
         autumn.style = 'display: flex; flex-wrap: wrap; opacity: 0; transition-duration: 1s';
-        setTimeout(() => (spring.style = 'position: absolute; opacity: 1; display: flex; column-gap: 259px; flex-wrap: wrap; transition-duration: 1s'), "1000");
+        setTimeout(() => (spring.style = 'position: absolute; z-index: 3; opacity: 1; display: flex; column-gap: 259px; flex-wrap: wrap; transition-duration: 1s'), "1000");
     })
 
     radioButtonsArray[2].addEventListener('click', () => {
         winter.style = 'display: flex; flex-wrap: wrap; opacity: 0; transition-duration: 1s';
         spring.style = 'display: flex; flex-wrap: wrap; opacity: 0; transition-duration: 1s';
         autumn.style = 'display: flex; flex-wrap: wrap; opacity: 0; transition-duration: 1s';
-        setTimeout(() => (summer.style = 'position: absolute; opacity: inherit; display: flex; column-gap: 259px; flex-wrap: wrap; transition-duration: 1s'), "1000");
+        setTimeout(() => (summer.style = 'position: absolute; z-index: 3; opacity: inherit; display: flex; column-gap: 259px; flex-wrap: wrap; transition-duration: 1s'), "1000");
     })
 
     radioButtonsArray[3].addEventListener('click', () => {
         winter.style = 'display: flex; flex-wrap: wrap; opacity: 0; transition-duration: 1s';
         spring.style = 'display: flex; flex-wrap: wrap; opacity: 0; transition-duration: 1s';
         summer.style = 'display: flex; flex-wrap: wrap; opacity: 0; transition-duration: 1s';
-        setTimeout(() => (autumn.style = 'position: absolute; opacity: inherit; display: flex; column-gap: 259px; flex-wrap: wrap; transition-duration: 1s'), "1000");
+        setTimeout(() => (autumn.style = 'position: absolute; z-index: 3; opacity: inherit; display: flex; column-gap: 259px; flex-wrap: wrap; transition-duration: 1s'), "1000");
     })       
 }
 

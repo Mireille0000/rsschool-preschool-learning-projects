@@ -37,6 +37,7 @@ li {
 .header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     background-color: #000000;
 }
@@ -187,6 +188,10 @@ li {
     background-color: #ffffff;
 }
 
+.log-in, .register {
+    display: none;
+}
+
 .log-in-header, .register-header {
     display: flex;
     justify-content: center;
@@ -288,6 +293,162 @@ li {
     text-decoration-line: underline;
 }
 
+/* my profile modal window */
+
+.my-profile-modal-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* display: flex; */
+    display: none;
+    background-color: #ffffff;
+}
+
+.my-profile-wrapper {
+    /* width: 600px; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.my-profile-aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 139px 25px;
+    background-color: #000000;
+}
+
+.initials {
+    padding: 30px 27px;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+    color: #BB945F;
+    background-color: #ffffff;
+}
+
+.user-name {
+    padding: 5px 15px;
+    margin-top: 15px;
+
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: capitalize;
+
+    background-color: #ffffff;
+}
+
+.my-profile-details {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.my-profile-header {
+    display: flex;
+    justify-content: center;
+}
+
+.my-profile-title {
+    margin-top: 40px;
+    margin-right: 163px;
+    margin-bottom: 40px;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.my-profile-svg {
+    margin-top: 25px;
+}
+
+.reader-info {
+    display: flex;
+}
+
+.reader-info-items {
+    margin-right: 20px;
+}
+
+.reader-info-statistics-column {
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.4px;
+}
+
+.reader-info-icon {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.rented-books-title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #0C0C0E;
+}
+
+.rented-books {
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+ li.rented-books-item {
+    margin-bottom: 10px;
+    list-style: inside;
+}
+
+.card-number-items {
+    display: flex;
+    margin-top: 40px;
+    column-gap: 10px;
+}
+
+.rented-books-item {
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.card-number-title {
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+     color: #0C0C0E;
+}
+
+.card-number {
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: #BB945F;
+}
 /* welcome section */
 
 .welcome {
@@ -596,9 +757,6 @@ label input:checked + .radio-button-item::before{
     height: 1190px;  /* !!! */
     overflow: hidden;
     display: flex;
-    /* flex-direction: row;
-    justify-content: space-between; */
-    /* flex-wrap: wrap; */
 
     padding-right: 60px;
     padding-left: 20px;
@@ -696,6 +854,7 @@ h4 {
     position: relative;
     top: 509px;
     left: 20px;
+    z-index: 3;
 
     width: 75px;
     height: 30px;
@@ -715,10 +874,10 @@ h4 {
     cursor: pointer;
 }
 
-.favorites-button:hover{
+.favorites-button:hover {
     border-radius: 2px;
     border: 1px solid #BB945F;
-    background: #BB945F;
+    background-color: #BB945F;
     transition: 0.5s;
 }
     
