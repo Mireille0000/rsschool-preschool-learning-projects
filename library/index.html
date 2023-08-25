@@ -36,13 +36,14 @@
             </ul>
 
             <!-- modal windows -->
+            <div class="background-modals"></div>
             <!-- drop menu modal windows -->
             <div class="drop-menu-modal-windows">
                 <div class="drop-menu-no-authorization">
                     <div class="drop-menu-title">Profile</div>
                     <hr class="hr-modal">
                     <div class="drop-menu-item">Log In</div>
-                    <div class="drop-menu-item">Register</div>
+                    <div class="drop-menu-item-register">Register</div>
                 </div>
                 <div class="drop-menu-with-authorization">
                     <div class="drop-menu-title">Profile</div>
@@ -635,8 +636,9 @@
                         <div class="card-block-title">Get a reader card</div>
                         <p class="card-block-prgrph">You will be able to see a reader card after logging into account or you can register a new account</p>
                         <form class="dlcards-get-card-block-buttons">
-                            <button class="card-block-button">Sign Up</button>
-                            <button class="card-block-button">Log in</button>
+                            <button id="sign-up-button" class="card-block-button-sign-up">Sign Up</button>
+                            <!-- <button id="sign-up-button" class="card-block-button-sign-up">Sign Up</button> -->
+                            <button class="card-block-button-log-in">Log in</button>
                         </form> 
                     </div>
                 </div>
