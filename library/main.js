@@ -159,11 +159,11 @@ dropMenus ();
 function registerModalWindow() {
     const registerWindow = document.querySelector('.register');
     const registerLink = document.querySelector('.drop-menu-item-register');
-    // const background = document.querySelector('.wrapper-body');
     const closeRegisterWindow = document.querySelector('.register-svg');
     const main = document.querySelector('main');
     const signUpButton = document.querySelector('.card-block-button-sign-up');
     const background = document.querySelector('.background-modals');
+
 
     registerLink.addEventListener('click', () => {
         registerWindow.classList.add('register_active');
@@ -197,3 +197,4 @@ function registerModalWindow() {
 registerModalWindow()
 
 console.log('50/50: бургер меню не исчезает при нажатии на header, в ТЗ - при нажатии на крестик, или на область вне меню, адаптивное меню плавно скрывается, уезжая за экран. У меня - только при нажатии на main. Возможно, стоит снять балл')
+console.log('background для модалки, section favorites, разобраться')

@@ -135,15 +135,20 @@ li {
 
 .background-modals_active {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    z-index: 9;
     width: 100%;
     height: 100%;
     background-color: rgba(15, 15, 15, 0.5);
 }
 
 /*modal windows, header  */
+
+.drop-menu-modal-windows {
+    position: relative;
+}
 
 .drop-menu-no-authorization, .drop-menu-with-authorization {
     display: none;
@@ -152,7 +157,7 @@ li {
 /* .drop-menu-with-authorization */
 .drop-menu-no-authorization_active, .drop-menu-with-authorization_active  {
     position: absolute;
-    right: 48px;
+    right: 32px;
 
     width: 80px;
     height: 115px;
@@ -1539,6 +1544,11 @@ article {
         right: 42px;
         /* padding-bottom: 8px;
         padding-right: 82px; */
+    }
+
+    .drop-menu-no-authorization_active, .drop-menu-with-authorization_active {
+        position: absolute;
+        right: 110px;
     }
 
     .burger-menu-container_active{
