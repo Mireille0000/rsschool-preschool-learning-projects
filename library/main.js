@@ -15,6 +15,37 @@
     };
 }())
 
+// validation forms
+
+function validation () {
+    const myEmail = document.querySelector('.register-mail');
+    const passward = document.querySelector('.register-password')
+    const passwardValue = document.querySelector('.register-password').value;
+    const signUpButtonRegister = document.querySelector('.register-button-name');
+    const emailValidation = /{}/;
+    const passwardValidation = /[0-9a-zA-z]{8,}/;
+
+    passward.oninput = () => {
+        if (passwardValidation.test(passwardValue)) {
+         return passwardValue;
+    } else {
+         return 0;
+    }
+    }
+   
+    signUpButtonRegister.addEventListener('click', () => {
+        console.log('Hey');
+    })
+
+    signUpButtonRegister.addEventListener('click', buttonClick, false);
+
+    function buttonClick(event) {
+        event.preventDefault();
+    }
+}
+
+validation();
+
 // burger function
 
 const burgerFunction = () => {
@@ -89,8 +120,6 @@ carousel();
 // favotites function 
 
 function favorites () {
-    // const seasonBooks = document.querySelector('.favorites-section-descriptions');
-    // const seasonBooksArray = Array.from(seasonBooks.children);
     const winter = document.querySelector('.winter.active');
     const spring = document.querySelector('.spring');
     const summer = document.querySelector('.summer');
@@ -158,20 +187,25 @@ dropMenus ();
 
 function registerModalWindow() {
     const registerWindow = document.querySelector('.register');
-    const registerLink = document.querySelector('.drop-menu-item-register');
+    const itemRegisterWindow = document.querySelector('.drop-menu-item-register');
+    const logInWindow = document.querySelector('.log-in');
+    const itemLogInWindow = document.querySelector('.drop-menu-item-log-in');
     const closeRegisterWindow = document.querySelector('.register-svg');
-    const main = document.querySelector('main');
     const signUpButton = document.querySelector('.card-block-button-sign-up');
     const background = document.querySelector('.background-modals');
 
+    itemLogInWindow.addEventListener('click', () => {
+        logInWindow.classList.add('log-in_active');
+        background.classList.add('background-modals_active')
+        console.log('Hey');
+    })
 
-    registerLink.addEventListener('click', () => {
+    itemRegisterWindow.addEventListener('click', () => {
         registerWindow.classList.add('register_active');
         background.classList.add('background-modals_active');
     })
 
     signUpButton.addEventListener('click', () => {
-        console.log('Does it work?');
         registerWindow.classList.toggle('register_active');
         background.classList.add('background-modals_active');
     })
@@ -182,7 +216,6 @@ function registerModalWindow() {
         event.preventDefault();
     }
 
-
     closeRegisterWindow.addEventListener('click', () => {
         registerWindow.classList.remove('register_active');
         background.classList.remove('background-modals_active');
@@ -190,11 +223,57 @@ function registerModalWindow() {
 
     background.addEventListener('click', () => {
         registerWindow.classList.remove('register_active');
+        logInWindow.classList.remove('log-in_active');
         background.classList.remove('background-modals_active');
     })
 }
+registerModalWindow();
 
-registerModalWindow()
+function logInWindow () {
+    const logInLink = document.querySelector('.register-spans-link');
+    const logInWindow = document.querySelector('.log-in');
+    const registerWindow = document.querySelector('.register');
+    const closeLogInWindow = document.querySelector('.log-in-svg');
+    const background = document.querySelector('.background-modals');
+    const registerLink = document.querySelector('.log-in-register-link');
+
+    const logInButton = document.querySelector('.card-block-button-log-in');
+
+
+    background.addEventListener('click', () => {
+        registerWindow.classList.remove('log-in_active');
+        background.classList.remove('background-modals_active');
+    })
+
+    logInLink.addEventListener('click', () => {
+        logInWindow.classList.add('log-in_active');
+        registerWindow.classList.remove('register_active');
+        // background.classList.add('background-modals_active');
+    })
+
+    registerLink.addEventListener('click', () => {
+        logInWindow.classList.remove('log-in_active');
+        registerWindow.classList.add('register_active');
+        background.classList.add('background-modals_active');
+    })
+    
+    closeLogInWindow.addEventListener('click', () => {
+        logInWindow.classList.remove('log-in_active');
+        background.classList.remove('background-modals_active');
+    })
+
+    logInButton.addEventListener('click', () => {
+        logInWindow.classList.add('log-in_active');
+        background.classList.add('background-modals_active');
+    })
+
+    logInButton.addEventListener('click', buttonClick, false);
+    function buttonClick(event) {
+        event.preventDefault();
+    }
+}
+logInWindow ();
+
 
 console.log('50/50: бургер меню не исчезает при нажатии на header, в ТЗ - при нажатии на крестик, или на область вне меню, адаптивное меню плавно скрывается, уезжая за экран. У меня - только при нажатии на main. Возможно, стоит снять балл')
 console.log('background для модалки, section favorites, разобраться')

@@ -186,7 +186,7 @@ li {
     background-color:#BB945F;
 }
 
-.drop-menu-item, .drop-menu-item-register {
+.drop-menu-item-log-in, .drop-menu-item-register {
     margin-bottom: 10px;
     color: #000;
     text-align: center;
@@ -201,17 +201,30 @@ li {
 
 /* login modal and register modal */
 
+/* .valid {
+    background-color: #5fbb5f;
+}
+
+.valid {
+    background-color: #cd1b48;
+} */
+
 .log-in {
+    display: none;
+}
+
+.log-in_active {
+    position: fixed;
+    top: 30%;
+    left: 45%;
+    z-index: 10;
+    
     display: flex;
     flex-direction: column;
     width: 250px;
     height: 262px; 
 
     background-color: #ffffff;
-}
-
-.log-in {
-    display: none;
 }
 
 .register {
@@ -291,6 +304,8 @@ li {
 
     border-radius: 2px;
     border: 1px solid #0C0C0E;
+
+    cursor: pointer;
 }
 
 .log-in-button-name, .register-button-name {
@@ -306,6 +321,8 @@ li {
     letter-spacing: 1px;
 
     background-color: #FFFFFF;
+
+    cursor: pointer;
 }
 
 .log-in-register-spans, .register-spans {
@@ -331,7 +348,10 @@ li {
     line-height: normal;
     letter-spacing: 1px;
     text-decoration-line: underline;
+
+    cursor: pointer;
 }
+
 
 /* my profile modal window */
 
@@ -1530,6 +1550,11 @@ article {
     .spring, .summer, .autumn {
         width: auto;
 }
+
+.our-contacts-content {
+    display: flex;
+    gap: 0px;
+}
 }
 
 @media screen and (max-width: 1024px) {
@@ -1775,6 +1800,6 @@ article {
     }
 
     .favorites-section-descriptions {
-        margin-left: 50px;
+        margin-left: 0px;
     }  
 }

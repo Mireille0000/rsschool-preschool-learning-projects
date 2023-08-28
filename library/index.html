@@ -42,7 +42,7 @@
                 <div class="drop-menu-no-authorization">
                     <div class="drop-menu-title">Profile</div>
                     <hr class="hr-modal">
-                    <div class="drop-menu-item">Log In</div>
+                    <div class="drop-menu-item-log-in">Log In</div>
                     <div class="drop-menu-item-register">Register</div>
                 </div>
                 <div class="drop-menu-with-authorization">
@@ -91,13 +91,13 @@
                 </div>
                 <form class="register-form">
                     <div class="register-input-title">First name</div>
-                    <input class="register-input register-first-name">
+                    <input type="text" class="register-input register-first-name">
                     <div class="register-input-title">Last name</div>
-                    <input class="register-input register-last-name">
+                    <input type="text" class="register-input register-last-name">
                     <div class="register-input-title">E-mail</div>
-                    <input class="register-input register-mail">
+                    <input type="email" class="register-input register-mail">
                     <div class="register-input-title">Password</div>
-                    <input class="register-input register-password">
+                    <input class="register-input register-password" pattern="[0-9a-zA-z]{8,}">
 
                     <div class="register-button">
                         <button type="submit" class="register-button-name">Sign Up</button>
