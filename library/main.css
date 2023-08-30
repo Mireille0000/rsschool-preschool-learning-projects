@@ -604,6 +604,11 @@ h2 {
     color: #000000;
 }
 
+.photos-wrapper {
+    width: 1400px;
+    overflow: hidden;
+}
+
 .photos-block {
     display: flex;
     justify-content: space-around;
@@ -613,8 +618,13 @@ h2 {
 }
 
 .photos {
+    position: relative;
+    left: 0;
+    width: 2300px;
     display: flex;
-    gap: 23px;
+    gap: 24px;
+    flex-wrap: nowrap;
+    overflow: hidden;
 }
 
 .carrets {
@@ -653,39 +663,35 @@ h2 {
 }
 
 .about-photo-girl {
-    width: 450px;
+    min-width: 450px;
     height: 560px;
     background: url(./images/about-photo-girl.png) lightgray 50% / cover no-repeat;
 }
 
 .about-photo-statues {
-    width: 450px;
+    min-width: 450px;
     height: 560px;
     background: url(./images/about-photo-statues.png) lightgray 50% / cover no-repeat;
 }
 
 .about-photo-books {
-    width: 450px;
+    min-width: 450px;
     height: 560px;
     background: url(./images/about-photo-books.png) lightgray 50% / cover no-repeat;
 }
 
 .about-photo-ladder {
-    width: 450px;
+    min-width: 450px;
     height: 560px;
     /* display: none; */
     background: url(./images/about-photo-ladder.png) lightgray 50% / cover no-repeat;
 }
 
 .about-photo-building {
-    width: 450px;
+    min-width: 450px;
     height: 560px;
     /* display: none; */
     background: url(./images/about-photo-building.png) lightgray 50% / cover no-repeat;
-}
-
-.photos-hidden {
-    display: none;
 }
 
 /* favorites section */
@@ -1619,7 +1625,7 @@ article {
         transform: scale(1) translate(0px, -50%);
     }
 
-    .burger-icon-active  span {
+    .burger-icon-active span {
         transform: scale(0) translate(0px, -50%);
     }
 
@@ -1645,9 +1651,11 @@ article {
 
     /* about us section */
 
-    .about-photo-books, .about-photo-statues {
-        display: none;
-    }
+    /* .about-photo-girl, .about-photo-books, .about-photo-statues, .about-photo-ladder, .about-photo-building {
+        position: absolute;
+        top: 0;
+        left: 0;
+    } */
 
     .about-prgph {
         margin-right: 20px;
@@ -1656,8 +1664,24 @@ article {
 
     .photos-block {
         display: flex;
+        flex-wrap: nowrap;
         justify-content: space-around;
         gap: 30px;
+    }
+
+    .photos-wrapper {
+        width: 450px;
+        overflow: hidden;
+    }
+
+    .photos {
+        position: relative;
+        left: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0;
+
+        transition: 2s ease-in-out .5s;
     }
     
     .carrets {

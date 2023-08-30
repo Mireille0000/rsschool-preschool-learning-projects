@@ -90,34 +90,40 @@ burgerFunction();
 // carousel function
 
 function carousel() {
+    const slider = document.querySelector('.photos-block');
+    const photoesWrapper = document.querySelector('.photos-wrapper')
     const photosAboutUs = document.querySelector('.photos');
-    const photosCollection = Array.from(photosAboutUs.children);
-    photosCollection.forEach((photo, index) => {
-        if ((index !== 0) && (index !== 1) && (index !== 2)) {
-            photo.classList.add('photos-hidden');
-        }  
-    })
-
+    const photosCollection = Array.from(photosAboutUs); // ??
     const paginationButtons = document.querySelectorAll('.pagination-button');
-    const paginationButtonsItems = Array.from(paginationButtons);
-    
-    paginationButtonsItems.forEach((button, index) => {
-        paginationButtonsItems[index].setAttribute('data-active', '');
-        button.addEventListener('click', () => {
-            let position = 0;
-            let count = 1;
-            let width = 540;
+    const paginationButtonsItems = Array.from(paginationButtons); // ??
 
-            position += width * count;
-            position = Math.min(position, 3);
-            photosCollection.style.width = position + 'px';
-        })
-    })
+    // for tablet
+    const previousPhoto = document.querySelector('.carret-left');
+    const nextPhoto = document.querySelector('.carret-right');
+    let position = 0;
+
+    function tabletSliderNext() { 
+        if (position < 1800) {
+            position += 450;
+            photosAboutUs.style.left = -position + 'px'; 
+         }
+    }
+
+    nextPhoto.addEventListener('click', tabletSliderNext)
+
+    function tabletSliderPrevious() { 
+        if (position > 0) {
+            position -= 450;
+            photosAboutUs.style.left = -position + 'px'; 
+         }
+    }
+
+    previousPhoto.addEventListener('click', tabletSliderPrevious)
 }
 
 carousel();
 
-// favotites function 
+// favorites function 
 
 function favorites () {
     const winter = document.querySelector('.winter.active');
@@ -248,7 +254,6 @@ function logInWindow () {
     logInLink.addEventListener('click', () => {
         logInWindow.classList.add('log-in_active');
         registerWindow.classList.remove('register_active');
-        // background.classList.add('background-modals_active');
     })
 
     registerLink.addEventListener('click', () => {
@@ -256,7 +261,7 @@ function logInWindow () {
         registerWindow.classList.add('register_active');
         background.classList.add('background-modals_active');
     })
-    
+
     closeLogInWindow.addEventListener('click', () => {
         logInWindow.classList.remove('log-in_active');
         background.classList.remove('background-modals_active');
