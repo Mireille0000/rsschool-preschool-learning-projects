@@ -352,7 +352,6 @@ li {
     cursor: pointer;
 }
 
-
 /* my profile modal window */
 
 .my-profile-modal-window {
@@ -625,6 +624,8 @@ h2 {
     gap: 24px;
     flex-wrap: nowrap;
     overflow: hidden;
+
+    transition: 2s ease-in-out .5s;
 }
 
 .carrets {

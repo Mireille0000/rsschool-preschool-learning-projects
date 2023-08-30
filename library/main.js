@@ -97,6 +97,14 @@ function carousel() {
     const paginationButtons = document.querySelectorAll('.pagination-button');
     const paginationButtonsItems = Array.from(paginationButtons); // ??
 
+    paginationButtons.forEach((item, index) => {
+      
+        item.addEventListener('click', () => {
+            position = 450 * index;
+            photosAboutUs.style.left = -position + 'px';
+        }) 
+    })
+
     // for tablet
     const previousPhoto = document.querySelector('.carret-left');
     const nextPhoto = document.querySelector('.carret-right');
@@ -119,6 +127,16 @@ function carousel() {
     }
 
     previousPhoto.addEventListener('click', tabletSliderPrevious)
+
+    // for desktop
+    const paginationButtonsDesktop = document.querySelectorAll('.desktop');
+
+    paginationButtonsDesktop.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            position = 474 * index;
+            photosAboutUs.style.left = -position + 'px';
+        }) 
+    })
 }
 
 carousel();
