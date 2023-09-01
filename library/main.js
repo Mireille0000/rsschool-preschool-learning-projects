@@ -98,9 +98,8 @@ function carousel() {
     const paginationButtonsItems = Array.from(paginationButtons); // ??
 
     paginationButtons.forEach((item, index) => {
-      
         item.addEventListener('click', () => {
-            position = 450 * index;
+            position = 474 * index;
             photosAboutUs.style.left = -position + 'px';
         }) 
     })
@@ -112,7 +111,7 @@ function carousel() {
 
     function tabletSliderNext() { 
         if (position < 1800) {
-            position += 450;
+            position += 474;
             photosAboutUs.style.left = -position + 'px'; 
          }
     }
@@ -121,7 +120,7 @@ function carousel() {
 
     function tabletSliderPrevious() { 
         if (position > 0) {
-            position -= 450;
+            position -= 474;
             photosAboutUs.style.left = -position + 'px'; 
          }
     }
@@ -299,4 +298,4 @@ logInWindow ();
 
 
 console.log('50/50: бургер меню не исчезает при нажатии на header, в ТЗ - при нажатии на крестик, или на область вне меню, адаптивное меню плавно скрывается, уезжая за экран. У меня - только при нажатии на main. Возможно, стоит снять балл')
-console.log('background для модалки, section favorites, разобраться')
+console.log('section favorites, разобраться; добавить связь между кнопками и сменой картинок, about us section')

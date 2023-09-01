@@ -619,7 +619,7 @@ h2 {
 .photos {
     position: relative;
     left: 0;
-    width: 2300px;
+    width: 2374px;
     display: flex;
     gap: 24px;
     flex-wrap: nowrap;
@@ -1680,9 +1680,9 @@ article {
         left: 0;
         display: flex;
         flex-wrap: nowrap;
-        gap: 0;
+        gap: 24px;
 
-        transition: 2s ease-in-out .5s;
+        transition: 2s ease-in-out 0.5s;
     }
     
     .carrets {
