@@ -90,30 +90,37 @@ burgerFunction();
 // carousel function
 
 function carousel() {
-    const slider = document.querySelector('.photos-block');
-    const photoesWrapper = document.querySelector('.photos-wrapper')
     const photosAboutUs = document.querySelector('.photos');
-    const photosCollection = Array.from(photosAboutUs); // ??
     const paginationButtons = document.querySelectorAll('.pagination-button');
-    const paginationButtonsItems = Array.from(paginationButtons); // ??
+    const previousPhoto = document.querySelector('.carret-left');
+    const nextPhoto = document.querySelector('.carret-right');
+
+    let position = 0;
+    let paginationButtonsIndex = 0;
+
+    function paginationButtonsActive (index) {
+        paginationButtons.forEach(button => button.classList.remove('pagination-button_active'));
+        paginationButtons[index].classList.add('pagination-button_active');
+    }
 
     paginationButtons.forEach((item, index) => {
         item.addEventListener('click', () => {
             position = 474 * index;
             photosAboutUs.style.left = -position + 'px';
+            paginationButtonsIndex = index;
+            paginationButtonsActive(paginationButtonsIndex);
         }) 
     })
 
     // for tablet
-    const previousPhoto = document.querySelector('.carret-left');
-    const nextPhoto = document.querySelector('.carret-right');
-    let position = 0;
 
     function tabletSliderNext() { 
         if (position < 1800) {
             position += 474;
             photosAboutUs.style.left = -position + 'px'; 
+            paginationButtonsIndex++;
          }
+         paginationButtonsActive(paginationButtonsIndex);
     }
 
     nextPhoto.addEventListener('click', tabletSliderNext)
@@ -122,20 +129,12 @@ function carousel() {
         if (position > 0) {
             position -= 474;
             photosAboutUs.style.left = -position + 'px'; 
+            paginationButtonsIndex--;
          }
+         paginationButtonsActive(paginationButtonsIndex);
     }
 
     previousPhoto.addEventListener('click', tabletSliderPrevious)
-
-    // for desktop
-    const paginationButtonsDesktop = document.querySelectorAll('.desktop');
-
-    paginationButtonsDesktop.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            position = 474 * index;
-            photosAboutUs.style.left = -position + 'px';
-        }) 
-    })
 }
 
 carousel();

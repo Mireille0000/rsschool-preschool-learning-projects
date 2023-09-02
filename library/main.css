@@ -653,6 +653,12 @@ h2 {
     cursor: pointer;
 }
 
+.pagination-button_active {
+    background-color: #BB945F;
+    box-shadow: 1px 1px 2px #BB945F;
+    cursor: default;
+}
+
 .pagination-button:hover {
     background-color: #BB945F;
     box-shadow: 1px 1px 2px #BB945F;
