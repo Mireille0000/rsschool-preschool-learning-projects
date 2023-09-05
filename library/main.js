@@ -142,6 +142,7 @@ carousel();
 // favorites function 
 
 function favorites () {
+    // books
     const winter = document.querySelector('.winter.active');
     const spring = document.querySelector('.spring');
     const summer = document.querySelector('.summer');
@@ -177,6 +178,16 @@ function favorites () {
         summer.style = 'display: flex; flex-wrap: wrap; opacity: 0; transition-duration: 1s';
         setTimeout(() => (autumn.style = 'opacity: inherit; display: flex; column-gap: 259px; flex-wrap: wrap; transition-duration: 1s'), "1000");
     })       
+
+    // buy before authorization
+    const buyButton = document.querySelectorAll('.favorites-button');
+    const logInWindow = document.querySelector('.log-in');
+    const background = document.querySelector('.background-modals');
+
+    buyButton.forEach((item) => item.addEventListener('click', () => {
+        logInWindow.classList.add('log-in_active');
+        background.classList.add('background-modals_active')
+    }))
 }
 
 favorites();
@@ -293,8 +304,15 @@ function logInWindow () {
         event.preventDefault();
     }
 }
-logInWindow ();
+logInWindow (); 
 
+// library card form (add to any function binded with the form later)
+const checkTheCardButton = document.querySelector('dlcards-section-button');
+ 
+function buttonClick(event) {
+    event.preventDefault();
+}
+checkTheCardButton.addEventListener('click', buttonClick, false);
 
 console.log('50/50: бургер меню не исчезает при нажатии на header, в ТЗ - при нажатии на крестик, или на область вне меню, адаптивное меню плавно скрывается, уезжая за экран. У меня - только при нажатии на main. Возможно, стоит снять балл')
 console.log('section favorites, разобраться; добавить связь между кнопками и сменой картинок, about us section')

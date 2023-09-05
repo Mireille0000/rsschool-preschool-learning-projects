@@ -215,8 +215,10 @@ li {
 
 .log-in_active {
     position: fixed;
-    top: 30%;
-    left: 45%;
+    top: 50%;
+    /* top: 0; */
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 10;
     
     display: flex;
@@ -233,8 +235,10 @@ li {
 
 .register_active {
     position: fixed;
-    top: 30%;
-    left: 45%;
+    top: 50%;
+    /* top: 0; */
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 10;
 
     display: flex;
@@ -247,11 +251,16 @@ li {
 .log-in-header, .register-header {
     display: flex;
     justify-content: center;
+    margin-right: 10px;
 }
 
 .log-in-svg, .register-svg {
     justify-self: end;
     cursor: pointer;
+}
+
+.register-form {
+    margin-top: -8px;
 }
 
 .log-in-title, .register-title {
@@ -267,7 +276,7 @@ li {
 }
 
 .log-in-title {
-    margin: 20px 67px 10px 95px;
+    margin: 20px 65px 10px 95px;
 }
 
 .register-title {
@@ -280,7 +289,8 @@ li {
 
 .log-in-input-title, .register-input-title {
     margin-top: 10px;
-    text-align: center;
+    margin-left: 26px;
+    text-align: left;
     font-family: Inter;
     font-size: 15px;
     font-style: normal;
@@ -291,14 +301,26 @@ li {
 
 .log-in-input, .register-input {
     width: 200px;
-    margin-top: 10px;
-    margin-left: 25px;
+    margin-top: 12px;
+    margin-left: 26px;
     border: 1px solid #BB945F;
+}
+
+.log-in-input {
+    margin-top: 13px;
+}
+
+.register-first-name {
+    margin-top: 10px;
+}
+
+.register-mail {
+    margin-top: 14px;
 }
 
 .log-in-button, .register-button {
     margin-top: 20px;
-    margin-left: 25px;
+    margin-left: 27px;
     width: 75px;
     height: 31px;
 
@@ -308,10 +330,14 @@ li {
     cursor: pointer;
 }
 
+.log-in-button {
+    margin-bottom: 6px;
+}
+
 .log-in-button-name, .register-button-name {
     box-sizing: content-box;
     margin-top: 9px;
-    margin-left: 20px;
+    margin-left: 14px;
 
     font-family: Inter;
     font-size: 10px;
@@ -325,10 +351,19 @@ li {
     cursor: pointer;
 }
 
-.log-in-register-spans, .register-spans {
+.log-in-button-name {
     margin-top: 10px;
-    margin-left: 25px;
+    margin-left: 19px;
+}
+
+.log-in-register-spans, .register-spans {
+    margin-top: 8px;
+    margin-left: 26px;
     margin-bottom: 20px;
+}
+
+.log-in-register-spans {
+    margin-top: 0;
 }
 
 .log-in-register-link-item, .register-spans-link-item {
@@ -341,6 +376,7 @@ li {
 }
 
 .log-in-register-link, .register-spans-link {
+    margin-left: 7px;
     font-family: Inter;
     font-size: 10px;
     font-style: normal;
