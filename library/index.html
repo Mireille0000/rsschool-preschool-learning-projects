@@ -23,7 +23,8 @@
                 </nav>
 
             <!-- burger menu -->
-            <div class="icon-header"><img src="icon-profile.png" alt="icon_profile" width="28" height="28"></div>
+            <div class="icon-header"><img class="icon-header-img" src="icon-profile.png" alt="icon_profile" width="28" height="28"></div>
+            <div class="icon-header-initials"></div>
             <div class="burger-icon">
                 <span></span>
             </div>
@@ -91,13 +92,13 @@
                 </div>
                 <form class="register-form">
                     <div class="register-input-title">First name</div>
-                    <input type="text" class="register-input register-first-name">
+                        <input type="text" id="first-name" class="register-input register-first-name" name="firtName" autocomplete="off">
                     <div class="register-input-title">Last name</div>
-                    <input type="text" class="register-input register-last-name">
+                        <input type="text" id="last-name" class="register-input register-last-name" name="lastName" autocomplete="off">
                     <div class="register-input-title">E-mail</div>
-                    <input type="email" class="register-input register-mail">
+                        <input type="email" class="register-input register-mail" name="mail" autocomplete="off">
                     <div class="register-input-title">Password</div>
-                    <input class="register-input register-password" pattern="[0-9a-zA-z]{8,}">
+                        <input type="text" class="register-input register-password" name="password" autocomplete="off">
 
                     <div class="register-button">
                         <button type="submit" class="register-button-name">Sign Up</button>

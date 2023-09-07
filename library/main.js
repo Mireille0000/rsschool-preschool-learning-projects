@@ -18,25 +18,29 @@
 // validation forms
 
 function validation () {
-    const myEmail = document.querySelector('.register-mail');
-    const passward = document.querySelector('.register-password')
-    const passwardValue = document.querySelector('.register-password').value;
+    const passward = document.querySelector('.register-input');
+    let passwardValue = passward.value;
     const signUpButtonRegister = document.querySelector('.register-button-name');
-    const emailValidation = /{}/;
-    const passwardValidation = /[0-9a-zA-z]{8,}/;
+    // const emailValidation = /{}/;
+    let passwardValidation = /[0-9a-zA-z]{8,}/;
 
-    passward.oninput = () => {
+    passward.oninput = () => { 
         if (passwardValidation.test(passwardValue)) {
-         return passwardValue;
-    } else {
-         return 0;
-    }
+            signUpButtonRegister.addEventListener('click', () => {
+                passward.classList.toggle('register-passward.active');
+            })
+            } else if (!passwardValidation.test(paspasswardValuesward)) {
+            signUpButtonRegister.addEventListener('click', () => {
+                passward.classList.toggle('register-passward_active');
+            })
+        }
     }
    
     signUpButtonRegister.addEventListener('click', () => {
-        console.log('Hey');
+        console.log(passwardValidation.test(passwardValue));
     })
 
+    
     signUpButtonRegister.addEventListener('click', buttonClick, false);
 
     function buttonClick(event) {
@@ -44,7 +48,69 @@ function validation () {
     }
 }
 
-validation();
+// validation();
+
+// LocalStorage 
+
+function localStorageFunction () {
+    let formData = {};
+
+    // register form, set items in local storage
+    const registerForm = document.querySelector('.register-form');
+    const localStorageInfo = localStorage;
+
+    registerForm.addEventListener('input', function(event) {
+        formData[event.target.name] = event.target.value;
+        localStorageInfo.setItem('formData', JSON.stringify(formData));
+        console.log(formData);
+    })
+
+    // header after authorization, get items in local storage + (icon with initials, drop down menu (my profile, log out))
+
+    const signUpButtonRegister = document.querySelector('.register-button-name');
+
+    const iconHeader = document.querySelector('.icon-header');
+    const iconHeaderInitials = document.querySelector('.icon-header-initials');
+    const dropDownMenuAfter = document.querySelector('.drop-menu-with-authorization');
+
+    const menuBeforeAutorization = document.querySelector('.drop-menu-no-authorization');
+    const main = document.querySelector('main');
+
+
+    if (localStorageInfo.getItem('formData')) {
+        formData = JSON.parse(localStorageInfo.getItem('formData'));
+        // console.log(registerForm.elements[name]);
+        for (let key in formData) {
+            registerForm.elements[key].value = formData[key]
+        }
+
+        signUpButtonRegister.addEventListener('click', () => {
+            iconHeader.classList.add('icon-header_active');
+            iconHeaderInitials.classList.add('icon-header-initials_active');
+            menuBeforeAutorization.classList.remove('drop-menu-no-authorization_active');
+            document.querySelector('.icon-header-initials').textContent = registerForm.elements['first-name'].value[0].toUpperCase() + registerForm.elements['last-name'].value[0];
+            console.log(registerForm.elements['first-name'].value[0] + registerForm.elements['last-name'].value[0]);
+        })
+
+        iconHeaderInitials.addEventListener('click', () => {
+            dropDownMenuAfter.classList.toggle('drop-menu-with-authorization_active');
+        })
+
+        main.addEventListener('click', () => {
+            dropDownMenuAfter.classList.remove('drop-menu-with-authorization_active');
+        })
+
+    }
+
+    // button default off (register form)
+
+    signUpButtonRegister.addEventListener('click', buttonClick, false);
+    function buttonClick(event) {
+        event.preventDefault();
+    }
+}
+
+localStorageFunction ()
 
 // burger function
 
@@ -307,7 +373,7 @@ function logInWindow () {
 logInWindow (); 
 
 // library card form (add to any function binded with the form later)
-const checkTheCardButton = document.querySelector('dlcards-section-button');
+const checkTheCardButton = document.querySelector('.dlcards-section-button');
  
 function buttonClick(event) {
     event.preventDefault();
