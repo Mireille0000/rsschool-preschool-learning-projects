@@ -76,6 +76,9 @@ function localStorageFunction () {
     const menuBeforeAutorization = document.querySelector('.drop-menu-no-authorization');
     const main = document.querySelector('main');
 
+    const burgerIcon = document.querySelector('.burger-icon');
+    const burgerMenu = document.querySelector('.burger-menu');
+
 
     if (localStorageInfo.getItem('formData')) {
         formData = JSON.parse(localStorageInfo.getItem('formData'));
@@ -94,9 +97,15 @@ function localStorageFunction () {
 
         iconHeaderInitials.addEventListener('click', () => {
             dropDownMenuAfter.classList.toggle('drop-menu-with-authorization_active');
+            burgerIcon.classList.remove('burger-icon-active');
+            burgerMenu.classList.remove('burger-menu_active');
         })
 
         main.addEventListener('click', () => {
+            dropDownMenuAfter.classList.remove('drop-menu-with-authorization_active');
+        })
+
+        burgerIcon.addEventListener('click', () => {
             dropDownMenuAfter.classList.remove('drop-menu-with-authorization_active');
         })
 
