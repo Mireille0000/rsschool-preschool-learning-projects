@@ -79,6 +79,9 @@ function localStorageFunction () {
     const burgerIcon = document.querySelector('.burger-icon');
     const burgerMenu = document.querySelector('.burger-menu');
 
+    const registerWindow = document.querySelector('.register');
+    const background = document.querySelector('.background-modals');
+
 
     if (localStorageInfo.getItem('formData')) {
         formData = JSON.parse(localStorageInfo.getItem('formData'));
@@ -91,8 +94,23 @@ function localStorageFunction () {
             iconHeader.classList.add('icon-header_active');
             iconHeaderInitials.classList.add('icon-header-initials_active');
             menuBeforeAutorization.classList.remove('drop-menu-no-authorization_active');
+            registerWindow.classList.remove('register_active');
+            background.classList.remove('background-modals_active');
             document.querySelector('.icon-header-initials').textContent = registerForm.elements['first-name'].value[0].toUpperCase() + registerForm.elements['last-name'].value[0];
-            console.log(registerForm.elements['first-name'].value[0] + registerForm.elements['last-name'].value[0]);
+            // console.log(registerForm.elements['first-name'].value[0] + registerForm.elements['last-name'].value[0]);
+        })
+
+        iconHeaderInitials.addEventListener('mouseover', () => {
+            console.log('work');
+            const nameTitle = registerForm.elements['first-name'].value + " " + registerForm.elements['last-name'].value;
+            const capitalizeName = nameTitle.split(" ");
+            for (let i = 0; i < capitalizeName.length; i++) {
+                capitalizeName[i] = capitalizeName[i].charAt(0).toUpperCase() + capitalizeName[i].slice(1);
+            }
+
+            const capitalizeInitials = capitalizeName.join(" ");
+            // console.log(capitalizeInitials);
+            document.querySelector('.icon-header-initials').title = capitalizeInitials;
         })
 
         iconHeaderInitials.addEventListener('click', () => {
