@@ -334,6 +334,7 @@ function dropMenus () {
 dropMenus ();
 
 function registerModalWindow() {
+    const dropDownMenuBefore = document.querySelector('.drop-menu-no-authorization')
     const registerWindow = document.querySelector('.register');
     const itemRegisterWindow = document.querySelector('.drop-menu-item-register');
     const logInWindow = document.querySelector('.log-in');
@@ -345,12 +346,13 @@ function registerModalWindow() {
     itemLogInWindow.addEventListener('click', () => {
         logInWindow.classList.add('log-in_active');
         background.classList.add('background-modals_active')
-        console.log('Hey');
+        dropDownMenuBefore.classList.remove('drop-menu-no-authorization_active')
     })
 
     itemRegisterWindow.addEventListener('click', () => {
         registerWindow.classList.add('register_active');
         background.classList.add('background-modals_active');
+        dropDownMenuBefore.classList.remove('drop-menu-no-authorization_active')
     })
 
     signUpButton.addEventListener('click', () => {
@@ -378,6 +380,7 @@ function registerModalWindow() {
 registerModalWindow();
 
 function logInWindow () {
+    const dropDownMenuBefore = document.querySelector('.drop-menu-no-authorization')
     const logInLink = document.querySelector('.register-spans-link');
     const logInWindow = document.querySelector('.log-in');
     const registerWindow = document.querySelector('.register');
@@ -396,6 +399,8 @@ function logInWindow () {
     logInLink.addEventListener('click', () => {
         logInWindow.classList.add('log-in_active');
         registerWindow.classList.remove('register_active');
+        dropDownMenuBefore.classList.remove('drop-menu-no-authorization_active')
+        // 
     })
 
     registerLink.addEventListener('click', () => {
@@ -430,4 +435,4 @@ function buttonClick(event) {
 checkTheCardButton.addEventListener('click', buttonClick, false);
 
 console.log('50/50: бургер меню не исчезает при нажатии на header, в ТЗ - при нажатии на крестик, или на область вне меню, адаптивное меню плавно скрывается, уезжая за экран. У меня - только при нажатии на main. Возможно, стоит снять балл')
-console.log('section favorites, разобраться; добавить связь между кнопками и сменой картинок, about us section')
+console.log('section favorites, разобраться')
