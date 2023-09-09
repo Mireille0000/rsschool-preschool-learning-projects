@@ -232,14 +232,6 @@ li {
 
 /* login modal and register modal */
 
-/* .valid {
-    background-color: #5fbb5f;
-}
-
-.valid {
-    background-color: #cd1b48;
-} */
-
 .log-in {
     display: none;
 }
@@ -430,12 +422,18 @@ li {
 /* my profile modal window */
 
 .my-profile-modal-window {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
     /* display: flex; */
     display: none;
+    z-index: 9;
+    transform: translate(-50%, -50%);
     background-color: #ffffff;
+}
+
+.my-profile-modal-window_active {
+    display: flex;
 }
 
 .my-profile-wrapper {
@@ -505,6 +503,7 @@ li {
 
 .my-profile-svg {
     margin-top: 25px;
+    cursor: pointer;
 }
 
 .reader-info {

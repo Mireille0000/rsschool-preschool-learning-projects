@@ -127,6 +127,28 @@ function localStorageFunction () {
             dropDownMenuAfter.classList.remove('drop-menu-with-authorization_active');
         })
 
+        // drop down menu after authorization (profile, log out)
+
+        const myProfileItem =  document.querySelector('.my-profile-menu');
+        const logOutItem = document.querySelector('.log-out-menu');
+        const myProfileModalWindow = document.querySelector('.my-profile-modal-window');
+        const closeProfileWindow = document.querySelector('.my-profile-svg');
+
+        background.addEventListener('click', () => {
+            myProfileModalWindow.classList.remove('my-profile-modal-window_active');
+            background.classList.remove('background-modals_active');
+        })
+
+        closeProfileWindow.addEventListener('click', () => {
+            myProfileModalWindow.classList.remove('my-profile-modal-window_active');
+            background.classList.remove('background-modals_active');
+        })
+
+        myProfileItem.addEventListener('click', () => {
+            myProfileModalWindow.classList.add('my-profile-modal-window_active');
+            background.classList.add('background-modals_active');
+            dropDownMenuAfter.classList.remove('drop-menu-with-authorization_active');
+        })
     }
 
     // button default off (register form)
