@@ -15,80 +15,40 @@
     };
 }())
 
-// validation forms
-
-function validation () {
-    const passward = document.querySelector('.register-input');
-    let passwardValue = passward.value;
-    const signUpButtonRegister = document.querySelector('.register-button-name');
-    // const emailValidation = /{}/;
-    let passwardValidation = /[0-9a-zA-z]{8,}/;
-
-    passward.oninput = () => { 
-        if (passwardValidation.test(passwardValue)) {
-            signUpButtonRegister.addEventListener('click', () => {
-                passward.classList.toggle('register-passward.active');
-            })
-            } else if (!passwardValidation.test(paspasswardValuesward)) {
-            signUpButtonRegister.addEventListener('click', () => {
-                passward.classList.toggle('register-passward_active');
-            })
-        }
-    }
-   
-    signUpButtonRegister.addEventListener('click', () => {
-        console.log(passwardValidation.test(passwardValue));
-    })
-
-    
-    signUpButtonRegister.addEventListener('click', buttonClick, false);
-
-    function buttonClick(event) {
-        event.preventDefault();
-    }
-}
-
-// validation();
-
 // LocalStorage 
 
 function localStorageFunction () {
-    let formData = {};
+    let formDataRegister = {};
 
-    // register form, set items in local storage
+    // variables 
     const registerForm = document.querySelector('.register-form');
     const localStorageInfo = localStorage;
+    const signUpButtonRegister = document.querySelector('.register-button-name');
+    const iconHeader = document.querySelector('.icon-header');
+    const iconHeaderInitials = document.querySelector('.icon-header-initials');
+    const dropDownMenuAfter = document.querySelector('.drop-menu-with-authorization');
+    const menuBeforeAutorization = document.querySelector('.drop-menu-no-authorization');
+    const main = document.querySelector('main');
+    const burgerIcon = document.querySelector('.burger-icon');
+    const burgerMenu = document.querySelector('.burger-menu');
+    const registerWindow = document.querySelector('.register');
+    const logInWindow = document.querySelector('.log-in')
+    const background = document.querySelector('.background-modals');
+    const buyButton = document.querySelectorAll('.favorites-button');
+    const card = document.querySelector('.buy-a-card')
+
+    // register form, set items in local storage
 
     registerForm.addEventListener('input', function(event) {
-        formData[event.target.name] = event.target.value;
-        localStorageInfo.setItem('formData', JSON.stringify(formData));
-        console.log(formData);
+        formDataRegister[event.target.name] = event.target.value;
+        localStorageInfo.setItem('formDataRegister', JSON.stringify(formDataRegister));
+        // console.log(formDataRegister);
     })
 
     // header after authorization, get items in local storage + (icon with initials, drop down menu (my profile, log out))
 
-    const signUpButtonRegister = document.querySelector('.register-button-name');
-
-    const iconHeader = document.querySelector('.icon-header');
-    const iconHeaderInitials = document.querySelector('.icon-header-initials');
-    const dropDownMenuAfter = document.querySelector('.drop-menu-with-authorization');
-
-    const menuBeforeAutorization = document.querySelector('.drop-menu-no-authorization');
-    const main = document.querySelector('main');
-
-    const burgerIcon = document.querySelector('.burger-icon');
-    const burgerMenu = document.querySelector('.burger-menu');
-
-    const registerWindow = document.querySelector('.register');
-    const background = document.querySelector('.background-modals');
-
-
-    if (localStorageInfo.getItem('formData')) {
-        formData = JSON.parse(localStorageInfo.getItem('formData'));
-        // console.log(registerForm.elements[name]);
-        for (let key in formData) {
-            registerForm.elements[key].value = formData[key]
-        }
+    if (localStorageInfo.getItem('formDataRegister')) {
+        formDataRegister = JSON.parse(localStorageInfo.getItem('formDataRegister'));
 
         signUpButtonRegister.addEventListener('click', () => {
             iconHeader.classList.add('icon-header_active');
@@ -97,11 +57,16 @@ function localStorageFunction () {
             registerWindow.classList.remove('register_active');
             background.classList.remove('background-modals_active');
             document.querySelector('.icon-header-initials').textContent = registerForm.elements['first-name'].value[0].toUpperCase() + registerForm.elements['last-name'].value[0];
-            // console.log(registerForm.elements['first-name'].value[0] + registerForm.elements['last-name'].value[0]);
         })
 
+        // console.log(registerForm.elements[name]);
+        for (let key in formDataRegister) {
+            registerForm.elements[key].value = formDataRegister[key]
+        }
+    }
+        // initials icon
+
         iconHeaderInitials.addEventListener('mouseover', () => {
-            console.log('work');
             const nameTitle = registerForm.elements['first-name'].value + " " + registerForm.elements['last-name'].value;
             const capitalizeName = nameTitle.split(" ");
             for (let i = 0; i < capitalizeName.length; i++) {
@@ -109,9 +74,63 @@ function localStorageFunction () {
             }
 
             const capitalizeInitials = capitalizeName.join(" ");
-            // console.log(capitalizeInitials);
             document.querySelector('.icon-header-initials').title = capitalizeInitials;
         })
+
+        let formDataLogIn = {};
+        const logInForm = document.querySelector('.log-in-form');
+        const logInMail = document.querySelector('.log-in-mail');
+        const logInPassward = document.querySelector('.log-in-password');
+        const logInButton =  document.querySelector('.log-in-button');
+
+        const buyCardClose = document.querySelector('.buy-a-card-svg')
+
+        logInForm.addEventListener('input', function(event) {
+            formDataLogIn[event.target.name] = event.target.value;
+            localStorageInfo.setItem('formDataLogIn', JSON.stringify(formDataLogIn));
+            console.log(formDataLogIn); 
+        })
+
+        if (localStorageInfo.getItem('formDataLogIn')) {
+            formDataLogIn = JSON.parse(localStorageInfo.getItem('formDataLogIn'));
+    
+            for (let key in formDataLogIn) {
+                logInForm.elements[key].value = formDataLogIn[key]
+            }
+        }
+
+        logInButton.addEventListener('click', () => {
+            if (logInForm.elements[0].value == registerForm.elements[2].value && logInForm.elements[1].value == registerForm.elements[3].value) {
+                iconHeader.classList.add('icon-header_active');
+                iconHeaderInitials.classList.add('icon-header-initials_active');
+                menuBeforeAutorization.classList.remove('drop-menu-no-authorization_active');
+                logInWindow.classList.remove('log-in_active');
+                background.classList.remove('background-modals_active');
+                document.querySelector('.icon-header-initials').textContent = registerForm.elements['first-name'].value[0].toUpperCase() + registerForm.elements['last-name'].value[0];
+
+                buyButton.forEach(item => {
+                    item.addEventListener('click', () => {
+                       card.classList.add('buy-a-card_active');
+                       logInWindow.classList.remove('log-in_active');
+                       background.classList.add('background-modals_active');
+                   })
+               }) 
+            } else {
+                logInMail.style = 'color: red'
+                logInPassward.style = 'color: red'
+            }
+            
+            console.log(logInForm.elements[0].value == registerForm.elements[2].value);
+            console.log(logInForm.elements[1].value == registerForm.elements[3].value);
+        })
+
+        // close buy a card window
+
+        buyCardClose.addEventListener('click', () => {
+            card.classList.remove('buy-a-card_active');
+            background.classList.remove('background-modals_active');
+        })
+
 
         iconHeaderInitials.addEventListener('click', () => {
             dropDownMenuAfter.classList.toggle('drop-menu-with-authorization_active');
@@ -137,6 +156,9 @@ function localStorageFunction () {
         background.addEventListener('click', () => {
             myProfileModalWindow.classList.remove('my-profile-modal-window_active');
             background.classList.remove('background-modals_active');
+
+            card.classList.remove('buy-a-card_active'); 
+            // buy a card window
         })
 
         closeProfileWindow.addEventListener('click', () => {
@@ -149,11 +171,20 @@ function localStorageFunction () {
             background.classList.add('background-modals_active');
             dropDownMenuAfter.classList.remove('drop-menu-with-authorization_active');
         })
-    }
+
+        // to accomplish the event listener !!!
+
+        logOutItem.addEventListener('click', () => {
+            iconHeaderInitials.classList.remove('icon-header-initials_active');
+            iconHeader.classList.remove('icon-header_active');
+            dropDownMenuAfter.classList.remove('drop-menu-with-authorization_active');
+        })
+    
 
     // button default off (register form)
 
     signUpButtonRegister.addEventListener('click', buttonClick, false);
+    logInButton.addEventListener('click', buttonClick, false);
     function buttonClick(event) {
         event.preventDefault();
     }
@@ -320,7 +351,6 @@ function dropMenus () {
 
 
     iconHeader.addEventListener('click', () => {
-        console.log('Hi');
         menuBeforeAutorization.classList.toggle('drop-menu-no-authorization_active');
         burgerMenu.classList.remove('burger-menu_active');
         burgerIcon.classList.remove('burger-icon-active');  
@@ -329,6 +359,19 @@ function dropMenus () {
         main.addEventListener('click', () => {
             menuBeforeAutorization.classList.remove('drop-menu-no-authorization_active');
         })
+
+        // const iconHeaderInitials = document.querySelector('.icon-header-initials');
+        // const buyButton = document.querySelectorAll('.favorites-button');
+        // const card = document.querySelector('.buy-a-card')
+
+        //  if ('icon-header-initials_active') {
+        //     buyButton.forEach(item => {
+        //         item.addEventListener('click', () => {
+        //             console.log('hey');
+        //             card.classList.add('buy-a-card_active');
+        //         })
+        //     })  
+        // }
 }
 
 dropMenus ();
@@ -434,5 +477,23 @@ function buttonClick(event) {
 }
 checkTheCardButton.addEventListener('click', buttonClick, false);
 
+// (function () {
+//         const passward = document.querySelector('.register-input');
+//         let passwardValue = passward.value;
+//         const signUpButtonRegister = document.querySelector('.register-button-name');
+//         let passwardValidation = /[0-9a-zA-z]{8,}/;
+    
+        
+//         passward.addEventListener('input', () => {
+//             this.value = this.value.replace(passwardValidation, '');
+//             console.log('hey')
+//         })
+
+//         signUpButtonRegister.addEventListener('click', buttonClick, false);
+    
+//         function buttonClick(event) {
+//             event.preventDefault();
+//         }
+//     }())
+
 console.log('50/50: бургер меню не исчезает при нажатии на header, в ТЗ - при нажатии на крестик, или на область вне меню, адаптивное меню плавно скрывается, уезжая за экран. У меня - только при нажатии на main. Возможно, стоит снять балл')
-console.log('section favorites, разобраться')
