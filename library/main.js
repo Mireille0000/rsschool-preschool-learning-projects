@@ -59,11 +59,12 @@ function localStorageFunction () {
     signUpButtonRegister.addEventListener('click', () => {
         iconHeader.classList.add('icon-header_active');
         iconHeaderInitials.classList.add('icon-header-initials_active');
-        menuBeforeAutorization.classList.remove('drop-menu-no-authorization_active');
+        // menuBeforeAutorization.classList.toggle('drop-menu-no-authorization_active');
         registerWindow.classList.remove('register_active');
         background.classList.remove('background-modals_active');
         document.querySelector('.icon-header-initials').textContent = registerForm.elements['first-name'].value[0].toUpperCase() + registerForm.elements['last-name'].value[0].toUpperCase();
     })
+
         // initials icon
 
         iconHeaderInitials.addEventListener('mouseover', () => {
@@ -103,10 +104,25 @@ function localStorageFunction () {
             if (logInForm.elements[0].value == registerForm.elements[2].value && logInForm.elements[1].value == registerForm.elements[3].value) {
                 iconHeader.classList.add('icon-header_active');
                 iconHeaderInitials.classList.add('icon-header-initials_active');
-                menuBeforeAutorization.classList.remove('drop-menu-no-authorization_active');
+                // menuBeforeAutorization.classList.remove('drop-menu-with-authorization_active');
                 logInWindow.classList.remove('log-in_active');
                 background.classList.remove('background-modals_active');
                 document.querySelector('.icon-header-initials').textContent = registerForm.elements['first-name'].value[0].toUpperCase() + registerForm.elements['last-name'].value[0].toUpperCase();
+
+                iconHeaderInitials.addEventListener('click', () => {
+                    dropDownMenuAfter.classList.toggle('drop-menu-with-authorization_active');
+                    burgerIcon.classList.remove('burger-icon-active');
+                    burgerMenu.classList.remove('burger-menu_active');
+                })
+        
+                main.addEventListener('click', () => {
+                    dropDownMenuAfter.classList.remove('drop-menu-with-authorization_active');
+                })
+        
+                burgerIcon.addEventListener('click', () => {
+                    dropDownMenuAfter.classList.remove('drop-menu-with-authorization_active');
+                })
+
 
                 buyButton.forEach(item => {
                     item.addEventListener('click', () => {
@@ -116,8 +132,9 @@ function localStorageFunction () {
                    })
                }) 
             } else {
-                logInMail.style = 'color: red'
-                logInPassward.style = 'color: red'
+                logInMail.style = 'color: red';
+                logInPassward.style = 'color: red';
+
             }
             
             console.log(logInForm.elements[0].value == registerForm.elements[2].value);
@@ -133,17 +150,17 @@ function localStorageFunction () {
 
 
         iconHeaderInitials.addEventListener('click', () => {
-            dropDownMenuAfter.classList.toggle('drop-menu-with-authorization_active');
+            menuBeforeAutorization.classList.toggle('drop-menu-no-authorization_active');
             burgerIcon.classList.remove('burger-icon-active');
             burgerMenu.classList.remove('burger-menu_active');
         })
 
         main.addEventListener('click', () => {
-            dropDownMenuAfter.classList.remove('drop-menu-with-authorization_active');
+            menuBeforeAutorization.classList.remove('drop-menu-no-authorization_active');
         })
 
         burgerIcon.addEventListener('click', () => {
-            dropDownMenuAfter.classList.remove('drop-menu-with-authorization_active');
+            menuBeforeAutorization.classList.remove('drop-menu-no-authorization_active');
         })
 
         // drop down menu after authorization (profile, log out)
