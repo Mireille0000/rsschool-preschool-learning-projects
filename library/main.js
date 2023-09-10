@@ -50,20 +50,20 @@ function localStorageFunction () {
     if (localStorageInfo.getItem('formDataRegister')) {
         formDataRegister = JSON.parse(localStorageInfo.getItem('formDataRegister'));
 
-        signUpButtonRegister.addEventListener('click', () => {
-            iconHeader.classList.add('icon-header_active');
-            iconHeaderInitials.classList.add('icon-header-initials_active');
-            menuBeforeAutorization.classList.remove('drop-menu-no-authorization_active');
-            registerWindow.classList.remove('register_active');
-            background.classList.remove('background-modals_active');
-            document.querySelector('.icon-header-initials').textContent = registerForm.elements['first-name'].value[0].toUpperCase() + registerForm.elements['last-name'].value[0];
-        })
-
         // console.log(registerForm.elements[name]);
         for (let key in formDataRegister) {
             registerForm.elements[key].value = formDataRegister[key]
         }
     }
+
+    signUpButtonRegister.addEventListener('click', () => {
+        iconHeader.classList.add('icon-header_active');
+        iconHeaderInitials.classList.add('icon-header-initials_active');
+        menuBeforeAutorization.classList.remove('drop-menu-no-authorization_active');
+        registerWindow.classList.remove('register_active');
+        background.classList.remove('background-modals_active');
+        document.querySelector('.icon-header-initials').textContent = registerForm.elements['first-name'].value[0].toUpperCase() + registerForm.elements['last-name'].value[0].toUpperCase();
+    })
         // initials icon
 
         iconHeaderInitials.addEventListener('mouseover', () => {
