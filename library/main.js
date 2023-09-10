@@ -106,7 +106,7 @@ function localStorageFunction () {
                 menuBeforeAutorization.classList.remove('drop-menu-no-authorization_active');
                 logInWindow.classList.remove('log-in_active');
                 background.classList.remove('background-modals_active');
-                document.querySelector('.icon-header-initials').textContent = registerForm.elements['first-name'].value[0].toUpperCase() + registerForm.elements['last-name'].value[0];
+                document.querySelector('.icon-header-initials').textContent = registerForm.elements['first-name'].value[0].toUpperCase() + registerForm.elements['last-name'].value[0].toUpperCase();
 
                 buyButton.forEach(item => {
                     item.addEventListener('click', () => {
