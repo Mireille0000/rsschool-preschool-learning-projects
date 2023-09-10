@@ -18,6 +18,10 @@ html {
     max-width: 1440px;
 }
 
+.wrapper-body_active {
+    background-color: rgba(20, 20, 20, 0.6);
+}
+
 body {
     font-family: "Forum";
     min-height: 100vh;
@@ -32,9 +36,12 @@ li {
     list-style-type: none;
 }
 
+/* header */
+
 .header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     background-color: #000000;
 }
@@ -87,11 +94,42 @@ li {
 }
 
 .icon-header {
+    display: flex;
     padding-bottom: 9px;
 }
 
 .icon-header:hover {
     cursor: pointer;
+}
+
+.icon-header_active {
+    display: none;
+}
+
+.icon-header-initials {
+    display: none;
+    width: 28px;
+    height: 28px;
+    margin-right: 0;
+    margin-bottom: 10px;
+    padding-top: 4px;
+
+    text-align: center;
+    color: #BB945F;
+
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+
+    background-color: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.icon-header-initials_active {
+    display: block;
 }
 
 .burger-icon span {
@@ -121,6 +159,429 @@ li {
         line-height: 50px;
     }
 
+/* modal windows */
+.background-modals {
+    display: flex;
+}
+
+.background-modals_active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 15, 15, 0.5);
+}
+
+/*modal windows, header  */
+
+.drop-menu-modal-windows {
+    position: relative;
+}
+
+.drop-menu-no-authorization, .drop-menu-with-authorization {
+    display: none;
+}
+
+/* .drop-menu-with-authorization */
+.drop-menu-no-authorization_active, .drop-menu-with-authorization_active  {
+    position: absolute;
+    right: 0;
+
+    width: 80px;
+    height: 115px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: #ffffff;
+}
+
+.drop-menu-title {
+    margin-bottom: 5px;
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    line-height: 20px;
+}
+
+.hr-modal {
+    width: 40px;
+    height: 1px;
+    margin-bottom: 15px;
+    background-color:#BB945F;
+}
+
+.drop-menu-item-log-in, .drop-menu-item-register, .drop-menu-item {
+    margin-bottom: 10px;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+    cursor: pointer;
+}
+
+/* login modal and register modal */
+
+.log-in {
+    display: none;
+}
+
+.log-in_active {
+    position: fixed;
+    top: 50%;
+    /* top: 0; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 262px; 
+
+    background-color: #ffffff;
+}
+
+.register {
+    display: none;
+}
+
+.register_active {
+    position: fixed;
+    top: 50%;
+    /* top: 0; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+
+    background-color: #ffffff;
+}
+
+.log-in-header, .register-header {
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.log-in-svg, .register-svg {
+    justify-self: end;
+    cursor: pointer;
+}
+
+.register-form {
+    margin-top: -8px;
+}
+
+.log-in-title, .register-title {
+    color: #000;
+    text-align: center;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.log-in-title {
+    margin: 20px 65px 10px 95px;
+}
+
+.register-title {
+    margin: 20px 54px 20px 85px;
+}
+
+.log-in-svg, .register-svg {
+    margin-top: 15px;
+}
+
+.log-in-input-title, .register-input-title {
+    margin-top: 10px;
+    margin-left: 26px;
+    text-align: left;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+}
+
+.log-in-input, .register-input {
+    width: 200px;
+    margin-top: 12px;
+    margin-left: 26px;
+    border: 1px solid #BB945F;
+}
+
+.log-in-input {
+    margin-top: 13px;
+}
+
+.register-first-name {
+    margin-top: 10px;
+}
+
+.register-mail {
+    margin-top: 14px;
+}
+
+.register-passward_active {
+    background: #de8a8a;
+}
+
+.register-passward.active {
+    background: #b0d5b0;
+}
+
+.log-in-button, .register-button {
+    margin-top: 20px;
+    margin-left: 27px;
+    width: 75px;
+    height: 31px;
+
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+
+    cursor: pointer;
+}
+
+.log-in-button {
+    margin-bottom: 6px;
+}
+
+.log-in-button-name, .register-button-name {
+    box-sizing: content-box;
+    margin-top: 9px;
+    margin-left: 14px;
+
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+
+    background-color: #FFFFFF;
+
+    cursor: pointer;
+}
+
+.log-in-button-name {
+    margin-top: 10px;
+    margin-left: 19px;
+}
+
+.log-in-register-spans, .register-spans {
+    margin-top: 8px;
+    margin-left: 26px;
+    margin-bottom: 20px;
+}
+
+.log-in-register-spans {
+    margin-top: 0;
+}
+
+.log-in-register-link-item, .register-spans-link-item {
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.log-in-register-link, .register-spans-link {
+    margin-left: 7px;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-decoration-line: underline;
+
+    cursor: pointer;
+}
+
+/* my profile modal window */
+
+.my-profile-modal-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* display: flex; */
+    display: none;
+    z-index: 9;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+}
+
+.my-profile-modal-window_active {
+    display: flex;
+}
+
+.my-profile-wrapper {
+    /* width: 600px; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.my-profile-aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 139px 25px;
+    background-color: #000000;
+}
+
+.initials {
+    padding: 30px 27px;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+    color: #BB945F;
+    background-color: #ffffff;
+}
+
+.user-name {
+    padding: 5px 15px;
+    margin-top: 15px;
+
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: capitalize;
+
+    background-color: #ffffff;
+}
+
+.my-profile-details {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.my-profile-header {
+    display: flex;
+    justify-content: center;
+}
+
+.my-profile-title {
+    margin-top: 40px;
+    margin-right: 163px;
+    margin-bottom: 40px;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.my-profile-svg {
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.reader-info {
+    display: flex;
+}
+
+.reader-info-items {
+    margin-right: 20px;
+}
+
+.reader-info-statistics-column {
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.4px;
+}
+
+.reader-info-icon {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.rented-books-title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #0C0C0E;
+}
+
+.rented-books {
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+ li.rented-books-item {
+    margin-bottom: 10px;
+    list-style: inside;
+}
+
+.card-number-items {
+    display: flex;
+    margin-top: 40px;
+    column-gap: 10px;
+}
+
+.rented-books-item {
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.card-number-title {
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+     color: #0C0C0E;
+}
+
+.card-number {
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: #BB945F;
+}
 /* welcome section */
 
 .welcome {
@@ -216,7 +677,12 @@ h2 {
     color: #000000;
 }
 
-.photos {
+.photos-wrapper {
+    width: 1400px;
+    overflow: hidden;
+}
+
+.photos-block {
     display: flex;
     justify-content: space-around;
 
@@ -224,7 +690,19 @@ h2 {
     margin-right: 7px;
 }
 
-.arrows {
+.photos {
+    position: relative;
+    left: 0;
+    width: 2374px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+
+    transition: 2s ease-in-out .5s;
+}
+
+.carrets {
     align-self: center;
     display: none;
 }
@@ -249,6 +727,12 @@ h2 {
     cursor: pointer;
 }
 
+.pagination-button_active {
+    background-color: #BB945F;
+    box-shadow: 1px 1px 2px #BB945F;
+    cursor: default;
+}
+
 .pagination-button:hover {
     background-color: #BB945F;
     box-shadow: 1px 1px 2px #BB945F;
@@ -260,21 +744,35 @@ h2 {
 }
 
 .about-photo-girl {
-    width: 450px;
+    min-width: 450px;
     height: 560px;
     background: url(./images/about-photo-girl.png) lightgray 50% / cover no-repeat;
 }
 
 .about-photo-statues {
-    width: 450px;
+    min-width: 450px;
     height: 560px;
     background: url(./images/about-photo-statues.png) lightgray 50% / cover no-repeat;
 }
 
 .about-photo-books {
-    width: 450px;
+    min-width: 450px;
     height: 560px;
     background: url(./images/about-photo-books.png) lightgray 50% / cover no-repeat;
+}
+
+.about-photo-ladder {
+    min-width: 450px;
+    height: 560px;
+    /* display: none; */
+    background: url(./images/about-photo-ladder.png) lightgray 50% / cover no-repeat;
+}
+
+.about-photo-building {
+    min-width: 450px;
+    height: 560px;
+    /* display: none; */
+    background: url(./images/about-photo-building.png) lightgray 50% / cover no-repeat;
 }
 
 /* favorites section */
@@ -364,6 +862,28 @@ label input:checked + .radio-button-item::before{
     line-height: normal;
 } 
 
+.radion-btn-name:hover {
+    font-weight: 700px;
+    cursor: pointer;
+}
+
+.active {
+    /* position: absolute; */
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 259px;
+}
+
+.spring, .summer, .autumn {
+    width: 1420px;
+    height: 1190px;
+    position: absolute;
+    column-gap: 259px;
+    opacity: 0;
+    transition-duration: 1s;
+    z-index: 1;
+}
+
 .favorites-prgrph {
     margin-bottom: 37px;
     margin-left: 20px;
@@ -379,13 +899,14 @@ label input:checked + .radio-button-item::before{
 }
 
 .favorites-section-descriptions {
+    /* position: relative;
+    top: 0; */
+    /* height: 1190px;  !!! */
+    overflow: hidden;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
 
-    margin-right: 60px;
-    margin-left: 20px;
+    padding-right: 60px;
+    padding-left: 20px;
 }
 
 .bg-description {
@@ -480,6 +1001,7 @@ h4 {
     position: relative;
     top: 509px;
     left: 20px;
+    z-index: 3;
 
     width: 75px;
     height: 30px;
@@ -499,10 +1021,10 @@ h4 {
     cursor: pointer;
 }
 
-.favorites-button:hover{
+.favorites-button:hover {
     border-radius: 2px;
     border: 1px solid #BB945F;
-    background: #BB945F;
+    background-color: #BB945F;
     transition: 0.5s;
 }
     
@@ -514,10 +1036,154 @@ h4 {
     pointer-events: none;
 }
 
+/* buy a card modal window */
 
-.hidden-content {
+.buy-a-card {
     display: none;
 }
+
+.buy-a-card_active {
+    width: 650px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9;
+    display: block;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+}
+
+/* .buy-a-card-wrapper {
+    margin: auto;
+} */
+
+
+.buy-a-card-header {
+    display: flex;
+    justify-content: center;
+    column-gap: 101px;
+    background-color: #000000;
+}
+
+.buy-a-card-svg {
+    padding-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.buy-a-card-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 143px;
+
+    color: #FFF;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.buy-a-card-content {
+    display: flex;
+    gap: 20px;
+    margin-left: 40px;
+    /* margin-left: 40px; */
+}
+
+.buy-a-card-form {
+    margin-top: 30px;
+}
+
+.buy-a-card-form-item {
+    margin-bottom: 12px;
+
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+    letter-spacing: 0.3px;
+}
+
+.buy-a-card-input {
+    width: 200px;
+    /* margin-right: 20px; */
+    margin-bottom: 10px;
+    border: 1px solid #BB945F;
+}
+
+.buy-a-card-input.small {
+    width: 45px;
+    height: 20px;
+}
+
+.buy-a-card-info-below {
+    margin-top: 7px;
+}
+
+.buy-a-card-double-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+article {
+    width: 330px;
+    margin-top: 30px;
+    margin-left: 20px;
+
+    color: #8E8E8E;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 2px;
+}
+
+.buy-a-card-payment {
+    display: flex;
+    gap: 25px;
+    margin-top: 15px;
+    padding-bottom: 38px;
+}
+
+.buy-a-card-button {
+    width: 75px;
+    height: 30px;
+    text-align: center;
+    flex-shrink: 0;
+    
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    background-color: #ffffff;
+}
+
+.buy-a-card-total {
+    margin-top: 10px;
+    color: #0C0C0E;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* .hidden-content {
+    display: none;
+} */
 
 /* coffee shop */
 
@@ -815,7 +1481,7 @@ h4 {
     letter-spacing: 0.4px;
 }
 
-.card-block-button {
+.card-block-button-sign-up, .card-block-button-log-in {
     display: flex;
     width: 75px;
     height: 30px;
@@ -859,12 +1525,46 @@ h4 {
     margin-top: 35px;
 }
 
-.dlcards-section-button:hover, .card-block-button:hover {
+.dlcards-section-button:hover, .card-block-button-sign-up:hover, .card-block-button-log-in:hover {
     background-color: #BB945F;
     transition-duration: 0.5s;
     cursor: pointer;
 }
 
+/* LibraryCard after login in account modal */
+
+.library-card-after {
+    display: none;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.title-hr-after {
+    width: 50px;
+    height: 1px;
+    align-self: center;
+    margin-bottom: 40px;
+    background: #0C0C0E;
+}
+.dlcards-statistics {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-bottom: 15px;
+}
+
+.dlcards-icon {
+    text-align: center;
+}
+
+.dlcards-profile-button {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-end;
+
+    margin-top: 35px;
+}
 /* footer styles */
 
 .footer {
@@ -952,6 +1652,22 @@ h4 {
     }
 }
 
+@media  screen and (max-width: 1100px) {
+    .photos {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .spring, .summer, .autumn {
+        width: auto;
+}
+
+.our-contacts-content {
+    display: flex;
+    gap: 0px;
+}
+}
+
 @media screen and (max-width: 1024px) {
     /* header */
 
@@ -960,8 +1676,20 @@ h4 {
     }
 
     .icon-header {
-        padding-bottom: 8px;
-        padding-right: 82px;
+        position: relative;
+        right: 42px;
+        /* padding-bottom: 8px;
+        padding-right: 82px; */
+    }
+
+    .icon-header-initials {
+        margin-right: 45px;
+    }
+
+    .drop-menu-no-authorization_active, .drop-menu-with-authorization_active {
+        position: absolute;
+        /* right: 110px; */
+        right: 81px;
     }
 
     .burger-menu-container_active{
@@ -986,6 +1714,8 @@ h4 {
         position: relative;
         bottom: 17px;
         height: 20px;
+        width: 40px;
+        cursor: pointer;
     }
 
      .burger-icon span,
@@ -1005,7 +1735,7 @@ h4 {
         transform: scale(1) translate(0px, -50%);
     }
 
-    .burger-icon-active  span {
+    .burger-icon-active span {
         transform: scale(0) translate(0px, -50%);
     }
 
@@ -1031,32 +1761,50 @@ h4 {
 
     /* about us section */
 
-    .about-photo-books, .about-photo-statues {
-        display: none;
-    }
+    /* .about-photo-girl, .about-photo-books, .about-photo-statues, .about-photo-ladder, .about-photo-building {
+        position: absolute;
+        top: 0;
+        left: 0;
+    } */
 
     .about-prgph {
         margin-right: 20px;
         margin-left: 20px;
     }
 
-    .photos {
+    .photos-block {
         display: flex;
+        flex-wrap: nowrap;
         justify-content: space-around;
         gap: 30px;
     }
+
+    .photos-wrapper {
+        width: 450px;
+        overflow: hidden;
+    }
+
+    .photos {
+        position: relative;
+        left: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 24px;
+
+        transition: 2s ease-in-out 0.5s;
+    }
     
-    .arrows {
+    .carrets {
         display: flex;
         align-self: center;   
     }
 
-    .arrow2 {
+    .carret-left {
         margin-left: 55px;
         margin-top: 40px;
     }
 
-    .arrow1 {
+    .carret-right {
         margin-right: 55px;
         margin-top: 40px;
     }
@@ -1072,12 +1820,24 @@ h4 {
 
     /* favorites section */
 
+    .radio-buttons-form {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background-color: #ffffff;
+    }
+        
     .favorites-section-descriptions {
-        margin-left: 90px;
+        /* height: 2380px; */
+        margin-left: 70px;
     }
 
     label {
-        margin-right: 85px;
+        margin-right: 87px;
+    }
+
+    .spring, .summer, .autumn {
+        width: auto;
     }
 
     /* coffee shop section */
@@ -1174,6 +1934,6 @@ h4 {
     }
 
     .favorites-section-descriptions {
-        margin-left: 50px;
+        margin-left: 0px;
     }  
 }
