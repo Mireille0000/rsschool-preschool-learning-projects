@@ -7,16 +7,41 @@
     <title>Audio player</title>
 </head>
 <body>
-    <header>
-        <h1>Audio player</h1>
-    </header>
+    <div class="wrapper">
+        <header>
+            <h1>Audio player</h1>
+        </header>
 
-    <main>
-        <div></div>
-    </main>
+        <main>
+            <div class="player-box-wrapper">
+                <div class="player-box">
+                    <div class="track-image"></div>
+                    <div class="player-controllers">
+                        <div class="buttons">
+                            <div class="button-pause"><img src="/Audio-player/assets/buttons/pause.png" alt="pause" width="50" height="50"></div>
+                            <div class="button-play"><img src="/Audio-player/assets/buttons/play.png" alt="play" width="50" height="50"></div>
 
-    <footer>
-        <div></div>
-    </footer>
+                            <div class="current">
+                                <div class="artist">Kokia</div>
+                                <div class="track">Fukurou</div>
+                            </div>
+                            
+                            <div class="prev-next-buttons">
+                                <div class="button-prev"><img src="/Audio-player/assets/buttons/backward.png" alt="previous track" width="30" height="30"></div>
+                                <div class="button-next"><img src="/Audio-player/assets/buttons/forward.png" alt="next track"  width="30" height="30"></div>
+                            </div>      
+
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div></div>
+        </footer>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>

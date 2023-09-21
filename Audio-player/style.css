@@ -1,8 +1,67 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     max-width: 1920px;
+    background-color: #b0e1de;
+}
+
+.wrapper {
+    margin: 0 auto;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+/* player styles */
+
+.player-box-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-box {
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(#d6a8b9, rgb(165 91 105));
+
+    border-radius: 5%;
+    box-shadow: 5px 5px 58px 14px #886363;;
+}
+
+.track-image {
+    width: 20rem;
+    height: 11rem;
+    background: url(/Audio-player/assets/img/fukurou.jpg) 50% / cover no-repeat;
+    border-radius: 5% 5% 0 0;
+}
+
+/* buttons */
+
+.buttons {
+    display: flex;
+}
+
+.button-pause {
+    display: none;
+}
+
+.button-pause,
+.button-play,
+.current {
+    align-self: center;
+    margin-right: 10px;
+}
+
+.current {
+    width: 9rem;
 }
