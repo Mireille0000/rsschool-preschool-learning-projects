@@ -80,11 +80,26 @@ h1 {
     display: none;
 }
 
+.button-pause_active {
+    display: flex;
+}
+.button-play_active {
+    display: none;
+}
+
 .button-pause,
 .button-play,
 .current {
     align-self: center;
     margin-right: 10px;
+}
+
+.button-pause,
+.button-play,
+.button-prev,
+.button-next,
+.progress-bar {
+    cursor: pointer;
 }
 
 .current {
