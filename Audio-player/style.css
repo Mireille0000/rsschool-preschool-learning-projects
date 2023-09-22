@@ -13,14 +13,14 @@ body {
     max-width: 1920px;
     margin: 0 auto;
 
-    background: url(/Audio-player/assets/img/fukurou.jpg) 50% / cover no-repeat;
+    background: url(./assets/img/fukurou.jpg) 50% / cover no-repeat;
 }
 
 /* .wrapper {
     max-width: 1920px;
     margin: 0 auto;
 
-    background: url(/Audio-player/assets/img/lone_wolf.jpg) 50% / cover no-repeat;
+    background: url(./assets/img/lone_wolf.jpg) 50% / cover no-repeat;
 } */
 
 .header-wrapper {
@@ -58,14 +58,14 @@ h1 {
 .track-image {
     width: 20rem;
     height: 11rem;
-    background: url(/Audio-player/assets/img/fukurou.jpg) 50% / cover no-repeat;
+    background: url(./assets/img/fukurou.jpg) 50% / cover no-repeat;
     border-radius: 5% 5% 0 0;
 }
 
 /* .track-image {
     width: 20rem;
     height: 11rem;
-    background: url(/Audio-player/assets/img/lone_wolf.jpg) 50% / cover no-repeat;
+    background: url(./assets/img/lone_wolf.jpg) 50% / cover no-repeat;
     border-radius: 5% 5% 0 0;
 } */
 
