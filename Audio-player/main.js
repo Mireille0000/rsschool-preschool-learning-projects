@@ -1,4 +1,5 @@
-const trackImage = document.querySelector('.tarck-image'),
+const wrapperBackground = document.querySelector(".wrapper"),
+    trackImage = document.querySelector('.track-image'),
     buttonPause = document.querySelector('.button-pause'),
     buttonPlay = document.querySelector('.button-play'),
     currentTrack = document.querySelector(".current"),
@@ -8,82 +9,89 @@ const trackImage = document.querySelector('.tarck-image'),
     buttonPrevious = document.querySelector(".button-prev"),
     buttonNext = document.querySelector(".button-next");
 
-    // const currentTrackTitle = ["Kokia\n Fukurou", "Eels\n Lone Wolf"];
-    const artistArr = ["Kokia", "Eels"];
-    const tracksArr = ["Fukurou", "Lone Wolf"]
-    const audioTitle = ["kokia", "eels"];
+const artistArr = ["Kokia", "Eels"];
+const tracksArr = ["Fukurou", "Lone Wolf"]
+const audioTitle = ["kokia", "eels"];
+const trackImages = ["fukurou", "lone_wolf"];
 
-    let audioTitleIndex = 0;
-    let currentTrackIndex = 0;
-    let artistIndex = 0;
+let artistIndex = 0;
+let currentTrackIndex = 0;
+let audioTitleIndex = 0;
+let coverIndex = 0;
 
-    function playCurrentTracke(artist, title, audio) {
-        artistName.innerHTML = artist;
-        trackTitle.innerHTML = title;
+function playCurrentTracke(artist, title, audio, cover) {
+    artistName.innerHTML = artist;
+    trackTitle.innerHTML = title;
         
-        track.src = `./assets/audio/${audio}.mp3`;
+    track.src = `./assets/audio/${audio}.mp3`;
+    trackImage.style = `background: url(./assets/img/${cover}.jpg) 50% / cover no-repeat;`;
+    wrapperBackground.style = `background: url(./assets/img/${cover}.jpg) 50% / cover no-repeat;`;
+}
+
+playCurrentTracke(artistArr[artistIndex], tracksArr[currentTrackIndex], audioTitle[audioTitleIndex], trackImages[coverIndex], wrapperBackground[coverIndex])
+
+function playTrack () {
+    track.play();
+}
+
+function pauseTrack () {
+    track.pause();
+}
+
+buttonPlay.addEventListener('click', () => {
+    buttonPlay.classList.add('button-play_active');
+    buttonPause.classList.add('button-pause_active');
+    playTrack ();
+})
+
+buttonPause.addEventListener('click', () => {
+    buttonPlay.classList.remove('button-play_active');
+    buttonPause.classList.remove('button-pause_active');
+    pauseTrack ()
+})
+
+// switch track
+
+function switchTrackNext() {
+    currentTrackIndex++;
+    artistIndex++;
+    audioTitleIndex++;
+    coverIndex++;
+
+    if (currentTrackIndex > tracksArr.length -1) {
+        currentTrackIndex = 0;
+        artistIndex = 0;
+        audioTitleIndex = 0;
+        coverIndex = 0;
     }
 
-    playCurrentTracke(artistArr[artistIndex], tracksArr[currentTrackIndex], audioTitle[audioTitleIndex])
+    buttonPlay.classList.add('button-play_active');
+    buttonPause.classList.add('button-pause_active');
+    playCurrentTracke(artistArr[artistIndex], tracksArr[currentTrackIndex], audioTitle[audioTitleIndex], trackImages[coverIndex], wrapperBackground[coverIndex])
+    playTrack ();
+}
 
-    function playTrack () {
-       track.play();
+buttonNext.addEventListener('click', switchTrackNext)
+
+function switchTrackPrevious() {
+    currentTrackIndex--;
+    artistIndex--;
+    audioTitleIndex--;
+    coverIndex--;
+
+    if (currentTrackIndex < 0) {
+        currentTrackIndex = tracksArr.length - 1;
+        artistIndex = artistArr.length - 1;
+        audioTitleIndex = audioTitle.length - 1;
+        coverIndex = trackImages.length - 1;
     }
 
-    function pauseTrack () {
-        track.pause();
-    }
+    buttonPlay.classList.add('button-play_active');
+    buttonPause.classList.add('button-pause_active');
+    playCurrentTracke(artistArr[artistIndex], tracksArr[currentTrackIndex], audioTitle[audioTitleIndex], trackImages[coverIndex])
+    playTrack ();
+}
 
-    buttonPlay.addEventListener('click', () => {
-        buttonPlay.classList.add('button-play_active');
-        buttonPause.classList.add('button-pause_active');
-        playTrack ();
-    })
+buttonPrevious.addEventListener('click', switchTrackPrevious)
 
-    buttonPause.addEventListener('click', () => {
-        buttonPlay.classList.remove('button-play_active');
-        buttonPause.classList.remove('button-pause_active');
-        pauseTrack ()
-    })
-
-    // switch track
-
-    function switchTrackNext() {
-        currentTrackIndex++;
-        artistIndex++;
-        audioTitleIndex++;
-
-        if (currentTrackIndex > tracksArr.length -1) {
-            currentTrackIndex = 0;
-            artistIndex = 0;
-            audioTitleIndex = 0;
-        }
-
-        buttonPlay.classList.add('button-play_active');
-        buttonPause.classList.add('button-pause_active');
-        playCurrentTracke(artistArr[artistIndex], tracksArr[currentTrackIndex], audioTitle[audioTitleIndex])
-        playTrack ();
-    }
-
-    buttonNext.addEventListener('click', switchTrackNext)
-
-    function switchTrackPrevious() {
-        currentTrackIndex--;
-        artistIndex--;
-        audioTitleIndex--;
-
-        if (currentTrackIndex < 0) {
-            currentTrackIndex = tracksArr.length - 1;
-            artistIndex = artistArr.length - 1;
-            audioTitleIndex = audioTitle.length - 1;
-        }
-
-        buttonPlay.classList.add('button-play_active');
-        buttonPause.classList.add('button-pause_active');
-        playCurrentTracke(artistArr[artistIndex], tracksArr[currentTrackIndex], audioTitle[audioTitleIndex])
-        playTrack ();
-    }
-
-    buttonPrevious.addEventListener('click', switchTrackPrevious)
-
-    console.log(`https://rolling-scopes-school.github.io/mireille0000-JSFEPRESCHOOL2023Q2/Audio-player/`);
+console.log(`https://rolling-scopes-school.github.io/mireille0000-JSFEPRESCHOOL2023Q2/Audio-player/`);
