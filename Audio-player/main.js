@@ -6,6 +6,8 @@ const wrapperBackground = document.querySelector(".wrapper"),
     artistName = document.querySelector(".artist"),
     trackTitle = document.querySelector(".track")
     track = document.querySelector("audio"),
+    progressBarContainer = document.querySelector(".progress-bar"),
+    progress = document.querySelector(".progress"),
     buttonPrevious = document.querySelector(".button-prev"),
     buttonNext = document.querySelector(".button-next");
 
@@ -19,7 +21,9 @@ let currentTrackIndex = 0;
 let audioTitleIndex = 0;
 let coverIndex = 0;
 
-function playCurrentTracke(artist, title, audio, cover) {
+// play and pause tracks
+
+function playCurrentTrack(artist, title, audio, cover) {
     artistName.innerHTML = artist;
     trackTitle.innerHTML = title;
         
@@ -28,7 +32,7 @@ function playCurrentTracke(artist, title, audio, cover) {
     wrapperBackground.style = `background: url(./assets/img/${cover}.jpg) 50% / cover no-repeat;`;
 }
 
-playCurrentTracke(artistArr[artistIndex], tracksArr[currentTrackIndex], audioTitle[audioTitleIndex], trackImages[coverIndex], wrapperBackground[coverIndex])
+playCurrentTrack(artistArr[artistIndex], tracksArr[currentTrackIndex], audioTitle[audioTitleIndex], trackImages[coverIndex], wrapperBackground[coverIndex])
 
 function playTrack () {
     track.play();
@@ -67,7 +71,7 @@ function switchTrackNext() {
 
     buttonPlay.classList.add('button-play_active');
     buttonPause.classList.add('button-pause_active');
-    playCurrentTracke(artistArr[artistIndex], tracksArr[currentTrackIndex], audioTitle[audioTitleIndex], trackImages[coverIndex], wrapperBackground[coverIndex])
+    playCurrentTrack(artistArr[artistIndex], tracksArr[currentTrackIndex], audioTitle[audioTitleIndex], trackImages[coverIndex], wrapperBackground[coverIndex])
     playTrack ();
 }
 
@@ -88,10 +92,29 @@ function switchTrackPrevious() {
 
     buttonPlay.classList.add('button-play_active');
     buttonPause.classList.add('button-pause_active');
-    playCurrentTracke(artistArr[artistIndex], tracksArr[currentTrackIndex], audioTitle[audioTitleIndex], trackImages[coverIndex])
+    playCurrentTrack(artistArr[artistIndex], tracksArr[currentTrackIndex], audioTitle[audioTitleIndex], trackImages[coverIndex])
     playTrack ();
 }
 
 buttonPrevious.addEventListener('click', switchTrackPrevious)
+
+// progress bar functionality
+
+function goProgressBar(event) {
+    const {duration, currentTime} = event.srcElement;
+    const progressBarTime = (currentTime / duration) * 100;
+    progress.style.width = `${progressBarTime}%`;   
+}
+
+track.addEventListener("timeupdate", goProgressBar);
+
+function rewindProgressBar(event) {
+    const containerWidth = this.clientWidth;
+    const coordinates = event.offsetX;
+    const trackDuration = track.duration;
+    track.currentTime = (coordinates / containerWidth) * trackDuration;
+}
+
+progressBarContainer.addEventListener("click", rewindProgressBar)
 
 console.log(`https://rolling-scopes-school.github.io/mireille0000-JSFEPRESCHOOL2023Q2/Audio-player/`);
