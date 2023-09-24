@@ -100,21 +100,38 @@ buttonPrevious.addEventListener('click', switchTrackPrevious)
 
 // progress bar functionality
 
-function goProgressBar(event) {
+track.addEventListener("timeupdate", (event) => {
     const {duration, currentTime} = event.srcElement;
     const progressBarTime = (currentTime / duration) * 100;
-    progress.style.width = `${progressBarTime}%`;   
-}
+    progress.style.width = `${progressBarTime}%`; 
 
-track.addEventListener("timeupdate", goProgressBar);
+    let trackCurrentTime = document.querySelector(".track-duration-progress");
+    let trackDuration = document.querySelector(".track-duration");
+    track.addEventListener("loadeddata", () => {
+        
+        // total track time
+        let totalDuration = track.duration;
+        let minutes = Math.floor(totalDuration / 60);
+        let seconds = Math.floor(totalDuration % 60);
+    
+        if (seconds < 10) {
+            seconds = `0${seconds}`;
+        }
+        trackDuration.innerText = `${minutes}:${seconds}`;
+    })
+        
+    // current track time
+    let currentMinutes = Math.floor(currentTime / 60);
+    let currentSeconds = Math.floor(currentTime % 60);
+    
+    if (currentSeconds < 10) {
+        currentSeconds = `0${currentSeconds}`;
+    }
+    trackCurrentTime.innerText = `${currentMinutes}:${currentSeconds}`
 
-function rewindProgressBar(event) {
-    const containerWidth = this.clientWidth;
-    const coordinates = event.offsetX;
-    const trackDuration = track.duration;
-    track.currentTime = (coordinates / containerWidth) * trackDuration;
-}
+    console.log(currentTime)
+});
 
-progressBarContainer.addEventListener("click", rewindProgressBar)
+// setTimeout(function(){console.log(track.currentTime)},200);
 
 console.log(`https://rolling-scopes-school.github.io/mireille0000-JSFEPRESCHOOL2023Q2/Audio-player/`);
