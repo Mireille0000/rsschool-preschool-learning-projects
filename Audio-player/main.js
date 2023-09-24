@@ -29,7 +29,7 @@ function playCurrentTrack(artist, title, audio, cover) {
         
     track.src = `./assets/audio/${audio}.mp3`;
     trackImage.style = `background: url(./assets/img/${cover}.jpg) 50% / cover no-repeat;`;
-    wrapperBackground.style = `background: url(./assets/img/${cover}.jpg) 50% / cover no-repeat;`;
+    wrapperBackground.style = `background: url(./assets/img/${cover}.jpg) 50% / cover no-repeat`;
 }
 
 playCurrentTrack(artistArr[artistIndex], tracksArr[currentTrackIndex], audioTitle[audioTitleIndex], trackImages[coverIndex], wrapperBackground[coverIndex])
@@ -140,6 +140,5 @@ function rewindTrack(event) {
 }
 
 progressBarContainer.addEventListener("click", rewindTrack)
-// setTimeout(function(){console.log(track.currentTime)},200);
 
-console.log(`https://rolling-scopes-school.github.io/mireille0000-JSFEPRESCHOOL2023Q2/Audio-player/`);
+console.log(`60/60 все основные требования выполнены, дополнительный функционал не добавлялся`);

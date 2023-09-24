@@ -14,25 +14,17 @@ body {
     margin: 0 auto;
 
     background: url(./assets/img/fukurou.jpg) 50% / cover no-repeat;
-    backdrop-filter: blur(7px);
 }
 
-.header-wrapper {
+.blur {
     backdrop-filter: blur(7px);
 }
 
 h1 {
     text-align: center;
     padding-top: 20px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-}
-
-main {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-
-    backdrop-filter: blur(7px);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 3px 3px 7px #e896b4;
 }
 
 /* player styles */
@@ -42,7 +34,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    backdrop-filter: blur(7px);
 }
 
 .player-box {
@@ -54,7 +45,7 @@ main {
     background: linear-gradient(#d6a8b9, rgb(165 91 105));
 
     border-radius: 5%;
-    box-shadow: 5px 5px 58px 14px #886363;;
+    box-shadow: 15px 15px 100px 30px #c46e6e;;
 }
 
 .track-image {
@@ -63,13 +54,6 @@ main {
     background: url(./assets/img/fukurou.jpg) 50% / cover no-repeat;
     border-radius: 5% 5% 0 0;
 }
-
-/* .track-image {
-    width: 20rem;
-    height: 11rem;
-    background: url(./assets/img/lone_wolf.jpg) 50% / cover no-repeat;
-    border-radius: 5% 5% 0 0;
-} */
 
 /* buttons */
 
@@ -155,6 +139,6 @@ main {
     background: linear-gradient(#d6a8b9, rgb(165 91 105));
 }
 
-.footer-item {
-    backdrop-filter: blur(5px);
+.footer-item:hover {
+    box-shadow: 15px 15px 180px 24px #afc737;
 }
