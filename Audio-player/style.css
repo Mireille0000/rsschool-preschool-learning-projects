@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d0d3ef;
+    height: 100vh;
+}
+
+.wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+
+    background: url(./assets/img/fukurou.jpg) 50% / cover no-repeat;
+}
+
+.blur {
+    backdrop-filter: blur(7px);
+}
+
+h1 {
+    text-align: center;
+    padding-top: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 3px 3px 7px #e896b4;
+}
+
+/* player styles */
+
+.player-box-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-box {
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    background: linear-gradient(#d6a8b9, rgb(165 91 105));
+
+    border-radius: 5%;
+    box-shadow: 15px 15px 100px 30px #c46e6e;;
+}
+
+.track-image {
+    width: 20rem;
+    height: 11rem;
+    background: url(./assets/img/fukurou.jpg) 50% / cover no-repeat;
+    border-radius: 5% 5% 0 0;
+}
+
+/* buttons */
+
+.buttons {
+    display: flex;
+    margin-top: 5px;
+}
+
+.button-pause {
+    display: none;
+}
+
+.button-pause_active {
+    display: flex;
+}
+.button-play_active {
+    display: none;
+}
+
+.button-pause,
+.button-play,
+.current {
+    align-self: center;
+    margin-right: 10px;
+}
+
+.button-pause,
+.button-play,
+.button-prev,
+.button-next,
+.progress-bar {
+    cursor: pointer;
+}
+
+.current {
+    width: 9rem;
+}
+
+.current.next {
+    display: none;
+}
+
+/* progress bar */
+
+.player-controllers {
+    display: flex;
+    flex-direction: column;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 7px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    align-self: center;
+    border-radius: 15%;
+    border: 1px solid  #100b0b;
+    background-color: #b36984;
+}
+
+.progress {
+    width: 0;
+    height: 6px;
+    border-radius: 15%;
+    background-color: #af63e8;
+}
+
+.duration {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* footer styles */
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    background-color: #af63e8;
+    background: linear-gradient(#d6a8b9, rgb(165 91 105));
+}
+
+.footer-item:hover {
+    box-shadow: 15px 15px 180px 24px #afc737;
+}

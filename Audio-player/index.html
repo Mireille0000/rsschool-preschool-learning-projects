@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link  type="image/x-icon" href="./assets/img/favicon.ico" rel="shortcut icon">
+    <title>Audio player</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="blur">
+            <header class="header-wrapper">
+                <h1>Audio player</h1>
+            </header>
+
+            <main>
+                <div class="player-box-wrapper">
+                    <div class="player-box">
+                        <div class="track-image"></div>
+                        <div class="player-controllers">
+                            <div class="buttons">
+                                <div class="button-pause"><img src="./assets/buttons/pause.png" alt="pause" width="50" height="50"></div>
+                                <div class="button-play"><img src="./assets/buttons/play.png" alt="play" width="50" height="50"></div>
+
+                                <div class="current">
+                                    <div class="artist"></div>
+                                    <div class="track"></div>
+                                </div>
+                                <div><audio src="./assets/audio/kokia.mp3"></audio></div>
+                                
+                                <div class="prev-next-buttons">
+                                    <div class="button-prev"><img src="./assets/buttons/backward.png" alt="previous track" width="30" height="30"></div>
+                                    <div class="button-next"><img src="./assets/buttons/forward.png" alt="next track"  width="30" height="30"></div>
+                                </div>      
+                            </div>
+                            
+                            <div class="progress-bar">
+                                <div class="progress"></div>
+                                <div class="duration">
+                                    <div class="track-duration-progress"></div>
+                                    <div class="track-duration"></div>
+                                </div>    
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <div class="footer-wrapper">
+                <div class="footer-item"><a href="https://github.com/Mireille0000"><img src="./assets/img/gh_logo.svg" alt="hg logo" width="36" height="36" title="My hitHub page"></a></div>
+                <div class="footer-item">2023</div>
+                <div class="footer-item"><a href="https://github.com/rolling-scopes-school/tasks/tree/master/stage0"><img src="./assets/img/rsschool.svg" alt="rsschool logo" width="36" height="36" title="Link RSSchool Stage0"></a></div>
+            </div>
+        </footer>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
