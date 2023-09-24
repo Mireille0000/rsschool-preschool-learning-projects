@@ -129,7 +129,7 @@ track.addEventListener("timeupdate", () => {
         currentSeconds = `0${currentSeconds}`;
     }
     trackCurrentTime.innerText = `${currentMinutes}:${currentSeconds}`
-});
+})
 
 function rewindTrack(event) {
     const progressWidth = this.clientWidth;
@@ -141,4 +141,4 @@ function rewindTrack(event) {
 
 progressBarContainer.addEventListener("click", rewindTrack)
 
-console.log(`60/60 все основные требования выполнены, дополнительный функционал не добавлялся`);
+console.log(`60/60 все основные требования выполнены, дополнительный функционал не добавлялся`)
