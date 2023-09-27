@@ -34,9 +34,16 @@ body {
 }
 
 /* galery styles */
+
 .galery {
-    height: 100vh;
+    width: 100%;
+    /* height: 100vh; */
     padding: 20px;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-gap: 10px;
 }
 
 /* footer styles */
@@ -47,6 +54,6 @@ body {
     padding-top: 20px;
     padding-right: 20px;
     padding-left: 20px;
-    
+
     background: linear-gradient(rgb(203, 203, 215), rgb(212, 221, 221));
 }
