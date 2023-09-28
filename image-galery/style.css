@@ -24,13 +24,15 @@ body {
     background: linear-gradient(rgb(212, 221, 221), rgb(203, 203, 215));
 }
 
-.searche-header {
+.search-header {
     display: flex;
 }
 
 .search-icon {
     margin-top: 1px;
     border-radius: 5%;
+
+cursor: pointer;
 }
 
 /* galery styles */
