@@ -6,6 +6,8 @@ const urlTest = `https://api.flickr.com/services/rest/?method=flickr.photos.getR
 const galery = document.querySelector(".galery")
 const image = document.querySelectorAll(".image");
 const searchImage = document.querySelector(".search_image");
+const input = document.querySelector("input");
+const searchIcon = document.querySelector(".search-icon");
 
 // ??
 let currentPage = 1;
@@ -20,8 +22,6 @@ const putImages = (images) => {
 const getImages = () => {
     fetch(url).then(response => response.json()).then(data => {
         putImages(data.photos.photo);
-        console.log(data.photos.photo);
-        console.log(data);
     })
 }
 
@@ -54,6 +54,14 @@ const loadImages = (event) => {
         url=`https://www.flickr.com/services/rest/?method=flickr.photos.search&per_page=30&api_key=2045df24e76300706839bdb4fc7f3201&tags=${value}&tag_mode=all&extras=url_m&format=json&nojsoncallback=1`
         getImages(url)
     }
+
+    searchIcon.addEventListener("click", () => {
+        currentPage = 1;
+        value = event.target.value;
+        galery.innerHTML = "";
+        url=`https://www.flickr.com/services/rest/?method=flickr.photos.search&per_page=30&api_key=2045df24e76300706839bdb4fc7f3201&tags=${value}&tag_mode=all&extras=url_m&format=json&nojsoncallback=1`
+        getImages(url)  
+    })   
 }
 
-searchImage.addEventListener("keyup", loadImages)
+searchImage.addEventListener("keyup", loadImages);
