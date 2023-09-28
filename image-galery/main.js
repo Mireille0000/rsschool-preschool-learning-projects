@@ -8,6 +8,7 @@ const image = document.querySelectorAll(".image");
 const searchImage = document.querySelector(".search_image");
 const input = document.querySelector("input");
 const searchIcon = document.querySelector(".search-icon");
+const cross = document.querySelector(".cross");
 
 // ??
 let currentPage = 1;
@@ -24,7 +25,6 @@ const getImages = () => {
         putImages(data.photos.photo);
     })
 }
-
 getImages();
 
 // async function getData() {
@@ -54,14 +54,19 @@ const loadImages = (event) => {
         url=`https://www.flickr.com/services/rest/?method=flickr.photos.search&per_page=30&api_key=2045df24e76300706839bdb4fc7f3201&tags=${value}&tag_mode=all&extras=url_m&format=json&nojsoncallback=1`
         getImages(url)
     }
-
-    searchIcon.addEventListener("click", () => {
-        currentPage = 1;
-        value = event.target.value;
-        galery.innerHTML = "";
-        url=`https://www.flickr.com/services/rest/?method=flickr.photos.search&per_page=30&api_key=2045df24e76300706839bdb4fc7f3201&tags=${value}&tag_mode=all&extras=url_m&format=json&nojsoncallback=1`
-        getImages(url)  
-    })   
 }
 
 searchImage.addEventListener("keyup", loadImages);
+
+searchIcon.addEventListener("click", () => {
+    let value = document.getElementById("input").value;
+    currentPage = 1;
+    galery.innerHTML = "";
+    url=`https://www.flickr.com/services/rest/?method=flickr.photos.search&per_page=30&api_key=2045df24e76300706839bdb4fc7f3201&tags=${value}&tag_mode=all&extras=url_m&format=json&nojsoncallback=1`
+    getImages(url);
+    console.log(value);
+})  
+
+cross.addEventListener("click", () => {
+    document.getElementsByName("search")[0].value = "";
+})

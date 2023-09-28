@@ -28,15 +28,33 @@ body {
     display: flex;
 }
 
+.cross {
+    position: absolute;
+    top: 23px;
+    right: 50px;
+    opacity: 0.2;
+
+    cursor: pointer;
+}
+
+.input-search {
+    appearance: none;
+    width: 250px;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
 .search-icon {
-    margin-top: 1px;
+    margin-top: 5px;
     border-radius: 5%;
 
     cursor: pointer;
 }
 
-div.search-icon img:hover {
-    background-color: rgb(166, 194, 242);
+div.search-icon img {
+    /* opacity: 0.4; */
+    border-radius: 10px;
 }
 
 /* galery styles */
