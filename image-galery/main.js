@@ -1,4 +1,4 @@
-let url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&per_page=30&api_key=2045df24e76300706839bdb4fc7f3201&tags=butterfly&tag_mode=all&extras=url_m&format=json&nojsoncallback=1`;
+let url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&per_page=30&api_key=2045df24e76300706839bdb4fc7f3201&tags=mountain, nature&tag_mode=all&extras=url_m&format=json&nojsoncallback=1`;
 //   photos
 const urlTest = `https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=2045df24e76300706839bdb4fc7f3201&extras=url_m&format=json&nojsoncallback=1`;
 
