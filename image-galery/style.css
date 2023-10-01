@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(203, 203, 215);
+    height: 100vh;
+
+    font-family: "Permanent Marker";
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* header styles */
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    background: linear-gradient(rgb(212, 221, 221), rgb(203, 203, 215));
+}
+
+.logo-title-box {
+    display: flex;
+}
+
+.logo-header {
+    align-self: center;
+    margin-right: 5px;
+}
+
+h1 {
+    text-shadow: 3px 3px 10px #92add6;
+}
+
+.search-header {
+    display: flex;
+}
+
+.cross {
+    position: absolute;
+    top: 23px;
+    right: 50px;
+    opacity: 0.2;
+
+    cursor: pointer;
+}
+
+.input-search {
+    appearance: none;
+    width: 250px;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: 1.5px solid #c8c416;
+}
+
+.search-icon {
+    margin-top: 5px;
+    border-radius: 5%;
+
+    cursor: pointer;
+}
+
+div.search-icon img {
+    border-radius: 10px;
+}
+
+/* galery styles */
+
+.galery {
+    width: 100%;
+    padding: 20px;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-gap: 10px;
+}
+
+/* footer styles */
+
+.wrapper-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    background: linear-gradient(rgb(203, 203, 215), rgb(212, 221, 221));
+}
