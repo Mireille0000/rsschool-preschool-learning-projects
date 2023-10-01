@@ -1,4 +1,4 @@
-let url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&per_page=30&api_key=2045df24e76300706839bdb4fc7f3201&tags=mountain, nature&tag_mode=all&extras=url_m&format=json&nojsoncallback=1`;
+let url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&per_page=30&api_key=2045df24e76300706839bdb4fc7f3201&tags=mountain,nature&tag_mode=all&extras=url_m&format=json&nojsoncallback=1`;
 
 const galery = document.querySelector(".galery")
 const image = document.querySelectorAll(".image");
@@ -35,7 +35,6 @@ searchIcon.addEventListener("click", () => {
     galery.innerHTML = "";
     url=`https://www.flickr.com/services/rest/?method=flickr.photos.search&per_page=30&api_key=2045df24e76300706839bdb4fc7f3201&tags=${value}&tag_mode=all&extras=url_m&format=json&nojsoncallback=1`
     getImages(url);
-    console.log(value);
 })  
 
 cross.addEventListener("click", () => {
@@ -43,5 +42,3 @@ cross.addEventListener("click", () => {
 })
 
 console.log("Оценка: 60/60, все требования к заданию выполнены, дополнительный функционал не добавлялся")
-
-console.log(` 2. input; 3. images size; 4. self-check; 5. git hub manipulations (pull requests and merge)`)

@@ -20,6 +20,14 @@ body {
 
 /* header styles */
 
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    background: linear-gradient(rgb(212, 221, 221), rgb(203, 203, 215));
+}
+
 .logo-title-box {
     display: flex;
 }
@@ -29,12 +37,8 @@ body {
     margin-right: 5px;
 }
 
-.header-wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-
-    background: linear-gradient(rgb(212, 221, 221), rgb(203, 203, 215));
+h1 {
+    text-shadow: 3px 3px 10px #92add6;
 }
 
 .search-header {
