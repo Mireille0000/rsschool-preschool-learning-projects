@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header styles */
+
+.header-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* tetris styles */
+
+.tetris-box {
+    display: flex;
+}
+
+.game-field {
+    width: 200px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(176, 176, 81);
+}
+
+.game-field div {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(85, 105, 220);
+    border: 1px solid #000;
+}
+
+/* footer styles */
+
+.footer-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 10px 5px;
+}
+
+.footer-item {
+    align-self: center;
+}
