@@ -17,6 +17,7 @@
 
 .tetris-box {
     display: flex;
+    justify-content: center;
 }
 
 .game-field {
@@ -24,14 +25,22 @@
     height: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(176, 176, 81);
+    background-color: rgb(231, 231, 148);
 }
 
 .game-field div {
     width: 20px;
     height: 20px;
-    background-color: rgb(85, 105, 220);
-    border: 1px solid #000;
+    /* background-color: rgb(85, 105, 220);*/
+    border: 1px solid #cf8c8c; 
+}
+
+.tetromino {
+    background-color: rgb(25, 143, 103);
+}
+
+.side-bar {
+    margin-left: 50px;
 }
 
 /* footer styles */
