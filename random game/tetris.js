@@ -48,8 +48,15 @@ const iTetromino = [
 
 const tetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
 
+// random tetromino
+
+let randomTetromino = Math.floor(Math.random()*tetrominoes.length);
+let randomRotation = Math.floor(Math.random()*4);
+console.log(randomRotation)
+console.log(`add buttons`)
+
 let currentTetrominoPosition = 4;
-let current = tetrominoes[4][3];
+let current = tetrominoes[randomTetromino][randomRotation];
 console.log(current)
 
 function colorTetrominos() {
@@ -59,4 +66,4 @@ function colorTetrominos() {
 }
 
 colorTetrominos();
-console.log(`add buttons`)
+
