@@ -36,7 +36,7 @@ const oTetromino = [
     [0, 1, width, width + 1],
     [0, 1, width, width + 1],
     [0, 1, width, width + 1],
-    [1, 1, width, width + 1]
+    [0, 1, width, width + 1]
 ]
 
 const iTetromino = [
@@ -50,10 +50,10 @@ const tetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
 
 // random tetromino
 
+let rotation = 0;
 let randomTetromino = Math.floor(Math.random()*tetrominoes.length);
 let randomRotation = Math.floor(Math.random()*4);
-console.log(randomRotation)
-console.log(`add buttons`)
+console.log(randomTetromino, randomRotation)
 
 let currentTetrominoPosition = 4;
 let current = tetrominoes[randomTetromino][randomRotation];
@@ -66,4 +66,40 @@ function colorTetrominos() {
 }
 
 colorTetrominos();
+
+// remove tetromino (it should be used later)
+
+function removeTetromino() {
+    current.forEach(index => {
+        fieldItem[currentTetrominoPosition + index].classList.remove("tetromino");
+    });
+}
+
+// move tetromino
+
+let timer = setInterval(moveTetromino, 400);
+
+function moveTetromino() {
+        removeTetromino();
+        currentTetrominoPosition += width;
+        stopMoving();
+        colorTetrominos();
+    console.log(currentTetrominoPosition)
+}
+
+function stopMoving() {
+        if(currentTetrominoPosition > 174) {
+        clearInterval(timer);
+
+        randomTetromino = Math.floor(Math.random()*tetrominoes.length);
+        current = tetrominoes[randomTetromino][randomRotation];
+        currentTetrominoPosition = 4;
+        colorTetrominos();
+
+    }
+}
+
+// colorTetrominos();
+
+console.log(`add buttons`)
 
