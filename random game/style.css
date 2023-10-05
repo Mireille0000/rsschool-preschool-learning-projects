@@ -13,6 +13,21 @@
     margin-top: 10px;
 }
 
+/* buttons */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.start, .pause, .restart {
+    margin-top: 10px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
 /* tetris styles */
 
 .tetris-box {
@@ -26,13 +41,17 @@
     display: flex;
     flex-wrap: wrap;
     background-color: rgb(231, 231, 148);
+    overflow: hidden;
 }
 
 .game-field div {
     width: 20px;
     height: 20px;
-    /* background-color: rgb(85, 105, 220);*/
     border: 1px solid #cf8c8c; 
+}
+
+.stop {
+    background-color: rgb(25, 143, 103);
 }
 
 .tetromino {

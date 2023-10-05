@@ -76,30 +76,73 @@ function removeTetromino() {
 }
 
 // move tetromino
+// buttons
 
-let timer = setInterval(moveTetromino, 400);
+const start = document.querySelector(".start");
+const pause = document.querySelector(".pause");
+const restart = document.querySelector(".restart");
+
+let timer;
+
+start.addEventListener("click", () => {
+    prevent;
+    timer = setInterval(moveTetromino, 1000);
+})
+
+pause.addEventListener("click", () => {
+    prevent;
+    clearInterval(timer);
+})
+
+restart.addEventListener("click", () => {
+    clearInterval(timer);
+    removeTetromino();
+    randomTetromino = Math.floor(Math.random()*tetrominoes.length);
+    current = tetrominoes[randomTetromino][randomRotation];
+    currentTetrominoPosition = 4;
+    colorTetrominos();
+})
+
+function prevent(event) {
+    event.preventDefault();
+}
+
+start.addEventListener("click", prevent, false);
+pause.addEventListener("click", prevent, false);
+restart.addEventListener("click", prevent, false);
 
 function moveTetromino() {
         removeTetromino();
         currentTetrominoPosition += width;
-        stopMoving();
         colorTetrominos();
-    console.log(currentTetrominoPosition)
+        stopMoving();
+        
+        console.log(currentTetrominoPosition)
 }
 
 function stopMoving() {
-        if(currentTetrominoPosition > 174) {
-        clearInterval(timer);
+
+    if(current.some(index => fieldItem[currentTetrominoPosition + index + width].classList.contains("stop"))) {
+        current.forEach(index => fieldItem[currentTetrominoPosition + index].classList.add("stop"));
 
         randomTetromino = Math.floor(Math.random()*tetrominoes.length);
         current = tetrominoes[randomTetromino][randomRotation];
         currentTetrominoPosition = 4;
         colorTetrominos();
-
     }
+       
+
+        // if(currentTetrominoPosition > 174) {
+        // clearInterval(timer);
+
+        // randomTetromino = Math.floor(Math.random()*tetrominoes.length);
+        // current = tetrominoes[randomTetromino][randomRotation];
+        // currentTetrominoPosition = 4;
+        // // colorTetrominos();
+        // }
 }
 
-// colorTetrominos();
+// animation-tetris made
 
 console.log(`add buttons`)
 
