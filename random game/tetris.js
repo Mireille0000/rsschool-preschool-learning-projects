@@ -5,9 +5,11 @@ const gameField = document.querySelector(".game-field"),
     level = document.querySelector(".level"),
 
     nextField = document.querySelector(".next"),
-    nextItem = Array.from(document.querySelectorAll(".next div"))
+    nextItem = document.querySelectorAll(".next div")
 
 const width = 10;
+const nextFieldWidth = 4;
+let nextRandomTetromino = 0;
 
 // The tetrominoes shapes
 
@@ -127,10 +129,12 @@ function stopMoving() {
     if(current.some(index => fieldItem[currentTetrominoPosition + index + width].classList.contains("stop"))) {
         current.forEach(index => fieldItem[currentTetrominoPosition + index].classList.add("stop"));
 
-        randomTetromino = Math.floor(Math.random()*tetrominoes.length);
+        randomTetromino = nextRandomTetromino;
+        nextRandomTetromino = Math.floor(Math.random()*tetrominoes.length);
         current = tetrominoes[randomTetromino][rotation];
         currentTetrominoPosition = 4;
         colorTetrominos();
+        colorNextTetromino();
     }
        
 
@@ -230,4 +234,23 @@ document.addEventListener("keyup", (event) => {
     }
 });
 
-console.log(`1 controls were made 2 fix restart button 3 look through the code once again 4 wrtite 2 functions: moveTright and rotate`)
+// show the next tetromino on a separate field
+
+let nextTetrominoIndex = 0;
+
+const nextTetrominoShapes = [
+    [1, nextFieldWidth + 1, nextFieldWidth * 2 + 1, 2],
+    [0, nextFieldWidth, nextFieldWidth + 1, nextFieldWidth * 2 + 1],
+    [1, nextFieldWidth, nextFieldWidth + 1, nextFieldWidth + 2],
+    [0, 1, nextFieldWidth, nextFieldWidth + 1],
+    [1, nextFieldWidth + 1, nextFieldWidth * 2 + 1, nextFieldWidth * 3 + 1]
+]
+
+function colorNextTetromino() {
+    nextItem.forEach(item => {
+        item.classList.remove("tetromino");
+    })
+    nextTetrominoShapes[nextRandomTetromino].forEach(index => nextItem[nextTetrominoIndex + index].classList.add("tetromino"));
+}
+
+console.log(`1 fix restart button 3 look through the code once again`)
