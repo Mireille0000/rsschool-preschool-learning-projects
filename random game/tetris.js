@@ -12,8 +12,8 @@ const width = 10;
 // The tetrominoes shapes
 
 const lTetromino = [
-    [1, width + 1, width * 2 + 1, 2 ],
-    [width, width + 1,  width * 2, width * 1 + 2],
+    [1, width + 1, width * 2 + 1, 2],
+    [width, width + 1,  width * 2 + 2, width * 1 + 2],
     [1, width + 1, width * 2 + 1, width * 2],
     [width, width * 2, width * 2 + 1, width * 2 + 2]
 ];
@@ -43,7 +43,7 @@ const iTetromino = [
     [1, width + 1, width * 2 + 1, width * 3 + 1],
     [ width, width + 1, width + 2, width + 3],
     [1, width +1, width * 2 + 1, width * 3 + 1],
-    [width, width + 1, width + 2, width + 3,]
+    [width, width + 1, width + 2, width + 3]
 ]
 
 const tetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
@@ -53,10 +53,10 @@ const tetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
 let rotation = 0;
 let randomTetromino = Math.floor(Math.random()*tetrominoes.length);
 let randomRotation = Math.floor(Math.random()*4);
-console.log(randomTetromino, randomRotation)
+console.log(randomTetromino, rotation)
 
 let currentTetrominoPosition = 4;
-let current = tetrominoes[randomTetromino][randomRotation];
+let current = tetrominoes[randomTetromino][rotation];
 console.log(current)
 
 function colorTetrominos() {
@@ -94,11 +94,13 @@ pause.addEventListener("click", () => {
     clearInterval(timer);
 })
 
+// fix restart
+
 restart.addEventListener("click", () => {
     clearInterval(timer);
     removeTetromino();
     randomTetromino = Math.floor(Math.random()*tetrominoes.length);
-    current = tetrominoes[randomTetromino][randomRotation];
+    current = tetrominoes[randomTetromino][rotation];
     currentTetrominoPosition = 4;
     colorTetrominos();
 })
@@ -126,7 +128,7 @@ function stopMoving() {
         current.forEach(index => fieldItem[currentTetrominoPosition + index].classList.add("stop"));
 
         randomTetromino = Math.floor(Math.random()*tetrominoes.length);
-        current = tetrominoes[randomTetromino][randomRotation];
+        current = tetrominoes[randomTetromino][rotation];
         currentTetrominoPosition = 4;
         colorTetrominos();
     }
@@ -142,7 +144,90 @@ function stopMoving() {
         // }
 }
 
-// animation-tetris made
+// const testTetromino = [
+//     [1, width, width + 1,  width + 2, width * 2 + 1],
+//     [width + 1, width + 2,  width * 2, width * 2 + 1],
+//     [0, width, width + 1, width * 2 + 1],
+//     [width + 1, width + 2, width * 2, width * 2 + 1]
+// ];
 
-console.log(`add buttons`)
+// function test() {
+//     currentTetrominoPosition = 0;
+//     current = testTetromino[0];
+//     current.forEach(index => {
+//         fieldItem[currentTetrominoPosition + index].classList.add("tetromino");
+//     });
+// }
+// test()
 
+console.log(`add buttons`);
+
+// move tetromino left/right and change its rotation
+
+function moveTetrominoLeft() {
+    removeTetromino();
+    const isAtLeft = current.some(index => (currentTetrominoPosition + index) % width === 0);
+
+    if(!isAtLeft) {
+        currentTetrominoPosition -= 1;
+    }
+
+    if(current.some(index => fieldItem[currentTetrominoPosition + index].classList.contains("stop"))) {
+        currentTetrominoPosition += 1;
+    }
+
+    colorTetrominos();
+}
+
+function slice(number) {
+    let numberToString = number.toString();
+    if(numberToString.length <= 1) {
+      return +numberToString;
+    }
+    result = numberToString.toString().slice(numberToString.length - 1);
+    return +result
+  }
+
+function moveTetrominoRight() {
+    removeTetromino();
+    const isAtRight = current.some(index => slice(currentTetrominoPosition + index) === 9);
+
+    if(!isAtRight) {
+        currentTetrominoPosition += 1;
+    }
+
+    if(current.some(index => fieldItem[currentTetrominoPosition + index].classList.contains("stop"))) {
+        currentTetrominoPosition -= 1;
+    }
+
+    colorTetrominos();
+}
+
+function rotateTetromino() {
+    removeTetromino();
+    rotation++;
+    if(rotation === current.length) {
+        rotation = 0
+    }
+    current = tetrominoes[randomTetromino][rotation];
+    colorTetrominos()
+}
+
+document.addEventListener("keyup", (event) => {
+    if(event.code === "KeyQ") {
+        moveTetrominoLeft()
+        console.log("left")
+    }
+
+    if(event.code === "KeyE") {
+        moveTetrominoRight()
+        console.log("right")
+    }
+
+    if(event.code === "KeyW") {
+        rotateTetromino()
+        console.log("rotate")
+    }
+});
+
+console.log(`1 controls were made 2 fix restart button 3 look through the code once again 4 wrtite 2 functions: moveTright and rotate`)
