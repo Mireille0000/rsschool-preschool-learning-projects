@@ -1,15 +1,17 @@
 const gameField = document.querySelector(".game-field"),
-    fieldItem = Array.from(document.querySelectorAll(".game-field div")),
 
-    score = document.querySelector(".score"),
+    scoreTable = document.querySelector(".score")
     level = document.querySelector(".level"),
 
     nextField = document.querySelector(".next"),
     nextItem = document.querySelectorAll(".next div")
 
+let fieldItem = Array.from(document.querySelectorAll(".game-field div"));
+
 const width = 10;
 const nextFieldWidth = 4;
 let nextRandomTetromino = 0;
+let score = 0;
 
 // The tetrominoes shapes
 
@@ -78,6 +80,7 @@ function removeTetromino() {
 }
 
 // move tetromino
+
 // buttons
 
 const start = document.querySelector(".start");
@@ -86,10 +89,26 @@ const restart = document.querySelector(".restart");
 
 let timer;
 
+
 start.addEventListener("click", () => {
     prevent;
+    colorTetrominos();
     timer = setInterval(moveTetromino, 1000);
+    nextRandomTetromino = Math.floor(Math.random()*tetrominoes.length);
+    colorNextTetromino();
 })
+// start.addEventListener("click", () => {
+//     prevent;
+//     if(timer) {
+//         clearInterval(timer);
+//         timer = null;
+//     } else {
+//         colorTetrominos();
+//         timer = setInterval(moveTetromino, 1000);
+//         nextRandomTetromino = Math.floor(Math.random()*tetrominoes.length);
+//         colorNextTetromino();
+//     }
+// })
 
 pause.addEventListener("click", () => {
     prevent;
@@ -105,6 +124,7 @@ restart.addEventListener("click", () => {
     current = tetrominoes[randomTetromino][rotation];
     currentTetrominoPosition = 4;
     colorTetrominos();
+    colorNextTetromino();
 })
 
 function prevent(event) {
@@ -135,6 +155,7 @@ function stopMoving() {
         currentTetrominoPosition = 4;
         colorTetrominos();
         colorNextTetromino();
+        showScore()
     }
        
 
@@ -253,4 +274,24 @@ function colorNextTetromino() {
     nextTetrominoShapes[nextRandomTetromino].forEach(index => nextItem[nextTetrominoIndex + index].classList.add("tetromino"));
 }
 
-console.log(`1 fix restart button 3 look through the code once again`)
+// remove the row that is completed and show score
+
+function showScore() {
+    for(let i = 0; i < 199; i += 10) {
+        let row = [i, i + 1, i + 2, i + 3, i + 4, i + 5, i + 6, i + 7, i + 8, i + 9];
+
+        if (row.every(index =>
+             fieldItem[index].classList.contains("stop"))){
+                score +=10;
+                scoreTable.innerHTML = `Score:${score}`;
+
+                row.forEach(index => {
+                    fieldItem[index].classList.remove("stop");
+                    fieldItem[index].classList.remove("tetromino")
+                })
+                const rowCompleted = fieldItem.splice(i, width);
+                fieldItem = rowCompleted.concat(fieldItem);
+                fieldItem.forEach(particle => gameField.appendChild(particle));
+             };    
+        }
+    }
