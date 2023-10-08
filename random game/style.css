@@ -50,9 +50,9 @@
     border: 1px solid #cf8c8c; 
 }
 
-.stop {
+/* .stop {
     background-color: rgb(25, 143, 103);
-}
+} */
 
 .tetromino {
     background-color: rgb(25, 143, 103);

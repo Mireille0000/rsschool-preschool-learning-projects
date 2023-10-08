@@ -56,7 +56,7 @@ const tetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
 
 let rotation = 0;
 let randomTetromino = Math.floor(Math.random()*tetrominoes.length);
-let randomRotation = Math.floor(Math.random()*4);
+// let randomRotation = Math.floor(Math.random()*4);
 console.log(randomTetromino, rotation)
 
 let currentTetrominoPosition = 4;
@@ -71,15 +71,13 @@ function colorTetrominos() {
 
 colorTetrominos();
 
-// remove tetromino (it should be used later)
+// remove tetromino
 
 function removeTetromino() {
     current.forEach(index => {
         fieldItem[currentTetrominoPosition + index].classList.remove("tetromino");
     });
 }
-
-// move tetromino
 
 // buttons
 
@@ -89,14 +87,14 @@ const restart = document.querySelector(".restart");
 
 let timer;
 
-
 start.addEventListener("click", () => {
     prevent;
     colorTetrominos();
-    timer = setInterval(moveTetromino, 1000);
+    timer = setInterval(moveTetromino, 300);
     nextRandomTetromino = Math.floor(Math.random()*tetrominoes.length);
     colorNextTetromino();
 })
+
 // start.addEventListener("click", () => {
 //     prevent;
 //     if(timer) {
@@ -118,13 +116,21 @@ pause.addEventListener("click", () => {
 // fix restart
 
 restart.addEventListener("click", () => {
-    clearInterval(timer);
+    prevent;
     removeTetromino();
-    randomTetromino = Math.floor(Math.random()*tetrominoes.length);
-    current = tetrominoes[randomTetromino][rotation];
+    clearInterval(timer);
+
+   for (let i = 0; i < 200; i++) {
+    fieldItem[i].classList.remove("stop");
+    fieldItem[i].classList.remove("tetromino");
+   }
+
     currentTetrominoPosition = 4;
     colorTetrominos();
+    nextRandomTetromino = Math.floor(Math.random()*tetrominoes.length);
     colorNextTetromino();
+
+    console.log(fieldItem.length - 10);
 })
 
 function prevent(event) {
@@ -134,6 +140,8 @@ function prevent(event) {
 start.addEventListener("click", prevent, false);
 pause.addEventListener("click", prevent, false);
 restart.addEventListener("click", prevent, false);
+
+// move tetromino
 
 function moveTetromino() {
         removeTetromino();
@@ -145,7 +153,6 @@ function moveTetromino() {
 }
 
 function stopMoving() {
-
     if(current.some(index => fieldItem[currentTetrominoPosition + index + width].classList.contains("stop"))) {
         current.forEach(index => fieldItem[currentTetrominoPosition + index].classList.add("stop"));
 
@@ -155,9 +162,9 @@ function stopMoving() {
         currentTetrominoPosition = 4;
         colorTetrominos();
         colorNextTetromino();
-        showScore()
-    }
-       
+        showScore();
+        gameOver();
+    }   
 
         // if(currentTetrominoPosition > 174) {
         // clearInterval(timer);
@@ -187,6 +194,7 @@ function stopMoving() {
 
 console.log(`add buttons`);
 
+
 // move tetromino left/right and change its rotation
 
 function moveTetrominoLeft() {
@@ -209,7 +217,7 @@ function slice(number) {
     if(numberToString.length <= 1) {
       return +numberToString;
     }
-    result = numberToString.toString().slice(numberToString.length - 1);
+    result = numberToString.slice(numberToString.length - 1);
     return +result
   }
 
@@ -293,5 +301,18 @@ function showScore() {
                 fieldItem = rowCompleted.concat(fieldItem);
                 fieldItem.forEach(particle => gameField.appendChild(particle));
              };    
+        }
+    }
+
+    // game over
+
+    function gameOver() {
+        if(current.some(index => fieldItem[currentTetrominoPosition + index].classList.contains("stop"))) {
+            scoreTable.innerHTML = "Game over";
+            clearInterval(timer);
+            fieldItem.forEach(item =>  {
+                item.classList.remove("tetromino");
+                item.classList.remove("stop");
+            })
         }
     }
