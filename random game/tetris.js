@@ -90,7 +90,14 @@ let timer;
 start.addEventListener("click", () => {
     prevent;
     fieldItem[53].innerHTML = "";
-    scoreTable.innerHTML = `Score: ${score = 0}`;
+    if (score === 0) {
+        scoreTable.innerHTML = `Score: ${score = 0}`;
+    }
+
+    if (scoreTable.innerHTML === "Game over") {
+        score = 0;
+    }
+    scoreTable.innerHTML = `Score: ${score}`;
     colorTetrominos();
     timer = setInterval(moveTetromino, 300);
     nextRandomTetromino = Math.floor(Math.random()*tetrominoes.length);
@@ -324,7 +331,7 @@ function showScore() {
     }
 
     // menu
-
+    // change background color
     const settings = document.querySelector(".settings"),
         sound = document.querySelector(".sound"),
         color = document.querySelector(".color"),
@@ -333,8 +340,6 @@ function showScore() {
         darkColor = document.querySelector(".dark"),
         results = document.querySelector(".results"),
         ghIcon = document.querySelector(".footer-item a img")
-
-        // make the block: sound and color, then results; menu part started (markup)
 
         darkColor.addEventListener("click", () => {
             bodyBackground.style = "background-color: #000; color: #fff";
@@ -345,3 +350,6 @@ function showScore() {
             bodyBackground.style = "background-color: #d3dec2; color: #000";
             ghIcon.style = "background-color: #d3dec2"
         })
+
+        // sound on/ off
+        // make the block: sound, then results; 
