@@ -89,6 +89,8 @@ let timer;
 
 start.addEventListener("click", () => {
     prevent;
+    fieldItem[94].innerHTML = "";
+    scoreTable.innerHTML = `Score: ${score = 0}`;
     colorTetrominos();
     timer = setInterval(moveTetromino, 300);
     nextRandomTetromino = Math.floor(Math.random()*tetrominoes.length);
@@ -119,6 +121,8 @@ restart.addEventListener("click", () => {
     prevent;
     removeTetromino();
     clearInterval(timer);
+    fieldItem[94].innerHTML = "";
+    scoreTable.innerHTML = `Score: ${score = 0}`;
 
    for (let i = 0; i < 200; i++) {
     fieldItem[i].classList.remove("stop");
@@ -217,7 +221,7 @@ function slice(number) {
     if(numberToString.length <= 1) {
       return +numberToString;
     }
-    result = numberToString.slice(numberToString.length - 1);
+    let result = numberToString.slice(numberToString.length - 1);
     return +result
   }
 
@@ -309,11 +313,13 @@ function showScore() {
     function gameOver() {
         if(current.some(index => fieldItem[currentTetrominoPosition + index].classList.contains("stop"))) {
             scoreTable.innerHTML = "Game over";
+            fieldItem[94].innerHTML = `Game over \n Your score: ${score}`;
             clearInterval(timer);
-            fieldItem.forEach(item =>  {
-                item.classList.remove("tetromino");
-                item.classList.remove("stop");
-            })
+
+            for (let i = 0; i < 200; i++) {
+                fieldItem[i].classList.remove("stop");
+                fieldItem[i].classList.remove("tetromino");
+               }
         }
     }
 
@@ -326,4 +332,3 @@ function showScore() {
 
         // make the block: sound and color, then results; menu part started (markup)
 
-        
