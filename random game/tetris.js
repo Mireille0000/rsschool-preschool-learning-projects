@@ -291,7 +291,7 @@ function showScore() {
         if (row.every(index =>
              fieldItem[index].classList.contains("stop"))){
                 score +=10;
-                scoreTable.innerHTML = `Score:${score}`;
+                scoreTable.innerHTML = `Score: ${score}`;
 
                 row.forEach(index => {
                     fieldItem[index].classList.remove("stop");
@@ -316,3 +316,14 @@ function showScore() {
             })
         }
     }
+
+    // menu
+
+    const settings = document.querySelector(".settings"),
+        sound = document.querySelector(".sound"),
+        color = document.querySelector(".color"),
+        results = document.querySelector(".results")
+
+        // make the block: sound and color, then results; menu part started (markup)
+
+        
