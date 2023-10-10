@@ -8,7 +8,18 @@
 body {
     height: 100vh;
     font-family: "Pixelify Sans";
+    font-size: 25px;
     background-color: #d3dec2;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 1 auto;
 }
 /* header styles */
 
@@ -16,7 +27,17 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border: 2px solid #cf8c8c; */
+}
+
+h1 {
+    font-size: 70px;
+}
+
+.header-box img {
+    margin-top: 35px;
 }
 
 /* buttons */
@@ -24,6 +45,7 @@ body {
 .buttons {
     display: flex;
     justify-content: center;
+    margin-left: 90px;
     cursor: pointer;
 }
 
@@ -35,6 +57,13 @@ body {
 
     appearance: none;
     font-family: "Pixelify Sans";
+    border-radius: 15%;
+    box-shadow: 4px 2px 4px #cf8c8c;
+}
+
+.start:hover, .pause:hover, .restart:hover {
+    transition: 1s;
+    background-color: rgb(231, 231, 148);;
 }
 
 /* tetris styles */
@@ -42,6 +71,7 @@ body {
 .tetris-box {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .game-field {
@@ -57,6 +87,11 @@ body {
     width: 20px;
     height: 20px;
     border: 0.5px solid #cf8c8c;  
+}
+
+.game-field div {
+    font-size: 35px;
+    color: rgb(200, 42, 42);
 }
 
 .tetromino {
@@ -92,7 +127,18 @@ body {
 }
 
 .menu-item {
+    line-height: 35px;
     cursor: pointer;
+}
+
+.color, .sound {
+    display: flex;
+    flex-direction: column;
+    line-height: 25px;
+}
+
+.options {
+    font-size: 20px;
 }
 
 /* footer styles */
@@ -101,7 +147,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
-    padding: 5px 10px 5px;
+    padding: 10px 10px 10px;
     border: 2px solid #cf8c8c;
 }
 

@@ -89,7 +89,7 @@ let timer;
 
 start.addEventListener("click", () => {
     prevent;
-    fieldItem[94].innerHTML = "";
+    fieldItem[53].innerHTML = "";
     scoreTable.innerHTML = `Score: ${score = 0}`;
     colorTetrominos();
     timer = setInterval(moveTetromino, 300);
@@ -121,7 +121,7 @@ restart.addEventListener("click", () => {
     prevent;
     removeTetromino();
     clearInterval(timer);
-    fieldItem[94].innerHTML = "";
+    fieldItem[53].innerHTML = "";
     scoreTable.innerHTML = `Score: ${score = 0}`;
 
    for (let i = 0; i < 200; i++) {
@@ -313,7 +313,7 @@ function showScore() {
     function gameOver() {
         if(current.some(index => fieldItem[currentTetrominoPosition + index].classList.contains("stop"))) {
             scoreTable.innerHTML = "Game over";
-            fieldItem[94].innerHTML = `Game over \n Your score: ${score}`;
+            fieldItem[53].innerHTML = `Game over \n Your score: ${score}`;
             clearInterval(timer);
 
             for (let i = 0; i < 200; i++) {
@@ -328,7 +328,20 @@ function showScore() {
     const settings = document.querySelector(".settings"),
         sound = document.querySelector(".sound"),
         color = document.querySelector(".color"),
-        results = document.querySelector(".results")
+        bodyBackground = document.querySelector("body")
+        lightColor = document.querySelector(".light"),
+        darkColor = document.querySelector(".dark"),
+        results = document.querySelector(".results"),
+        ghIcon = document.querySelector(".footer-item a img")
 
         // make the block: sound and color, then results; menu part started (markup)
 
+        darkColor.addEventListener("click", () => {
+            bodyBackground.style = "background-color: #000; color: #fff";
+            ghIcon.style = "background-color: #fff; border-radius: 25px"
+        })
+
+        lightColor.addEventListener("click", () => {
+            bodyBackground.style = "background-color: #d3dec2; color: #000";
+            ghIcon.style = "background-color: #d3dec2"
+        })

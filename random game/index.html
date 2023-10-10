@@ -8,276 +8,288 @@
     <link rel="icon" href="./images/tetris-icon.png">
 </head>
 <body>
-    <header>
-        <div class="header-box">
-            <h1>Tetris</h1>
-            <img src="./images/tetris-icon.png" alt="tetris-icon" title="Tetris icon" width="30" height="30">
-        </div>  
-    </header>
-    <main>
-        <form class="buttons">
-            <button type="submit" class="start">Start</button>
-            <button type="submit" class="pause">Pause</button>
-            <button type="submit" class="restart">Restart</button>
-        </form>
-        <div class="tetris-box">  
+    <div class="wrapper">
+        <header>
+            <div class="header-box">
+                <h1>Tetris</h1>
+                <img src="./images/tetris-icon.png" alt="tetris-icon" title="Tetris icon" width="30" height="30">
+            </div>  
+        </header>
+        <main>
+            <form class="buttons">
+                <button type="submit" class="start">Start</button>
+                <button type="submit" class="pause">Pause</button>
+                <button type="submit" class="restart">Restart</button>
+            </form>
+            <div class="tetris-box">  
 
-            <div class="menu">
-                <h3>Menu</h3>
-                <div class="menu-item">Controls</div>
-                <div class="settings menu-item">Settings
-                    <div class="sound menu-item">Sound</div>
-                    <div class="color menu-item">Color</div>
+                <div class="menu">
+                    <h3>Menu</h3>
+                    <div class="menu-item">Controls</div>
+                    <div class="settings menu-item">Settings
+                        <div class="sound menu-item">Sound
+                            <div class="options">
+                                <span class="on">On</span>
+                                 <span class="off">Off</span>  
+                             </div>
+                        </div>
+                        <div class="color menu-item">Color
+                            <div class="options">
+                               <span class="light">Light</span>
+                                <span class="dark">Dark</span>  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="results menu-item">Show last results</div>
                 </div>
-                <div class="results menu-item">Show last results</div>
-            </div>
 
-            <div class="game-field">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <div class="game-field">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
 
-                <div class="stop"></div>
-                <div class="stop"></div>
-                <div class="stop"></div>
-                <div class="stop"></div>
-                <div class="stop"></div>
-                <div class="stop"></div>
-                <div class="stop"></div>
-                <div class="stop"></div>
-                <div class="stop"></div>
-                <div class="stop"></div>
-            </div>
-
-            <div class="side-bar">
-                <p>Next tetromino</p>
-                <div class="next">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div class="stop"></div>
+                    <div class="stop"></div>
+                    <div class="stop"></div>
+                    <div class="stop"></div>
+                    <div class="stop"></div>
+                    <div class="stop"></div>
+                    <div class="stop"></div>
+                    <div class="stop"></div>
+                    <div class="stop"></div>
+                    <div class="stop"></div>
                 </div>
-                <div class="score">Score: 0</div>
-                <div class="level">Level: 0</div>
-            </div> 
-        </div>   
-    </main>
-    <footer>
-        <div class="footer-box">
-            <div class="footer-item"><a href="https://github.com/Mireille0000"><img src="./images/gh_logo.svg" alt="My GitHub Page" title="My GitHub Page" width="35" height="35"></a></div>
-            <div class="footer-item">2023</div>
-            <div class="footer-item"><a href="https://github.com/rolling-scopes-school/tasks/tree/master/stage0"><img src="./images/rsschool.svg" alt="My GitHub Page" title="Link on RSSchool course" width="35" height="35"></a></div>
-        </div>
-    </footer>
+
+                <div class="side-bar">
+                    <p>Next tetromino</p>
+                    <div class="next">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="score">Score: 0</div>
+                    <div class="level">Level: 0</div>
+                </div> 
+            </div>   
+        </main>
+        <footer>
+            <div class="footer-box">
+                <div class="footer-item"><a href="https://github.com/Mireille0000"><img src="./images/gh_logo.svg" alt="My GitHub Page" title="My GitHub Page" width="35" height="35"></a></div>
+                <div class="footer-item">2023</div>
+                <div class="footer-item"><a href="https://github.com/rolling-scopes-school/tasks/tree/master/stage0"><img src="./images/rsschool.svg" alt="My GitHub Page" title="Link on RSSchool course" width="35" height="35"></a></div>
+            </div>
+        </footer>
+    </div>
   
     <script src="tetris.js"></script>
 </body>
