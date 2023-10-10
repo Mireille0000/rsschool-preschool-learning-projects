@@ -134,11 +134,23 @@ h1 {
 .color, .sound {
     display: flex;
     flex-direction: column;
+    color: rgb(25, 143, 103);
     line-height: 25px;
 }
 
 .options {
     font-size: 20px;
+    color: #000;
+    opacity: 0;
+}
+
+.options.active {
+    transition: 1s;
+    opacity: 1;
+}
+
+span {
+    margin-right: 30px;
 }
 
 /* footer styles */

@@ -338,8 +338,14 @@ function showScore() {
         bodyBackground = document.querySelector("body")
         lightColor = document.querySelector(".light"),
         darkColor = document.querySelector(".dark"),
+        backgroundThemes = document.querySelector(".color .options"),
+        soundOnOff = document.querySelector(".sound .options"),
         results = document.querySelector(".results"),
         ghIcon = document.querySelector(".footer-item a img")
+
+        color.addEventListener("click", () => {
+            backgroundThemes.classList.toggle("active");
+        })
 
         darkColor.addEventListener("click", () => {
             bodyBackground.style = "background-color: #000; color: #fff";
@@ -352,4 +358,8 @@ function showScore() {
         })
 
         // sound on/ off
+        sound.addEventListener("click", () => {
+            soundOnOff.classList.toggle("active");
+        })
+        
         // make the block: sound, then results; 
