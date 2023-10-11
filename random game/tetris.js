@@ -96,6 +96,7 @@ start.addEventListener("click", () => {
 
     if (scoreTable.innerHTML === "Game over") {
         score = 0;
+        level.innerHTML = `Level: ${lvlUp = 0}`;
     }
     scoreTable.innerHTML = `Score: ${score}`;
     colorTetrominos();
@@ -130,6 +131,7 @@ restart.addEventListener("click", () => {
     clearInterval(timer);
     fieldItem[53].innerHTML = "";
     scoreTable.innerHTML = `Score: ${score = 0}`;
+    level.innerHTML = `Level: ${lvlUp = 0}`;
 
    for (let i = 0; i < 200; i++) {
     fieldItem[i].classList.remove("stop");
@@ -294,6 +296,7 @@ function colorNextTetromino() {
 }
 
 // remove the row that is completed and show score
+let lvlUp = 0;
 
 function showScore() {
     for(let i = 0; i < 199; i += 10) {
@@ -303,6 +306,13 @@ function showScore() {
              fieldItem[index].classList.contains("stop"))){
                 score +=10;
                 scoreTable.innerHTML = `Score: ${score}`;
+                if (score % 100 == 0) {
+                    lvlUp += 1;
+                }
+
+              
+                level.innerHTML = `Level: ${lvlUp}`;
+                
 
                 row.forEach(index => {
                     fieldItem[index].classList.remove("stop");
@@ -320,7 +330,7 @@ function showScore() {
     function gameOver() {
         if(current.some(index => fieldItem[currentTetrominoPosition + index].classList.contains("stop"))) {
             scoreTable.innerHTML = "Game over";
-            fieldItem[53].innerHTML = `Game over \n Your score: ${score}`;
+            fieldItem[53].innerHTML = `Game over \n Score: ${score} \n Level: ${lvlUp}`;
             clearInterval(timer);
 
             for (let i = 0; i < 200; i++) {
@@ -341,7 +351,8 @@ function showScore() {
         backgroundThemes = document.querySelector(".color .options"),
         soundOnOff = document.querySelector(".sound .options"),
         results = document.querySelector(".results"),
-        ghIcon = document.querySelector(".footer-item a img")
+        ghIcon = document.querySelector(".footer-item a img"), 
+        span = document.querySelectorAll("span");
 
         color.addEventListener("click", () => {
             backgroundThemes.classList.toggle("active");
@@ -349,17 +360,21 @@ function showScore() {
 
         darkColor.addEventListener("click", () => {
             bodyBackground.style = "background-color: #000; color: #fff";
-            ghIcon.style = "background-color: #fff; border-radius: 25px"
+            ghIcon.style = "background-color: #fff; border-radius: 25px";
+            span.forEach(item => item.style = "color: #fff");
         })
 
         lightColor.addEventListener("click", () => {
             bodyBackground.style = "background-color: #d3dec2; color: #000";
-            ghIcon.style = "background-color: #d3dec2"
+            ghIcon.style = "background-color: #d3dec2";
+            span.forEach(item => item.style = "color: #000");
         })
 
         // sound on/ off
         sound.addEventListener("click", () => {
             soundOnOff.classList.toggle("active");
         })
-        
+
+        // add audio !!!
+        // level
         // make the block: sound, then results; 
