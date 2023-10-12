@@ -131,6 +131,19 @@ h1 {
     cursor: pointer;
 }
 
+.control {
+    font-size: 20px;
+}
+
+.control-list {
+    display: none;
+}
+
+.control-list.active {
+    display: flex;
+    flex-direction: column;
+}
+
 .color, .sound {
     display: flex;
     flex-direction: column;
@@ -151,6 +164,11 @@ h1 {
 
 span {
     margin-right: 30px;
+}
+
+th {
+    padding-right: 10px;
+    font-size: 20px;
 }
 
 /* footer styles */

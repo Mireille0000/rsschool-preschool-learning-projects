@@ -340,9 +340,11 @@ function showScore() {
         }
     }
 
-    // menu
-    // change background color
+    // menu, variables
+
     const settings = document.querySelector(".settings"),
+        controls = document.querySelector(".controls"),
+        controlsItems = document.querySelector(".controls .control-list"),
         sound = document.querySelector(".sound"),
         color = document.querySelector(".color"),
         bodyBackground = document.querySelector("body")
@@ -354,6 +356,14 @@ function showScore() {
         ghIcon = document.querySelector(".footer-item a img"), 
         span = document.querySelectorAll("span");
 
+    // controls
+    controls.addEventListener("click", () => {
+        controlsItems.classList.toggle("active");
+        // controlsItems.forEach(control => control.style = "display: flex");
+    })
+
+
+    // change background color
         color.addEventListener("click", () => {
             backgroundThemes.classList.toggle("active");
         })
@@ -376,5 +386,4 @@ function showScore() {
         })
 
         // add audio !!!
-        // level
         // make the block: sound, then results; 
