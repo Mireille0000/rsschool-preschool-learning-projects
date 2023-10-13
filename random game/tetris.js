@@ -162,7 +162,7 @@ function moveTetromino() {
         colorTetrominos();
         stopMoving();
         
-        console.log(currentTetrominoPosition)
+        // console.log(currentTetrominoPosition)
 }
 
 function stopMoving() {
@@ -310,8 +310,11 @@ function showScore() {
                     lvlUp += 1;
                 }
 
-              
                 level.innerHTML = `Level: ${lvlUp}`;
+
+                // if (score === 20) {
+                //     level.innerHTML = `Win!`;
+                // }
                 
 
                 row.forEach(index => {
@@ -325,65 +328,90 @@ function showScore() {
         }
     }
 
-    // game over
+ // menu, variables
 
-    function gameOver() {
-        if(current.some(index => fieldItem[currentTetrominoPosition + index].classList.contains("stop"))) {
-            scoreTable.innerHTML = "Game over";
-            fieldItem[53].innerHTML = `Game over \n Score: ${score} \n Level: ${lvlUp}`;
-            clearInterval(timer);
+const settings = document.querySelector(".settings"),
+    controls = document.querySelector(".controls"),
+    controlsItems = document.querySelector(".controls .control-list"),
+    sound = document.querySelector(".sound"),
+    color = document.querySelector(".color"),
+    bodyBackground = document.querySelector("body")
+    lightColor = document.querySelector(".light"),
+    darkColor = document.querySelector(".dark"),
+    backgroundThemes = document.querySelector(".color .options"),
+    soundOnOff = document.querySelector(".sound .options"),
+    results = document.querySelector(".results"),
+    ghIcon = document.querySelector(".footer-item a img"), 
+    span = document.querySelectorAll("span");
 
-            for (let i = 0; i < 200; i++) {
-                fieldItem[i].classList.remove("stop");
-                fieldItem[i].classList.remove("tetromino");
-               }
+// controls
+
+controls.addEventListener("click", () => {
+    controlsItems.classList.toggle("active");
+})
+
+
+// change background color
+
+color.addEventListener("click", () => {
+     backgroundThemes.classList.toggle("active");
+})
+
+darkColor.addEventListener("click", () => {
+    bodyBackground.style = "background-color: #000; color: #fff";
+    ghIcon.style = "background-color: #fff; border-radius: 25px";
+    span.forEach(item => item.style = "color: #fff");
+})
+
+lightColor.addEventListener("click", () => {
+    bodyBackground.style = "background-color: #d3dec2; color: #000";
+    ghIcon.style = "background-color: #d3dec2";
+    span.forEach(item => item.style = "color: #000");
+})
+
+// sound on/ off
+
+sound.addEventListener("click", () => {
+    soundOnOff.classList.toggle("active");
+})
+
+// results table
+
+let resultScore = Array.from(document.querySelectorAll(".result-score")),
+    lvl = Array.from(document.querySelectorAll(".lvl"));
+
+console.log(resultScore[0].previousElementSibling)
+console.log(lvl)
+
+// game over
+
+function gameOver() {
+    if(current.some(index => fieldItem[currentTetrominoPosition + index].classList.contains("stop"))) {
+        scoreTable.innerHTML = "Game over";
+        fieldItem[53].innerHTML = `Game over \n Score: ${score} \n Level: ${lvlUp}`;
+        resultScore[0].innerHTML = `${score}`;
+        lvl[0].innerHTML = `${lvlUp}`;
+
+        clearInterval(timer);
+        
+        for (let i = 0; i < 200; i++) {
+            fieldItem[i].classList.remove("stop");
+            fieldItem[i].classList.remove("tetromino");
+            }
+        }
+
+    if (score === 1000) {
+        level.innerHTML = `Win!`;
+        scoreTable.innerHTML = "Win!";
+        fieldItem[53].innerHTML = `WIN! \n Score: ${score} \n Level: ${lvlUp}`;
+
+        clearInterval(timer);
+        
+    for (let i = 0; i < 200; i++) {
+        fieldItem[i].classList.remove("stop");
+        fieldItem[i].classList.remove("tetromino");
         }
     }
+}
 
-    // menu, variables
-
-    const settings = document.querySelector(".settings"),
-        controls = document.querySelector(".controls"),
-        controlsItems = document.querySelector(".controls .control-list"),
-        sound = document.querySelector(".sound"),
-        color = document.querySelector(".color"),
-        bodyBackground = document.querySelector("body")
-        lightColor = document.querySelector(".light"),
-        darkColor = document.querySelector(".dark"),
-        backgroundThemes = document.querySelector(".color .options"),
-        soundOnOff = document.querySelector(".sound .options"),
-        results = document.querySelector(".results"),
-        ghIcon = document.querySelector(".footer-item a img"), 
-        span = document.querySelectorAll("span");
-
-    // controls
-    controls.addEventListener("click", () => {
-        controlsItems.classList.toggle("active");
-        // controlsItems.forEach(control => control.style = "display: flex");
-    })
-
-
-    // change background color
-        color.addEventListener("click", () => {
-            backgroundThemes.classList.toggle("active");
-        })
-
-        darkColor.addEventListener("click", () => {
-            bodyBackground.style = "background-color: #000; color: #fff";
-            ghIcon.style = "background-color: #fff; border-radius: 25px";
-            span.forEach(item => item.style = "color: #fff");
-        })
-
-        lightColor.addEventListener("click", () => {
-            bodyBackground.style = "background-color: #d3dec2; color: #000";
-            ghIcon.style = "background-color: #d3dec2";
-            span.forEach(item => item.style = "color: #000");
-        })
-
-        // sound on/ off
-        sound.addEventListener("click", () => {
-            soundOnOff.classList.toggle("active");
-        })
-
-        // add audio !!!
-        // make the block: sound, then results; 
+// add sounds and results with local storage 
