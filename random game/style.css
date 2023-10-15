@@ -173,7 +173,10 @@ th {
 
 table {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+
+    height: 350px;
+    overflow: hidden;
 }
 
 .table-header {
@@ -181,8 +184,9 @@ table {
     gap: 10px;
 }
 
-.result-score {
-    padding-right: 50px;
+tr.results {
+    display: flex;
+    gap: 70px;
 }
 
 /* footer styles */

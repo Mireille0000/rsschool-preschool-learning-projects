@@ -378,24 +378,43 @@ sound.addEventListener("click", () => {
 // results table and local storage
 
 let table = document.querySelector("table"),
-    lvl = document.querySelectorAll(".lvl");
+    // tableRow = Array.from(document.querySelectorAll("tr")),
+    lvl = document.querySelector(".lvl"),
+    resultScore = document.querySelector(".result-score")
 
 let resultArray = []; // an array of objects containing data
 let resultArrayHtml = []; // an array for html elements of a table
 
     function scoreLevel () {
 
-        resultArray.unshift({score: `${score}`, level: `${lvlUp}`});
-        resultArrayHtml.unshift(`<tr class="results">
+    resultArray.unshift({score: `${score}`, level: `${lvlUp}`});
+    //     resultArrayHtml.unshift(`<tr class="results">
+    //     <td class="result-score">${score}</td>
+    //     <td class="lvl">${lvlUp}</td>
+    // </tr>`) 
+
+    // resultScore.textContent += resultArray[0].score;
+        // lvl.textContent += resultArray[0].level;
+
+    if(resultArray.length < 11) { // show 10 last results
+        table.insertAdjacentHTML("afterbegin", `<tr class="results">
+            <td class="result-score">${score}</td>
+            <td class="lvl">${lvlUp}</td>
+            </tr>`)
+        localStorage.setItem("data", JSON.stringify(resultArray));
+    } else {
+        table.insertAdjacentHTML("afterbegin", `<tr class="results">
         <td class="result-score">${score}</td>
         <td class="lvl">${lvlUp}</td>
-    </tr>`) 
+        </tr>`)
 
-    if(resultArray.length < 3){
-        table.innerHTML += resultArrayHtml[0];
+        resultArray.pop();
         localStorage.setItem("data", JSON.stringify(resultArray));
+        // pop the last element, push the first element and show it
     }
 }
+
+console.log(localStorage.getItem("data", JSON.stringify(resultArray)))
 
 // game over
 
@@ -425,3 +444,9 @@ function gameOver() {
         }
     }
 }
+
+// add sound and level up changings
+
+// const lastResults = document.querySelector(".last-results");
+
+// lastResults.innerHTML =`Last results: \n ${localStorage.getItem("data", JSON.stringify(resultArray))}`;
