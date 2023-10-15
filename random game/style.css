@@ -151,6 +151,19 @@ h1 {
     line-height: 25px;
 }
 
+/* .color, .sound {
+    display: none;
+} */
+
+.sound, .controls {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.settings {
+    margin-bottom: 20px;
+}
+
 .options {
     font-size: 20px;
     color: #000;
@@ -160,6 +173,14 @@ h1 {
 .options.active {
     transition: 1s;
     opacity: 1;
+}
+
+.results-list {
+    display: none;
+}
+
+.results-list.active {
+    display: flex;
 }
 
 span {
@@ -182,6 +203,11 @@ table {
 .table-header {
     display: flex;
     gap: 10px;
+    margin-top: 20px;
+}
+
+.table-header div {
+    font-weight: 700;
 }
 
 tr.results {

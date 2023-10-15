@@ -423,6 +423,7 @@ function gameOver() {
         scoreTable.innerHTML = "Game over";
         fieldItem[53].innerHTML = `Game over \n Score: ${score} \n Level: ${lvlUp}`;
         scoreLevel();
+        showLastResults ();
         clearInterval(timer);
         
         for (let i = 0; i < 200; i++) {
@@ -447,6 +448,24 @@ function gameOver() {
 
 // add sound and level up changings
 
-// const lastResults = document.querySelector(".last-results");
 
-// lastResults.innerHTML =`Last results: \n ${localStorage.getItem("data", JSON.stringify(resultArray))}`;
+function showLastResults () {
+    const lastResults = Array.from(document.querySelectorAll(".last-results"));
+    let resultsString = `${localStorage.getItem("data", JSON.stringify(resultArray))}`
+    let toObject = JSON.parse(localStorage.getItem("data"));
+    
+     for(let i = 0; i < toObject.length; i++) {
+        console.log(typeof Object.values(toObject[i]));
+        if (toObject[i].score) {
+            lastResults[i].innerHTML = `Score: ${toObject[i].score}, Level: ${toObject[i].level}`
+        }     
+     }
+}
+
+showLastResults ()
+
+const resultsList = document.querySelector(".results-list")
+results.addEventListener("click", () => {
+    resultsList.classList.toggle("active")
+})
+
