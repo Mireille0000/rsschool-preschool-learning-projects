@@ -56,12 +56,9 @@ const tetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
 
 let rotation = 0;
 let randomTetromino = Math.floor(Math.random()*tetrominoes.length);
-// let randomRotation = Math.floor(Math.random()*4);
-console.log(randomTetromino, rotation)
 
 let currentTetrominoPosition = 4;
 let current = tetrominoes[randomTetromino][rotation];
-console.log(current)
 
 function colorTetrominos() {
     current.forEach(index => {
@@ -105,19 +102,6 @@ start.addEventListener("click", () => {
     colorNextTetromino();
 })
 
-// start.addEventListener("click", () => {
-//     prevent;
-//     if(timer) {
-//         clearInterval(timer);
-//         timer = null;
-//     } else {
-//         colorTetrominos();
-//         timer = setInterval(moveTetromino, 1000);
-//         nextRandomTetromino = Math.floor(Math.random()*tetrominoes.length);
-//         colorNextTetromino();
-//     }
-// })
-
 pause.addEventListener("click", () => {
     prevent;
     clearInterval(timer);
@@ -142,8 +126,6 @@ restart.addEventListener("click", () => {
     colorTetrominos();
     nextRandomTetromino = Math.floor(Math.random()*tetrominoes.length);
     colorNextTetromino();
-
-    console.log(fieldItem.length - 10);
 })
 
 function prevent(event) {
@@ -161,8 +143,6 @@ function moveTetromino() {
         currentTetrominoPosition += width;
         colorTetrominos();
         stopMoving();
-        
-        // console.log(currentTetrominoPosition)
 }
 
 function stopMoving() {
@@ -178,15 +158,6 @@ function stopMoving() {
         showScore();
         gameOver();
     }   
-
-        // if(currentTetrominoPosition > 174) {
-        // clearInterval(timer);
-
-        // randomTetromino = Math.floor(Math.random()*tetrominoes.length);
-        // current = tetrominoes[randomTetromino][randomRotation];
-        // currentTetrominoPosition = 4;
-        // // colorTetrominos();
-        // }
 }
 
 // const testTetromino = [
@@ -296,6 +267,7 @@ function colorNextTetromino() {
 }
 
 // remove the row that is completed and show score
+
 let lvlUp = 0;
 
 function showScore() {
@@ -312,11 +284,6 @@ function showScore() {
 
                 level.innerHTML = `Level: ${lvlUp}`;
 
-                // if (score === 20) {
-                //     level.innerHTML = `Win!`;
-                // }
-                
-
                 row.forEach(index => {
                     fieldItem[index].classList.remove("stop");
                     fieldItem[index].classList.remove("tetromino")
@@ -324,8 +291,15 @@ function showScore() {
                 const rowCompleted = fieldItem.splice(i, width);
                 fieldItem = rowCompleted.concat(fieldItem);
                 fieldItem.forEach(particle => gameField.appendChild(particle));
+                playSoundStageClear ()
              };    
         }
+    }
+
+    const soundStageClear = document.querySelector(".sound-clear-stage")
+
+    function playSoundStageClear () {
+        soundStageClear.play()
     }
 
  // menu, variables
@@ -369,7 +343,7 @@ lightColor.addEventListener("click", () => {
     span.forEach(item => item.style = "color: #000");
 })
 
-// sound on/ off
+// sound on/ off (just one track, there is no possibility to off sound effects)
 
 sound.addEventListener("click", () => {
     soundOnOff.classList.toggle("active");
@@ -378,23 +352,14 @@ sound.addEventListener("click", () => {
 // results table and local storage
 
 let table = document.querySelector("table"),
-    // tableRow = Array.from(document.querySelectorAll("tr")),
     lvl = document.querySelector(".lvl"),
     resultScore = document.querySelector(".result-score")
 
 let resultArray = []; // an array of objects containing data
-let resultArrayHtml = []; // an array for html elements of a table
 
     function scoreLevel () {
 
     resultArray.unshift({score: `${score}`, level: `${lvlUp}`});
-    //     resultArrayHtml.unshift(`<tr class="results">
-    //     <td class="result-score">${score}</td>
-    //     <td class="lvl">${lvlUp}</td>
-    // </tr>`) 
-
-    // resultScore.textContent += resultArray[0].score;
-        // lvl.textContent += resultArray[0].level;
 
     if(resultArray.length < 11) { // show 10 last results
         table.insertAdjacentHTML("afterbegin", `<tr class="results">
@@ -413,43 +378,6 @@ let resultArrayHtml = []; // an array for html elements of a table
         // pop the last element, push the first element and show it
     }
 }
-
-console.log(localStorage.getItem("data", JSON.stringify(resultArray)))
-
-// // game over
-
-// function gameOver() {
-//     if(current.some(index => fieldItem[currentTetrominoPosition + index].classList.contains("stop"))) {
-//         scoreTable.innerHTML = "Game over";
-//         fieldItem[53].innerHTML = `Game over \n Score: ${score} \n Level: ${lvlUp}`;
-//         scoreLevel();
-//         showLastResults ();
-//         playGameOver ();
-//         clearInterval(timer);
-        
-//         for (let i = 0; i < 200; i++) {
-//             fieldItem[i].classList.remove("stop");
-//             fieldItem[i].classList.remove("tetromino");
-//             }
-//         }
-
-//     if (score === 1000) {
-//         level.innerHTML = `Win!`;
-//         scoreTable.innerHTML = "Win!";
-//         playSoundWin ();
-//         fieldItem[53].innerHTML = `WIN! \n Score: ${score} \n Level: ${lvlUp}`;
-
-//         clearInterval(timer);
-        
-//     for (let i = 0; i < 200; i++) {
-//         fieldItem[i].classList.remove("stop");
-//         fieldItem[i].classList.remove("tetromino");
-//         }
-//     }
-// }
-
-// add sound and level up changings
-
 
 function showLastResults () {
     const lastResults = Array.from(document.querySelectorAll(".last-results"));
@@ -486,7 +414,7 @@ function stopAudio () {
 playTrack.addEventListener("click", playAudio);
 offTrack.addEventListener("click", stopAudio);
 
-// sounds of the end of the game and when the game is lost
+// sound functions of the end of the game and when the game is lost
 
 const soundWin = document.querySelector(".sound-win"),
     soundGameOver = document.querySelector(".sound-game-over")
