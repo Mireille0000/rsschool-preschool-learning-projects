@@ -296,12 +296,6 @@ function showScore() {
         }
     }
 
-    const soundStageClear = document.querySelector(".sound-clear-stage")
-
-    function playSoundStageClear () {
-        soundStageClear.play()
-    }
-
  // menu, variables
 
 const settings = document.querySelector(".settings"),
@@ -401,7 +395,16 @@ results.addEventListener("click", () => {
 
 const playTrack = document.querySelector(".on"),
     offTrack = document.querySelector(".off"),
-    trackSound = document.querySelector(".audio-sound");
+    trackSound = document.querySelector(".audio-sound"),
+    soundStageClear = document.querySelector(".sound-clear-stage")
+
+function playSoundStageClear () {
+    soundStageClear.play()
+}
+
+function stopSoundStageClear () {
+    soundStageClear.pause()
+}
 
 function playAudio () {
     trackSound.play();
@@ -456,6 +459,7 @@ function gameOver() {
         level.innerHTML = `Win!`;
         scoreTable.innerHTML = "Win!";
         playSoundWin ();
+        stopSoundStageClear ()
         fieldItem[53].innerHTML = `WIN! \n Score: ${score} \n Level: ${lvlUp}`;
 
         clearInterval(timer);
@@ -466,3 +470,19 @@ function gameOver() {
         }
     }
 }
+
+console.log(`55/60: Ваша оценка - 55 баллов 
+Отзыв по пунктам ТЗ:
+Не выполненные/не засчитанные пункты:
+1) Очень высокое качество оформления приложения и/или дополнительный не предусмотренный в задании функционал, улучшающий качество приложения 
+Частично выполненные пункты:
+1) Логика игры. Ходы, перемещения фигур, другие действия игрока подчиняются определённым свойственным игре правилам 
+Отзыв: Тетраминошки не ускоряются в зависимости от уровня
+Выполненные пункты:
+1) реализован интерфейс игры 
+2) в футере приложения есть ссылка на гитхаб автора приложения, год создания приложения, логотип курса со ссылкой на курс 
+3) Реализовано завершение игры при достижении игровой цели (Нужно набрать 1000 баллов чтобы выиграть; строка 458, где можно поменять условие чтобы проверить реализацию концовки)
+4) По окончанию игры выводится её результат, например, количество ходов, время игры, набранные баллы, выигрыш или поражение и т.д (выигрыш/ поражение и набранные баллы/уровень(уровень - если проигрыш))
+5) Результаты последних 10 игр сохраняются в local storage. Есть таблица рекордов или последних игр(здесь - последних игр), в которой сохраняются результаты предыдущих 10 игр 
+6) Анимации или звуки, или настройки игры. Баллы начисляются за любой из перечисленных пунктов 
+`)

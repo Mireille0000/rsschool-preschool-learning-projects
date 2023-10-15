@@ -181,6 +181,7 @@ h1 {
 
 .results-list.active {
     display: flex;
+    flex-direction: column;
 }
 
 span {
