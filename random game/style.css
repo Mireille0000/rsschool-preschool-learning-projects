@@ -171,6 +171,20 @@ th {
     font-size: 20px;
 }
 
+table {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.table-header {
+    display: flex;
+    gap: 10px;
+}
+
+.result-score {
+    padding-right: 50px;
+}
+
 /* footer styles */
 
 .footer-box {

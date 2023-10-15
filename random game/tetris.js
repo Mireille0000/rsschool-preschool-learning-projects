@@ -344,7 +344,7 @@ const settings = document.querySelector(".settings"),
     ghIcon = document.querySelector(".footer-item a img"), 
     span = document.querySelectorAll("span");
 
-// controls
+// show controls
 
 controls.addEventListener("click", () => {
     controlsItems.classList.toggle("active");
@@ -375,13 +375,27 @@ sound.addEventListener("click", () => {
     soundOnOff.classList.toggle("active");
 })
 
-// results table
+// results table and local storage
 
-let resultScore = Array.from(document.querySelectorAll(".result-score")),
-    lvl = Array.from(document.querySelectorAll(".lvl"));
+let table = document.querySelector("table"),
+    lvl = document.querySelectorAll(".lvl");
 
-console.log(resultScore[0].previousElementSibling)
-console.log(lvl)
+let resultArray = []; // an array of objects containing data
+let resultArrayHtml = []; // an array for html elements of a table
+
+    function scoreLevel () {
+
+        resultArray.unshift({score: `${score}`, level: `${lvlUp}`});
+        resultArrayHtml.unshift(`<tr class="results">
+        <td class="result-score">${score}</td>
+        <td class="lvl">${lvlUp}</td>
+    </tr>`) 
+
+    if(resultArray.length < 3){
+        table.innerHTML += resultArrayHtml[0];
+        localStorage.setItem("data", JSON.stringify(resultArray));
+    }
+}
 
 // game over
 
@@ -389,9 +403,7 @@ function gameOver() {
     if(current.some(index => fieldItem[currentTetrominoPosition + index].classList.contains("stop"))) {
         scoreTable.innerHTML = "Game over";
         fieldItem[53].innerHTML = `Game over \n Score: ${score} \n Level: ${lvlUp}`;
-        resultScore[0].innerHTML = `${score}`;
-        lvl[0].innerHTML = `${lvlUp}`;
-
+        scoreLevel();
         clearInterval(timer);
         
         for (let i = 0; i < 200; i++) {
@@ -413,5 +425,3 @@ function gameOver() {
         }
     }
 }
-
-// add sounds and results with local storage 
