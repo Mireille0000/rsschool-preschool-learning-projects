@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    font-family: "Pixelify Sans";
+    font-size: 25px;
+    background-color: #d3dec2;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 1 auto;
+}
+/* header styles */
+
+.header-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border: 2px solid #cf8c8c; */
+}
+
+h1 {
+    font-size: 70px;
+}
+
+.header-box img {
+    margin-top: 35px;
+}
+
+/* buttons */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-left: 90px;
+    cursor: pointer;
+}
+
+.start, .pause, .restart {
+    margin-top: 10px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    appearance: none;
+    font-family: "Pixelify Sans";
+    border-radius: 15%;
+    box-shadow: 4px 2px 4px #cf8c8c;
+}
+
+.start:hover, .pause:hover, .restart:hover {
+    transition: 1s;
+    background-color: rgb(231, 231, 148);;
+}
+
+/* tetris styles */
+
+.tetris-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.game-field {
+    width: 200px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(231, 231, 148);
+    overflow: hidden;
+}
+
+.game-field div {
+    width: 20px;
+    height: 20px;
+    border: 0.5px solid #cf8c8c;  
+}
+
+.game-field div {
+    font-size: 35px;
+    color: rgb(200, 42, 42);
+}
+
+.tetromino {
+    background-color: rgb(25, 143, 103);
+}
+
+.side-bar {
+    margin-left: 50px;
+}
+
+/* next tetromino style */
+
+.next {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(231, 231, 148);
+}
+
+.next div {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #cf8c8c; 
+}
+
+/* menu */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding-right: 120px;
+}
+
+.menu-item {
+    line-height: 35px;
+    cursor: pointer;
+}
+
+.control {
+    font-size: 20px;
+}
+
+.control-list {
+    display: none;
+}
+
+.control-list.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.color, .sound {
+    display: flex;
+    flex-direction: column;
+    color: rgb(25, 143, 103);
+    line-height: 25px;
+}
+
+/* .color, .sound {
+    display: none;
+} */
+
+.sound, .controls {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.settings {
+    margin-bottom: 20px;
+}
+
+.options {
+    font-size: 20px;
+    color: #000;
+    opacity: 0;
+}
+
+.options.active {
+    transition: 1s;
+    opacity: 1;
+}
+
+.results-list {
+    display: none;
+}
+
+.results-list.active {
+    display: flex;
+    flex-direction: column;
+}
+
+span {
+    margin-right: 30px;
+}
+
+th {
+    padding-right: 10px;
+    font-size: 20px;
+}
+
+table {
+    display: flex;
+    flex-direction: column;
+
+    height: 350px;
+    overflow: hidden;
+}
+
+.table-header {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.table-header div {
+    font-weight: 700;
+}
+
+tr.results {
+    display: flex;
+    gap: 70px;
+}
+
+/* footer styles */
+
+.footer-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px 10px 10px;
+    border: 2px solid #cf8c8c;
+}
+
+.footer-item {
+    align-self: center;
+}
