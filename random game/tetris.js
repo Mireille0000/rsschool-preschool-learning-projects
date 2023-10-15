@@ -416,35 +416,37 @@ let resultArrayHtml = []; // an array for html elements of a table
 
 console.log(localStorage.getItem("data", JSON.stringify(resultArray)))
 
-// game over
+// // game over
 
-function gameOver() {
-    if(current.some(index => fieldItem[currentTetrominoPosition + index].classList.contains("stop"))) {
-        scoreTable.innerHTML = "Game over";
-        fieldItem[53].innerHTML = `Game over \n Score: ${score} \n Level: ${lvlUp}`;
-        scoreLevel();
-        showLastResults ();
-        clearInterval(timer);
+// function gameOver() {
+//     if(current.some(index => fieldItem[currentTetrominoPosition + index].classList.contains("stop"))) {
+//         scoreTable.innerHTML = "Game over";
+//         fieldItem[53].innerHTML = `Game over \n Score: ${score} \n Level: ${lvlUp}`;
+//         scoreLevel();
+//         showLastResults ();
+//         playGameOver ();
+//         clearInterval(timer);
         
-        for (let i = 0; i < 200; i++) {
-            fieldItem[i].classList.remove("stop");
-            fieldItem[i].classList.remove("tetromino");
-            }
-        }
+//         for (let i = 0; i < 200; i++) {
+//             fieldItem[i].classList.remove("stop");
+//             fieldItem[i].classList.remove("tetromino");
+//             }
+//         }
 
-    if (score === 1000) {
-        level.innerHTML = `Win!`;
-        scoreTable.innerHTML = "Win!";
-        fieldItem[53].innerHTML = `WIN! \n Score: ${score} \n Level: ${lvlUp}`;
+//     if (score === 1000) {
+//         level.innerHTML = `Win!`;
+//         scoreTable.innerHTML = "Win!";
+//         playSoundWin ();
+//         fieldItem[53].innerHTML = `WIN! \n Score: ${score} \n Level: ${lvlUp}`;
 
-        clearInterval(timer);
+//         clearInterval(timer);
         
-    for (let i = 0; i < 200; i++) {
-        fieldItem[i].classList.remove("stop");
-        fieldItem[i].classList.remove("tetromino");
-        }
-    }
-}
+//     for (let i = 0; i < 200; i++) {
+//         fieldItem[i].classList.remove("stop");
+//         fieldItem[i].classList.remove("tetromino");
+//         }
+//     }
+// }
 
 // add sound and level up changings
 
@@ -469,9 +471,9 @@ results.addEventListener("click", () => {
     resultsList.classList.toggle("active")
 })
 
-const playTrack = document.querySelector(".on");
-const offTrack = document.querySelector(".off");
-const trackSound = document.querySelector(".audio-sound");
+const playTrack = document.querySelector(".on"),
+    offTrack = document.querySelector(".off"),
+    trackSound = document.querySelector(".audio-sound");
 
 function playAudio () {
     trackSound.play();
@@ -484,3 +486,55 @@ function stopAudio () {
 playTrack.addEventListener("click", playAudio);
 offTrack.addEventListener("click", stopAudio);
 
+// sounds of the end of the game and when the game is lost
+
+const soundWin = document.querySelector(".sound-win"),
+    soundGameOver = document.querySelector(".sound-game-over")
+
+    function playSoundWin () {
+        soundWin.play();
+    }
+    
+    function stopSoundWin () {
+        soundWin.pause();
+    }
+
+    function playGameOver () {
+        soundGameOver.play();
+    }
+    
+    function stopGameOver () {
+        soundGameOver.pause();
+    }
+
+// game over
+
+function gameOver() {
+    if(current.some(index => fieldItem[currentTetrominoPosition + index].classList.contains("stop"))) {
+        scoreTable.innerHTML = "Game over";
+        fieldItem[53].innerHTML = `Game over \n Score: ${score} \n Level: ${lvlUp}`;
+        scoreLevel();
+        showLastResults ();
+        playGameOver ();
+        clearInterval(timer);
+        
+        for (let i = 0; i < 200; i++) {
+            fieldItem[i].classList.remove("stop");
+            fieldItem[i].classList.remove("tetromino");
+            }
+        }
+
+    if (score === 1000) {
+        level.innerHTML = `Win!`;
+        scoreTable.innerHTML = "Win!";
+        playSoundWin ();
+        fieldItem[53].innerHTML = `WIN! \n Score: ${score} \n Level: ${lvlUp}`;
+
+        clearInterval(timer);
+        
+    for (let i = 0; i < 200; i++) {
+        fieldItem[i].classList.remove("stop");
+        fieldItem[i].classList.remove("tetromino");
+        }
+    }
+}
