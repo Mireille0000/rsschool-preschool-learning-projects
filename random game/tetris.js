@@ -469,3 +469,18 @@ results.addEventListener("click", () => {
     resultsList.classList.toggle("active")
 })
 
+const playTrack = document.querySelector(".on");
+const offTrack = document.querySelector(".off");
+const trackSound = document.querySelector(".audio-sound");
+
+function playAudio () {
+    trackSound.play();
+}
+
+function stopAudio () {
+    trackSound.pause();
+}
+
+playTrack.addEventListener("click", playAudio);
+offTrack.addEventListener("click", stopAudio);
+
